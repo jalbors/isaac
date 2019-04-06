@@ -49,10 +49,6 @@ public class Get {
 			http.disconnect();
 			return usuarios;
 
-			
-			
-			
-	
 		} catch (Exception e) {
 
 			e.printStackTrace();
