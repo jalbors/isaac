@@ -67,11 +67,15 @@ public class NewJFrame extends javax.swing.JFrame {
 				
 				DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 		        ArrayList<Usuario> list = USUARIOS;
-		        Object rowData[] = new Object[4];
+		        Object rowData[] = new Object[6];
 		        for(int i = 0; i < list.size(); i++)
 		        {
-		            rowData[0] = list.get(i).getEmail();
-		            rowData[1] = list.get(i).getIdUser();
+		            rowData[0] = list.get(i).getIdUser();
+		            rowData[1] = list.get(i).getName();
+		            rowData[2] = list.get(i).getSurname();
+		            rowData[3] = list.get(i).getEmail();
+		            rowData[4] = String.valueOf(list.get(i).getMoney());
+		            rowData[5] = list.get(i).getRol();
 		            model.addRow(rowData);
 		        }
 				
@@ -91,14 +95,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         		
             new Object [][] {
-            	
-                {null,  null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
+                "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL"
             }
         ));
         
