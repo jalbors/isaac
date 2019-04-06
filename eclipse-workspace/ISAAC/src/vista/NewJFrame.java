@@ -2,10 +2,15 @@ package vista;
 
 import java.util.ArrayList;
 
+import javax.swing.table.DefaultTableModel;
+
 import clases.Usuario;
 
-public class NewJFrame extends javax.swing.JFrame {
 
+
+public class NewJFrame extends javax.swing.JFrame {
+	
+	public static ArrayList<Usuario> USUARIOS = null;
     /**
      * Creates new form NewJFrame
      */
@@ -56,9 +61,20 @@ public class NewJFrame extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 				Get g = new Get();
-				ArrayList<Usuario> usuarios = g.get();
+				USUARIOS = g.get();
 
-				jTextArea2.setText(usuarios.toString());
+				jTextArea2.setText(USUARIOS.toString());
+				
+				DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+		        ArrayList<Usuario> list = USUARIOS;
+		        Object rowData[] = new Object[4];
+		        for(int i = 0; i < list.size(); i++)
+		        {
+		            rowData[0] = list.get(i).getEmail();
+		            rowData[1] = list.get(i).getIdUser();
+		            model.addRow(rowData);
+		        }
+				
 
 			}
 		});
@@ -71,10 +87,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
-
+        
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        		
             new Object [][] {
-                {"aa", null, null, null, null, null},
+            	
+                {null,  null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
@@ -83,6 +101,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6"
             }
         ));
+        
+        
         jScrollPane2.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 110));
