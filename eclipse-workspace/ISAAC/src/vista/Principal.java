@@ -87,49 +87,31 @@ public class Principal {
 
 				try {
 
-					URL url = new URL("http://localhost:8080/prueba/users/login");
+					System.out.println("Introduzca el id");
+					String id = tec.nextLine();
+
+					URL url = new URL("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/" + id);
 
 					http = (HttpURLConnection) url.openConnection();
-					http.setDoOutput(true);
-					http.setRequestMethod("POST");
-					http.setRequestProperty("Content-Type", TYPE);
+					http.setRequestMethod("GET");
+					http.setRequestProperty("Accept", TYPE);
 
-					System.out.println("Introduzca usuario");
-					String user = tec.nextLine();
-					System.out.println("Introduzca pass");
-					String pass = tec.nextLine();
-					String pass_encrytp = encrytpSHA256(pass);
-
-					// le pasamos el usuario transformado a json
-					Usuario user_pass = new Usuario(user, pass_encrytp);
-					String json = gson.toJson(user_pass);
-
-					// escribimos el json
-					OutputStream os = http.getOutputStream();
-					os.write(json.getBytes());
-					os.flush();// ENVIA INFO AL SERVER
-
-					responseCode = http.getResponseCode();
-					System.out.println("Codigo de respuesta: " + responseCode);
-
-					// leemos la respuesta
 					BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
 					StringBuilder sb = new StringBuilder();
 					String respuesta;
 
 					while ((respuesta = br.readLine()) != null) {
-						sb.append(respuesta);// ANYADIR DATO AL STRING BUILDER
+
+						sb.append(respuesta);
 
 					}
 
-					Usuario user_token = gson.fromJson(sb.toString(), Usuario.class);
-					System.out.println("Usuario: " + user_token.toString());
-					token = user_token.getToken();
-					http.disconnect();
+					Usuario json_dev = gson.fromJson(sb.toString(), Usuario.class);
+					System.out.println("Datos de retorno: " + json_dev.toString());
 
 				} catch (Exception e) {
-					http.disconnect();
-					e.getMessage();
+
+					e.printStackTrace();
 
 				}
 

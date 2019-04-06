@@ -247,7 +247,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUser=" + idUser + ", name=" + name + ", surname=" + surname + ", email=" + email
 				+ ", password=" + password + ", money=" + money + ", registerDate=" + registerDate + ", removeDate="
-				+ removeDate + ", rol=" + rol + ", token=" + token + "]";
+				+ removeDate + ", rol=" + rol ;
 	}
 
 	
