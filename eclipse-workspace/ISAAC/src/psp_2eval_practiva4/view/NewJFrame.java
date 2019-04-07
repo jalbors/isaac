@@ -154,7 +154,7 @@ public class NewJFrame extends javax.swing.JFrame {
     	jf1.setVisible(true);
     	
     	//metodo para cerrar la ventana actual y pasar a la siguiente
-    	close();
+    	//close();
     	
 	}
     
