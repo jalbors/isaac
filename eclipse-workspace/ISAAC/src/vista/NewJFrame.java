@@ -1,5 +1,7 @@
 package vista;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
@@ -47,7 +49,10 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        
+       
+        
+        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Bienvenido admin");
@@ -60,11 +65,14 @@ public class NewJFrame extends javax.swing.JFrame {
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
+				
+				//llama a la clase get con el metodo get para listar usuarios
 				Get g = new Get();
 				USUARIOS = g.get();
 
 				jTextArea2.setText(USUARIOS.toString());
 				
+				//funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 		        ArrayList<Usuario> lista = USUARIOS;
 		        Object fila[] = new Object[6];
@@ -97,6 +105,8 @@ public class NewJFrame extends javax.swing.JFrame {
             new Object [][] {
             },
             new String [] {
+            		//cabecera ce la tabla
+            		
                 "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL"
             }
         ));
@@ -104,6 +114,7 @@ public class NewJFrame extends javax.swing.JFrame {
         
         jScrollPane2.setViewportView(jTable1);
 
+        //librerias externas  org.netbeans.lib.awtextra.AbsoluteConstraints
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 110));
 
         jTextArea2.setColumns(20);
@@ -135,10 +146,20 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+    	
+    	//llama al jframe para cambiar de ventana y lo pone visible
     	NewJFrame1 jf1 = new NewJFrame1();
     	jf1.setVisible(true);
     	
+    	//metodo para cerrar la ventana actual y pasar a la siguiente
+    	close();
+    	
 	}
+    
+    public void close() {
+    	WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+    	Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
+    }
 
     public static void main(String args[]) {
     	
