@@ -50,13 +50,13 @@ public class NewJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Bienvenido admin");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jButton1.setText("jButton1");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Listar usuarios");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
@@ -65,18 +65,18 @@ public class NewJFrame extends javax.swing.JFrame {
 
 				jTextArea2.setText(USUARIOS.toString());
 				
-				DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-		        ArrayList<Usuario> list = USUARIOS;
-		        Object rowData[] = new Object[6];
-		        for(int i = 0; i < list.size(); i++)
+				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+		        ArrayList<Usuario> lista = USUARIOS;
+		        Object fila[] = new Object[6];
+		        for(int i = 0; i < lista.size(); i++)
 		        {
-		            rowData[0] = list.get(i).getIdUser();
-		            rowData[1] = list.get(i).getName();
-		            rowData[2] = list.get(i).getSurname();
-		            rowData[3] = list.get(i).getEmail();
-		            rowData[4] = String.valueOf(list.get(i).getMoney());
-		            rowData[5] = list.get(i).getRol();
-		            model.addRow(rowData);
+		            fila[0] = lista.get(i).getIdUser();
+		            fila[1] = lista.get(i).getName();
+		            fila[2] = lista.get(i).getSurname();
+		            fila[3] = lista.get(i).getEmail();
+		            fila[4] = lista.get(i).getMoney();
+		            fila[5] = lista.get(i).getRol();
+		            modelo.addRow(fila);
 		        }
 				
 
@@ -90,7 +90,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
         
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         		
@@ -135,17 +135,13 @@ public class NewJFrame extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+    	NewJFrame1 jf1 = new NewJFrame1();
+    	jf1.setVisible(true);
+    	
 	}
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    	
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -162,17 +158,14 @@ public class NewJFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
             }
         });
     }
-
-    // Variables declaration - do not modify                     
+                    
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
@@ -185,6 +178,5 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea2;
-    // End of variables declaration                   
+    private javax.swing.JTextArea jTextArea2;      
 }
