@@ -1,3 +1,4 @@
+
 package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
@@ -9,11 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import psp_2eval_practica4.Get;
 import psp_2eval_practiva4.model.Usuario;
 
-
-
-
 public class ListarUsuarios extends javax.swing.JFrame {
-	
 	public static ArrayList<Usuario> USUARIOS = null;
     /**
      * Creates new form NewJFrame
@@ -34,6 +31,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -51,23 +51,18 @@ public class ListarUsuarios extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        
-       
-        
-        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Bienvenido admin");
+        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
-
-        jButton1.setText("Listar usuarios");
-		jButton1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton1ActionPerformed(evt);
-				
+        jButton1.setText("Listar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+                
+            	
 				//llama a la clase get con el metodo get para listar usuarios
 				Get g = new Get(USUARIOS);
 				
@@ -87,42 +82,62 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		            fila[5] = lista.get(i).getRol();
 		            modelo.addRow(fila);
 		        }
-				
+				 
+                
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
-			}
-		});
-        
-        
-        jButton2.setText("Crear usuario");
+        jButton2.setText("Crear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
-        
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-        		
             new Object [][] {
             },
             new String [] {
             		//cabecera ce la tabla
             		
-                "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL"
+                    "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL"
             }
         ));
-        
-        
         jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("ID");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("NOMBRE");
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("APELLIDO");
+            jTable1.getColumnModel().getColumn(3).setHeaderValue("EMAIL");
+            jTable1.getColumnModel().getColumn(4).setHeaderValue("DINERO");
+            jTable1.getColumnModel().getColumn(5).setHeaderValue("ROL");
+        }
 
-        //librerias externas  org.netbeans.lib.awtextra.AbsoluteConstraints
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 110));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 90));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 490, -1));
+
+        jButton3.setText("Editar");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+
+        jButton4.setText("Eliminar");
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+
+        jButton5.setText("Buscar Id");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
+       
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+                
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -147,9 +162,16 @@ public class ListarUsuarios extends javax.swing.JFrame {
     	jf1.setVisible(true);
     }  
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+    	BuscarId buscar = new BuscarId();
+    	buscar.setVisible(true);
     	
+    	
+    }  
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+
     	//llama al jframe para cambiar de ventana y lo pone visible
     	
     	
@@ -162,35 +184,22 @@ public class ListarUsuarios extends javax.swing.JFrame {
     	WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
     	Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
     }
-
+    
     public static void main(String args[]) {
-    	
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
+  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ListarUsuarios().setVisible(true);
             }
         });
     }
-                    
+
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -201,5 +210,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea2;      
+    private javax.swing.JTextArea jTextArea2;
+    // End of variables declaration                   
 }
