@@ -93,13 +93,13 @@ public class NewJFrame extends javax.swing.JFrame {
 		});
         
         
-        jButton2.setText("jButton2");
+        jButton2.setText("Crear usuario");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, -1));
         
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         		
@@ -143,14 +143,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+    	Postamenta jf1 = new Postamenta();
+    	jf1.setVisible(true);
     }  
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
     	
     	//llama al jframe para cambiar de ventana y lo pone visible
-    	NewJFrame1 jf1 = new NewJFrame1();
-    	jf1.setVisible(true);
+    	
     	
     	//metodo para cerrar la ventana actual y pasar a la siguiente
     	//close();

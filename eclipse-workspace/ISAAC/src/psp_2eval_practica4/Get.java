@@ -12,18 +12,18 @@ import psp_2eval_practiva4.model.Usuario;
 
 public class Get {
 
-	ArrayList<Usuario> userADevolver = null;
+	ArrayList<Usuario> usuariosADevolver = null;
 
 	public Get(ArrayList<Usuario> use) {
-		this.userADevolver = get(use);
+		this.usuariosADevolver = get(use);
 	}
 
 	public ArrayList<Usuario> getUserADevolver() {
-		return userADevolver;
+		return usuariosADevolver;
 	}
 
 	public void setUserADevolver(ArrayList<Usuario> userADevolver) {
-		this.userADevolver = userADevolver;
+		this.usuariosADevolver = userADevolver;
 	}
 
 	private ArrayList<Usuario> get(ArrayList<Usuario> use) {
@@ -33,9 +33,9 @@ public class Get {
 
 			respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/", "", "GET", "");
 			if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
-				userADevolver = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
+				usuariosADevolver = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
 				}.getType());
-				return (ArrayList<Usuario>) userADevolver;
+				return (ArrayList<Usuario>) usuariosADevolver;
 
 			} else {
 				System.out.println(

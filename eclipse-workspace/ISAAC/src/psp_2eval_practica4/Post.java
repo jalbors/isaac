@@ -17,6 +17,14 @@ public class Post {
 		this.userADevolver = postito(nombre, apellido, email, contra, dinero);
 	}
 
+	public Usuario getUserADevolver() {
+		return userADevolver;
+	}
+
+	public void setUserADevolver(Usuario userADevolver) {
+		this.userADevolver = userADevolver;
+	}
+
 	private Usuario postito(String nombre, String apellido, String email, String contra, double dinero) {
 		// TODO Auto-generated method stub
 		Respuesta respuesta = null;
@@ -34,14 +42,6 @@ public class Post {
 		}
 		return nuevoAlumno;
 
-	}
-
-	public Usuario getUserADevolver() {
-		return userADevolver;
-	}
-
-	public void setUserADevolver(Usuario userADevolver) {
-		this.userADevolver = userADevolver;
 	}
 
 	public static String encrytpSHA256(String mensaje) {
