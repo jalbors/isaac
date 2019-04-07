@@ -12,20 +12,30 @@ import psp_2eval_practiva4.model.Usuario;
 
 public class Get {
 
-	public Get() {
-		get();
+	ArrayList<Usuario> userADevolver = null;
+
+	public Get(ArrayList<Usuario> use) {
+		this.userADevolver = get(use);
 	}
 
-	public ArrayList<Usuario> get() {
+	public ArrayList<Usuario> getUserADevolver() {
+		return userADevolver;
+	}
+
+	public void setUserADevolver(ArrayList<Usuario> userADevolver) {
+		this.userADevolver = userADevolver;
+	}
+
+	private ArrayList<Usuario> get(ArrayList<Usuario> use) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
 		try {
 
 			respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/", "", "GET", "");
 			if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
-				List<Usuario> alumnos = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
+				userADevolver = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
 				}.getType());
-				return (ArrayList<Usuario>) alumnos;
+				return (ArrayList<Usuario>) userADevolver;
 
 			} else {
 				System.out.println(
@@ -41,4 +51,5 @@ public class Get {
 		return null;
 
 	}
+
 }

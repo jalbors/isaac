@@ -58,10 +58,10 @@ public class prueba extends javax.swing.JFrame {
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
-				Get g = new Get();
-				ArrayList<Usuario> usuarios = g.get();
+				//Get g = new Get();
+				//ArrayList<Usuario> usuarios = g.get();
 
-				jTextArea2.setText(usuarios.toString());
+				//jTextArea2.setText(usuarios.toString());
 
 			}
 		});

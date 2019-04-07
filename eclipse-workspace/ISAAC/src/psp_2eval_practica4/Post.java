@@ -45,20 +45,16 @@ public class Post {
 	}
 
 	public static String encrytpSHA256(String mensaje) {
-
 		MessageDigest md;
 
 		try {
-
 			md = MessageDigest.getInstance("SHA-256");
 			byte dataBytes[] = mensaje.getBytes();
 			md.update(dataBytes);
 			byte resumen[] = md.digest();
-
 			return new String(Base64.getEncoder().encode(resumen));
 
 		} catch (Exception e) {
-
 			return e.getMessage();
 
 		}

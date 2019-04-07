@@ -69,14 +69,13 @@ public class NewJFrame extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 				
 				//llama a la clase get con el metodo get para listar usuarios
-				Get g = new Get();
-				USUARIOS = g.get();
-
-				jTextArea2.setText(USUARIOS.toString());
+				Get g = new Get(USUARIOS);
+				
+				jTextArea2.setText(g.getUserADevolver().toString());
 				
 				//funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-		        ArrayList<Usuario> lista = USUARIOS;
+		        ArrayList<Usuario> lista = g.getUserADevolver();
 		        Object fila[] = new Object[6];
 		        for(int i = 0; i < lista.size(); i++)
 		        {
