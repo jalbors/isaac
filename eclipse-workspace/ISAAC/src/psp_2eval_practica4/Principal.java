@@ -118,56 +118,70 @@ public class Principal {
 			case 3:
 				try {
 
-					URL url = new URL("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/");
+					System.out.println("*****************DATOS DEL NUEVO ALUMNO***********");
+					System.out.println("Dni:");
+					System.out.println("Nombre:");
+					System.out.println("Telefono:");
+					System.out.println("Direccin:");
 
-					http = (HttpURLConnection) url.openConnection();
-
-					http.setDoOutput(true);
-					http.setRequestMethod("POST");
-					http.setRequestProperty("Content-Type", TYPE);
-					http.setRequestProperty("Authorization", "bearer " + token);
-
-					System.out.println("Introduzca el nombre");
-					String name = tec.nextLine();
-
-					System.out.println("Introduzca el apellido");
-					String surname = tec.nextLine();
-
-					System.out.println("Introduzca la email");
-					String email = tec.nextLine();
-
-					System.out.println("Introduzca la pass");
-					String pass = tec.nextLine();
-					String passEncrip = encrytpSHA256(pass);
-
-					System.out.println("Introduzca el dinero");
-					double money = tec.nextDouble();
-
-					Usuario cli = new Usuario(name, surname, email, passEncrip, money, "USER");
-					String json = gson.toJson(cli);
-
-					OutputStream os = http.getOutputStream();
-					os.write(json.getBytes());
-					os.flush();
-
-					responseCode = http.getResponseCode();
-					System.out.println("codigo respuesta: " + responseCode);
-
-					BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
-					StringBuilder sb = new StringBuilder();
-					String respuesta;
-
-					while ((respuesta = br.readLine()) != null) {
-
-						sb.append(respuesta);
-
-					}
-
-					Usuario json_dev = gson.fromJson(sb.toString(), Usuario.class);
-					json_dev.setPassword("");
-					System.out.println("Datos de retorno: " + json_dev.toString());
-
-					http.disconnect();
+					Post post = new Post("aa", "ads", "dsa", "dsa", 43);
+					
+					System.out.println(post.getUserADevolver().toString());
+					
+					
+					
+					
+					
+//					URL url = new URL("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/");
+//
+//					http = (HttpURLConnection) url.openConnection();
+//
+//					http.setDoOutput(true);
+//					http.setRequestMethod("POST");
+//					http.setRequestProperty("Content-Type", TYPE);
+//					http.setRequestProperty("Authorization", "bearer " + token);
+//
+//					System.out.println("Introduzca el nombre");
+//					String name = tec.nextLine();
+//
+//					System.out.println("Introduzca el apellido");
+//					String surname = tec.nextLine();
+//
+//					System.out.println("Introduzca la email");
+//					String email = tec.nextLine();
+//
+//					System.out.println("Introduzca la pass");
+//					String pass = tec.nextLine();
+//					String passEncrip = encrytpSHA256(pass);
+//
+//					System.out.println("Introduzca el dinero");
+//					double money = tec.nextDouble();
+//
+//					Usuario cli = new Usuario(name, surname, email, passEncrip, money, "USER");
+//					String json = gson.toJson(cli);
+//
+//					OutputStream os = http.getOutputStream();
+//					os.write(json.getBytes());
+//					os.flush();
+//
+//					responseCode = http.getResponseCode();
+//					System.out.println("codigo respuesta: " + responseCode);
+//
+//					BufferedReader br = new BufferedReader(new InputStreamReader(http.getInputStream()));
+//					StringBuilder sb = new StringBuilder();
+//					String respuesta;
+//
+//					while ((respuesta = br.readLine()) != null) {
+//
+//						sb.append(respuesta);
+//
+//					}
+//
+//					Usuario json_dev = gson.fromJson(sb.toString(), Usuario.class);
+//					json_dev.setPassword("");
+//					System.out.println("Datos de retorno: " + json_dev.toString());
+//
+//					http.disconnect();
 
 				} catch (Exception e) {
 
