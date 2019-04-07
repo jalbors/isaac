@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import clases.Usuario;
+import psp_2eval_practiva4.model.Usuario;
 
 import java.awt.*;
 import java.awt.event.*;

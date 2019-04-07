@@ -15,8 +15,8 @@ import java.util.Scanner;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import clases.Usuario;
-import clases.UsuarioLogin;
+import psp_2eval_practiva4.model.Usuario;
+import psp_2eval_practiva4.model.UsuarioLogin;
 
 public class Principal {
 	public static final String TYPE = "application/json";

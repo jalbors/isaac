@@ -1,4 +1,4 @@
-package vista;
+package psp_2eval_practica4;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +10,8 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import clases.Usuario;
+import psp_2eval_practiva4.model.Usuario;
+
 
 public class Get {
 

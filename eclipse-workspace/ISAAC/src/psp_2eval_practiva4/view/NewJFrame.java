@@ -6,8 +6,9 @@ import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
-import clases.Usuario;
-import vista.Get;
+import psp_2eval_practica4.Get;
+import psp_2eval_practiva4.model.Usuario;
+
 
 
 
