@@ -2,8 +2,8 @@ package psp_2eval_practiva4.view;
 
 import javax.swing.table.DefaultTableModel;
 
-import psp_2eval_practica4.GetId;
-import psp_2eval_practica4.Post;
+import psp_2eval_practica4.BuscarIdController;
+import psp_2eval_practica4.AnyadirUsuarioController;
 
 public class BuscarId extends javax.swing.JFrame {
 
@@ -60,7 +60,7 @@ public class BuscarId extends javax.swing.JFrame {
 
 				int identi = Integer.parseInt(jTextField2.getText());
 				
-				GetId get = new GetId(identi);
+				BuscarIdController get = new BuscarIdController(identi);
 				System.out.println(get.getUsuario().toString());
 
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();

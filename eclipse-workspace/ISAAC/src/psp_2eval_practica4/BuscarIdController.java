@@ -7,10 +7,10 @@ import com.google.gson.Gson;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
-public class GetId {
+public class BuscarIdController {
 	private Usuario usuario = null;
 
-	public GetId(int ide) {
+	public BuscarIdController(int ide) {
 		this.usuario = getId(ide);
 	}
 

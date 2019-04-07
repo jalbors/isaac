@@ -124,7 +124,7 @@ public class Principal {
 					System.out.println("Telefono:");
 					System.out.println("Direccin:");
 
-					Post post = new Post("aa", "ads", "dsa", "dsa", 43);
+					AnyadirUsuarioController post = new AnyadirUsuarioController("aa", "ads", "dsa", "dsa", 43);
 					
 					System.out.println(post.getUserADevolver().toString());
 					

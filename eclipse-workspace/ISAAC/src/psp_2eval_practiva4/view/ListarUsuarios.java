@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
-import psp_2eval_practica4.Get;
+import psp_2eval_practica4.ListarUsuariosController;
 import psp_2eval_practiva4.model.Usuario;
 
 public class ListarUsuarios extends javax.swing.JFrame {
@@ -64,7 +64,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
                 
             	
 				//llama a la clase get con el metodo get para listar usuarios
-				Get g = new Get(USUARIOS);
+				ListarUsuariosController g = new ListarUsuariosController(USUARIOS);
 				
 				jTextArea2.setText(g.getUserADevolver().toString());
 				

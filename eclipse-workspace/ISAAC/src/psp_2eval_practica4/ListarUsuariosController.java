@@ -10,11 +10,11 @@ import com.google.gson.reflect.TypeToken;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
-public class Get {
+public class ListarUsuariosController {
 
 	private ArrayList<Usuario> usuariosADevolver = null;
 
-	public Get(ArrayList<Usuario> use) {
+	public ListarUsuariosController(ArrayList<Usuario> use) {
 		this.usuariosADevolver = get(use);
 	}
 

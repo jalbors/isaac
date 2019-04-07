@@ -8,7 +8,7 @@ package psp_2eval_practiva4.view;
 
 import java.util.ArrayList;
 
-import psp_2eval_practica4.Get;
+import psp_2eval_practica4.ListarUsuariosController;
 import psp_2eval_practica4.Principal;
 import psp_2eval_practiva4.model.Usuario;
 

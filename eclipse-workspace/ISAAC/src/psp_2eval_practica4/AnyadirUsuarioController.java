@@ -9,11 +9,11 @@ import com.google.gson.Gson;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
-public class Post {
+public class AnyadirUsuarioController {
 
 	private Usuario userADevolver = null;
 
-	public Post(String nombre, String apellido, String email, String contra, double dinero) {
+	public AnyadirUsuarioController(String nombre, String apellido, String email, String contra, double dinero) {
 		this.userADevolver = postito(nombre, apellido, email, contra, dinero);
 	}
 

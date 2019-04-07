@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
-import psp_2eval_practica4.Post;
+import psp_2eval_practica4.AnyadirUsuarioController;
 import psp_2eval_practiva4.model.Usuario;
 
 /**
@@ -72,7 +72,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				//String pass2 = jTextField5.getText();
 				double dinero = Double.parseDouble(jTextField5.getText());
 
-				Post po = new Post(nombre, apellido, email, pass, dinero);
+				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero);
 
 				System.out.println(po.getUserADevolver().toString());
 
