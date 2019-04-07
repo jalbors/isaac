@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main extends JFrame {
-	public Main() {
+public class Tablasprueba extends JFrame {
+	public Tablasprueba() {
 		Object[][] datos = { 
 				{ "Juan", new Integer(25), new Boolean(false) },
 				{ "Sonia", new Integer(33), new Boolean(true) },
@@ -54,7 +54,7 @@ public class Main extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		Main frame = new Main();
+		Tablasprueba frame = new Tablasprueba();
 		frame.pack();
 		frame.setVisible(true);
 	}

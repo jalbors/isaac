@@ -1,4 +1,4 @@
-package vista;
+package psp_2eval_practica4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
