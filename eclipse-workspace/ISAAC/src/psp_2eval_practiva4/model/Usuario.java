@@ -2,6 +2,7 @@ package psp_2eval_practiva4.model;
 
 import java.util.Date;
 
+//clase para gestionar los usuarios
 public class Usuario {
 
 	private Integer idUser;

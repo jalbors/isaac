@@ -1,5 +1,6 @@
 package psp_2eval_practiva4.model;
 
+//clase para el login de usuarios
 public class UsuarioLogin {
 
 	private String email;
