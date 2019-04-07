@@ -99,9 +99,7 @@ public class BuscarId extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 				
-				ListarUsuarios buscar = new ListarUsuarios();
-		    	buscar.setVisible(true);
-		    	
+				
 
 			}
 		});
@@ -135,6 +133,9 @@ public class BuscarId extends javax.swing.JFrame {
 	
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		
+		//para cerrar una ventana
+		this.setVisible(false);
 	}
 
 	public void close() {

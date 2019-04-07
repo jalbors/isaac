@@ -164,6 +164,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
+    	//abrir nueva ventana
     	BuscarId buscar = new BuscarId();
     	buscar.setVisible(true);
     	
