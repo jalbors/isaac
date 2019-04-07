@@ -16,13 +16,13 @@ import psp_2eval_practiva4.model.Usuario;
  *
  * @author Jorge
  */
-public class Postamenta extends javax.swing.JFrame {
+public class AnyadirUsuario extends javax.swing.JFrame {
 	static Usuario user = null;
 
 	/**
 	 * Creates new form Postamenta
 	 */
-	public Postamenta() {
+	public AnyadirUsuario() {
 		initComponents();
 	}
 
@@ -265,16 +265,16 @@ public class Postamenta extends javax.swing.JFrame {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(Postamenta.class.getName()).log(java.util.logging.Level.SEVERE, null,
+			java.util.logging.Logger.getLogger(AnyadirUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(Postamenta.class.getName()).log(java.util.logging.Level.SEVERE, null,
+			java.util.logging.Logger.getLogger(AnyadirUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(Postamenta.class.getName()).log(java.util.logging.Level.SEVERE, null,
+			java.util.logging.Logger.getLogger(AnyadirUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(Postamenta.class.getName()).log(java.util.logging.Level.SEVERE, null,
+			java.util.logging.Logger.getLogger(AnyadirUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		}
 		// </editor-fold>
@@ -282,7 +282,7 @@ public class Postamenta extends javax.swing.JFrame {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new Postamenta().setVisible(true);
+				new AnyadirUsuario().setVisible(true);
 			}
 		});
 	}

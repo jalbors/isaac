@@ -11,7 +11,7 @@ import psp_2eval_practiva4.model.Usuario;
 
 public class Post {
 
-	Usuario userADevolver = null;
+	private Usuario userADevolver = null;
 
 	public Post(String nombre, String apellido, String email, String contra, double dinero) {
 		this.userADevolver = postito(nombre, apellido, email, contra, dinero);

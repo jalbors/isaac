@@ -12,7 +12,7 @@ import psp_2eval_practiva4.model.Usuario;
 
 public class Get {
 
-	ArrayList<Usuario> usuariosADevolver = null;
+	private ArrayList<Usuario> usuariosADevolver = null;
 
 	public Get(ArrayList<Usuario> use) {
 		this.usuariosADevolver = get(use);
@@ -41,12 +41,9 @@ public class Get {
 				System.out.println(
 						"Se ha producido un error obteniendo los alumnos: Codigo " + respuesta.getCodigoPeticion());
 			}
-
 		} catch (Exception e) {
-
 			e.printStackTrace();
 			return null;
-
 		}
 		return null;
 
