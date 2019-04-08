@@ -31,7 +31,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jScrollPane2 = new javax.swing.JScrollPane();
 		jTable1 = new javax.swing.JTable();
 		jScrollPane3 = new javax.swing.JScrollPane();
-		jTextArea2 = new javax.swing.JTextArea();
+		//jTextArea2 = new javax.swing.JTextArea();
 		jButton3 = new javax.swing.JButton();
 		jButton4 = new javax.swing.JButton();
 		jButton5 = new javax.swing.JButton();
@@ -51,8 +51,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-		jLabel1.setText("jLabel1");
-		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jorge\\Pictures\\contactaConNosotros.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +62,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				// llama a la clase get con el metodo get para listar usuarios
 				ListarUsuariosController g = new ListarUsuariosController(USUARIOS);
 
-				jTextArea2.setText(g.getUserADevolver().toString());
+				//jTextArea2.setText(g.getUserADevolver().toString());
 
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
@@ -106,9 +106,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 90));
 
-		jTextArea2.setColumns(20);
-		jTextArea2.setRows(5);
-		jScrollPane3.setViewportView(jTextArea2);
+		//jTextArea2.setColumns(20);
+		//jTextArea2.setRows(5);
+		//jScrollPane3.setViewportView(jTextArea2);
 
 		getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 490, -1));
 
