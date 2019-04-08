@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 import psp_2eval_practica4.AnyadirUsuarioController;
+import psp_2eval_practica4.ListarUsuariosController;
 import psp_2eval_practiva4.model.Usuario;
 
 /**
@@ -251,6 +252,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		// TODO add your handling code here:
 		//para cerrar una ventana
 				this.setVisible(false);
+				ListarUsuarios lista = new ListarUsuarios();
+				lista.setVisible(true);
+				
 	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {

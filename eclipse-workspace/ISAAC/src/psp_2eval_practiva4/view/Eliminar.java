@@ -50,9 +50,19 @@ public class Eliminar extends javax.swing.JFrame {
                 int identi = Integer.parseInt(jTextField2.getText());
 
 				EliminarController eliminar = new EliminarController(identi);
+				alerta();
 				
                 
             }
+
+			private void alerta() {
+				Alerta ale = new Alerta();
+				ale.setVisible(true);
+				
+			}
+
+			
+            
         });
 
         jButton2.setText("Volver");
@@ -128,6 +138,9 @@ public class Eliminar extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     	this.setVisible(false);
+    	ListarUsuarios u = new ListarUsuarios();
+    	u.setVisible(true);
+    	
     }                                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         

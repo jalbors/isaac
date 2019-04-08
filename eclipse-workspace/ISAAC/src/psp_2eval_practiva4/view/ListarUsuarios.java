@@ -154,6 +154,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		this.setVisible(false);
 		AnyadirUsuario jf1 = new AnyadirUsuario();
 		jf1.setVisible(true);
 	}
@@ -167,7 +168,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		this.setVisible(false);
 		// abrir nueva ventana
 		Eliminar eliminar = new Eliminar();
 		eliminar.setVisible(true);
