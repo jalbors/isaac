@@ -10,35 +10,40 @@ import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
-public class AnyadirUsuarioController {
+public class LoginController {
 
-	private Usuario userADevolver = null;
+	private UsuarioLogin userLoged = null;
 
-	public AnyadirUsuarioController(String nombre, String apellido, String email, String contra, double dinero) {
-		this.userADevolver = postito(nombre, apellido, email, contra, dinero);
+	public LoginController(String email, String password) {
+		this.userLoged = postito(email, password);
+	}
+	
+	
+
+	public UsuarioLogin getUserLoged() {
+		return userLoged;
 	}
 
-	public Usuario getUserADevolver() {
-		return userADevolver;
+	public void setUserLoged(UsuarioLogin userLoged) {
+		this.userLoged = userLoged;
 	}
 
-	public void setUserADevolver(Usuario userADevolver) {
-		this.userADevolver = userADevolver;
-	}
-
-	private Usuario postito(String nombre, String apellido, String email, String contra, double dinero) {
+	private UsuarioLogin postito(String email, String password) {
 		// TODO Auto-generated method stub
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
-		String pas = encrytpSHA256(contra);
-		Usuario nuevoAlumno = new Usuario(nombre, apellido, email, pas, dinero, "USER");
-
-		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/",
-				gson.toJson(nuevoAlumno), "POST", "");
+		String pas = encrytpSHA256(password);
 		
-		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_CREATED) {
-			userADevolver = gson.fromJson(respuesta.getJsonRespuesta(), Usuario.class);
-			return userADevolver;
+		//saca un 200 pero da fallo
+		UsuarioLogin nuevoAlumno = new UsuarioLogin(email, pas);
+
+		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/login",
+				gson.toJson(nuevoAlumno), "POST", "");
+
+		if (respuesta.getCodigoPeticion() == 200) {
+			userLoged = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
+			System.out.println(userLoged.getToken());
+			return userLoged;
 		} else {
 			System.out.println(
 					"Se ha producido un error creando el nuevo alumno: Codigo " + respuesta.getCodigoPeticion());

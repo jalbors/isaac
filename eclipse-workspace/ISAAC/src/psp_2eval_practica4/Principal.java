@@ -318,7 +318,6 @@ public class Principal {
 
 				System.out.println("Usuario: " + user_token.toString());
 				http.disconnect();
-
 				break;
 			}
 

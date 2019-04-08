@@ -21,6 +21,11 @@ public class UsuarioLogin {
 		this.password = password;
 	}
 
+	
+	public UsuarioLogin() {
+		super();
+	}
+
 	public String getIdUser() {
 		return idUser;
 	}

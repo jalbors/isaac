@@ -153,6 +153,7 @@ public class Usuario {
 		this.removeDate = removeDate;
 	}
 
+
 	public Integer getIdUser() {
 		return this.idUser;
 	}
@@ -224,8 +225,6 @@ public class Usuario {
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
-	
-	
 
 	public Usuario(String name, String surname, double money) {
 		super();
@@ -248,8 +247,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUser=" + idUser + ", name=" + name + ", surname=" + surname + ", email=" + email
 				+ ", password=" + password + ", money=" + money + ", registerDate=" + registerDate + ", removeDate="
-				+ removeDate + ", rol=" + rol ;
+				+ removeDate + ", rol=" + rol;
 	}
 
-	
 }
