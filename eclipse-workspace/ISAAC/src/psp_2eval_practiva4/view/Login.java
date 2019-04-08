@@ -5,6 +5,9 @@
  */
 package psp_2eval_practiva4.view;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 import psp_2eval_practica4.LoginController;
 
 /**
@@ -110,8 +113,14 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+    	this.setVisible(false);
+    	ListarUsuarios lis = new ListarUsuarios();
+    	lis.setVisible(true);
+    	
+    	
     }                                        
 
+    
     /**
      * @param args the command line arguments
      */

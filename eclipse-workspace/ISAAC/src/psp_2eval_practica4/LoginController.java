@@ -42,7 +42,11 @@ public class LoginController {
 
 		if (respuesta.getCodigoPeticion() == 200) {
 			userLoged = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
+			
+			//este token nose como sacarlo sin una variabler estatica
 			System.out.println(userLoged.getToken());
+			
+			
 			return userLoged;
 		} else {
 			System.out.println(

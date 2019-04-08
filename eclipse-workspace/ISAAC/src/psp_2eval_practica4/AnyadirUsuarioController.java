@@ -32,9 +32,10 @@ public class AnyadirUsuarioController {
 		Gson gson = new Gson();
 		String pas = encrytpSHA256(contra);
 		Usuario nuevoAlumno = new Usuario(nombre, apellido, email, pas, dinero, "USER");
+		UsuarioLogin userL = new UsuarioLogin();
 
 		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/",
-				gson.toJson(nuevoAlumno), "POST", "");
+				gson.toJson(nuevoAlumno), "POST", userL.getToken());
 		
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_CREATED) {
 			userADevolver = gson.fromJson(respuesta.getJsonRespuesta(), Usuario.class);
