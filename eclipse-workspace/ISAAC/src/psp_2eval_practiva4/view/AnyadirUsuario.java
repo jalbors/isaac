@@ -93,6 +93,16 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 			}
 		});
+		
+		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton2ActionPerformed(evt);
+
+				
+				// String nombre = jLabel6.getText();
+
+			}
+		});
 
 		jTextField1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,6 +245,12 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+	}
+	
+	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+		//para cerrar una ventana
+				this.setVisible(false);
 	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {

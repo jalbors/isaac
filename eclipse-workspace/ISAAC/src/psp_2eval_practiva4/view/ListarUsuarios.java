@@ -129,6 +129,15 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jButton4.setText("Eliminar");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+                
+            	
+            }
+        });
+        
+
         jButton5.setText("Buscar Id");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
        
@@ -145,10 +154,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("jMenu3");
+        jMenu3.setText("Componentes");
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("jMenu4");
+        jMenu4.setText("Mi cuenta");
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -163,6 +172,15 @@ public class ListarUsuarios extends javax.swing.JFrame {
     }  
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+    	//abrir nueva ventana
+    	Eliminar eliminar = new Eliminar();
+    	eliminar.setVisible(true);
+    	
+    	
+    }  
+    
+ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
     	//abrir nueva ventana
     	BuscarId buscar = new BuscarId();
