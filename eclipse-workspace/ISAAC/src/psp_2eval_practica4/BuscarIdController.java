@@ -10,8 +10,8 @@ import psp_2eval_practiva4.model.Usuario;
 public class BuscarIdController {
 	private Usuario usuario = null;
 
-	public BuscarIdController(int ide) {
-		this.usuario = getId(ide);
+	public BuscarIdController(int idABuscar) {
+		this.usuario = getId(idABuscar);
 	}
 
 	public Usuario getUsuario() {

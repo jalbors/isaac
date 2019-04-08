@@ -1,6 +1,9 @@
 
 package psp_2eval_practiva4.view;
 
+import psp_2eval_practica4.BuscarIdController;
+import psp_2eval_practica4.EliminarController;
+
 /**
  *
  * @author Jorge
@@ -44,6 +47,11 @@ public class Eliminar extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                int identi = Integer.parseInt(jTextField2.getText());
+
+				EliminarController eliminar = new EliminarController(identi);
+				
+                
             }
         });
 
@@ -124,6 +132,9 @@ public class Eliminar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
+    	//this.setVisible(false);
+    	
+    	
     }                                        
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
