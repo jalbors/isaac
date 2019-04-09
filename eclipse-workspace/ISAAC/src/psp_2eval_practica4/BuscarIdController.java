@@ -14,6 +14,10 @@ public class BuscarIdController {
 		this.usuario = getId(idABuscar);
 	}
 
+	public BuscarIdController() {
+		super();
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -25,18 +29,17 @@ public class BuscarIdController {
 	private Usuario getId(int id) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
-		
+
 		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios" + "/" + id;
-		
-		
+
 		respuesta = GestorHTTP.peticion(urlConId, "", "GET", "");
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 			Usuario al = gson.fromJson(respuesta.getJsonRespuesta(), Usuario.class);
 			return al;
-			
+
 		} else {
-			System.out.println("Se ha producido un error obteniendo el alumno con id " + id + ": Coigo "
-					+ respuesta.getCodigoPeticion());
+			System.out.println(
+					"Se ha producido un error obteniendo el id " + id + ": Coigo " + respuesta.getCodigoPeticion());
 		}
 		return usuario;
 	}

@@ -7,6 +7,7 @@ public class UsuarioLogin {
 	private String password;
 	private String token;
 	private String idUser;
+	private Usuario usuario;
 
 	public UsuarioLogin(String email, String password, String token) {
 		super();
@@ -20,8 +21,25 @@ public class UsuarioLogin {
 		this.email = email;
 		this.password = password;
 	}
-
 	
+	public UsuarioLogin(Usuario us) {
+		this.usuario = us;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	@Override
+	public String toString() {
+		return "UsuarioLogin [email=" + email + ", password=" + password + ", token=" + token + ", idUser=" + idUser
+				+ ", usuario=" + usuario + "]";
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public UsuarioLogin() {
 		super();
 	}

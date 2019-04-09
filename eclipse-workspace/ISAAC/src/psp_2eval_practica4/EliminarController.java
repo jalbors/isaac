@@ -13,6 +13,10 @@ public class EliminarController {
 		this.usuario = eliminar(idAEliminar);
 	}
 
+	public EliminarController() {
+		super();
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -23,17 +27,17 @@ public class EliminarController {
 
 	private Usuario eliminar(int idAEliminar) {
 		Respuesta respuesta = null;
-		
+
 		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios" + "/" + idAEliminar;
 		respuesta = GestorHTTP.peticion(urlConId, "", "DELETE", "");
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
-			
+
 			System.out.println("user eliminado");
-			
+
 			return null;
-			
+
 		}
-		
+
 		return null;
 
 	}

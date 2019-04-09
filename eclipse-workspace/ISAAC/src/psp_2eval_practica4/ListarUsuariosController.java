@@ -18,6 +18,10 @@ public class ListarUsuariosController {
 		this.usuariosADevolver = get(use);
 	}
 
+	public ListarUsuariosController() {
+		super();
+	}
+
 	public ArrayList<Usuario> getUserADevolver() {
 		return usuariosADevolver;
 	}
@@ -38,8 +42,7 @@ public class ListarUsuariosController {
 				return (ArrayList<Usuario>) usuariosADevolver;
 
 			} else {
-				System.out.println(
-						"Se ha producido un error obteniendo los alumnos: Codigo " + respuesta.getCodigoPeticion());
+				System.out.println("Se ha producido un error: Codigo " + respuesta.getCodigoPeticion());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

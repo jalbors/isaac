@@ -15,6 +15,15 @@ public class Usuario {
 	private Date removeDate;
 	private String rol;
 	private String token;
+	private UsuarioLogin userLogin;
+
+	public UsuarioLogin getUserLogin() {
+		return userLogin;
+	}
+
+	public void setUserLogin(UsuarioLogin userLogin) {
+		this.userLogin = userLogin;
+	}
 
 	public String getToken() {
 		return token;
@@ -153,6 +162,10 @@ public class Usuario {
 		this.removeDate = removeDate;
 	}
 
+	public Usuario(UsuarioLogin userLogin) {
+		super();
+		this.userLogin = userLogin;
+	}
 
 	public Integer getIdUser() {
 		return this.idUser;
@@ -247,7 +260,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUser=" + idUser + ", name=" + name + ", surname=" + surname + ", email=" + email
 				+ ", password=" + password + ", money=" + money + ", registerDate=" + registerDate + ", removeDate="
-				+ removeDate + ", rol=" + rol;
+				+ removeDate + ", rol=" + rol + ", token=" + token + ", userLogin=" + userLogin + "]";
 	}
 
 }
