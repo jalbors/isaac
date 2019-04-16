@@ -19,8 +19,20 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
-        initComponents();
+	private String token;
+	
+    public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	
+	public Login() {
+		initComponents();
+        
     }
 
     /**
@@ -51,11 +63,14 @@ public class Login extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                //aqui es cuando el usuario se loguea y pulsa el boton de login
                 
                 String nombre = jTextField1.getText();
 				String apellido = jTextField2.getText();
 				
+				//con los campos recuperados por el user los envio
 				LoginController control = new LoginController(nombre, apellido);
+				//esto imprime bien
 				System.out.println(control.getUserLoged().toString());
                 
             }
@@ -114,8 +129,8 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     	this.setVisible(false);
-    	ListarUsuarios lis = new ListarUsuarios();
-    	lis.setVisible(true);
+//    	ListarUsuarios lis = new ListarUsuarios(this.token);
+//    	lis.setVisible(true);
     	
     	
     }                                        

@@ -19,12 +19,30 @@ import psp_2eval_practiva4.model.Usuario;
  */
 public class AnyadirUsuario extends javax.swing.JFrame {
 	static Usuario user = null;
-
+	private String tokenAReicivr;
+	
 	/**
 	 * Creates new form Postamenta
 	 */
+	public AnyadirUsuario(String token) {
+
+		this.tokenAReicivr = token;
+		initComponents();
+		
+	}
+	
 	public AnyadirUsuario() {
 		initComponents();
+	}
+	
+	
+
+	public String getTokenAReicivr() {
+		return tokenAReicivr;
+	}
+
+	public void setTokenAReicivr(String tokenAReicivr) {
+		this.tokenAReicivr = tokenAReicivr;
 	}
 
 	/**
@@ -35,7 +53,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
-
+		
+		String receptor="";
+		this.tokenAReicivr = receptor;
 		jButton1 = new javax.swing.JButton();
 		jTextField1 = new javax.swing.JTextField();
 		jTextField2 = new javax.swing.JTextField();
@@ -63,6 +83,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 		jButton1.setText("Registrate");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			
+			
+			
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
@@ -73,7 +96,8 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				//String pass2 = jTextField5.getText();
 				double dinero = Double.parseDouble(jTextField5.getText());
 
-				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero);
+				//aqui recojo los campos
+				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, receptor);
 
 				System.out.println(po.getUserADevolver().toString());
 
@@ -94,6 +118,8 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 			}
 		});
+		
+		
 		
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,6 +270,22 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		pack();
 	}// </editor-fold>
 
+	private static String toke;
+	
+	public static String getToke() {
+		return toke;
+	}
+
+	public static void setToke(String toke) {
+		AnyadirUsuario.toke = toke;
+	}
+
+	public String jor(String p) {
+		toke = p;
+		return toke;
+		
+	}
+	
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}

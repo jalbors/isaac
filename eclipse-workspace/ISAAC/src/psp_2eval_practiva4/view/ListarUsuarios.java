@@ -12,11 +12,26 @@ import psp_2eval_practiva4.model.Usuario;
 
 public class ListarUsuarios extends javax.swing.JFrame {
 	public static ArrayList<Usuario> USUARIOS = null;
+	private String tokenAEnv;
+	
+	
+	public String getToken() {
+		return tokenAEnv;
+	}
+
+	public void setToken(String token) {
+		this.tokenAEnv = token;
+	}
 
 	/**
 	 * Creates new form NewJFrame
 	 */
 	public ListarUsuarios() {
+		initComponents();
+	}
+	
+	public ListarUsuarios(String token) {
+		this.tokenAEnv = token;
 		initComponents();
 	}
 
@@ -154,8 +169,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv);
 		this.setVisible(false);
-		AnyadirUsuario jf1 = new AnyadirUsuario();
 		jf1.setVisible(true);
 	}
 

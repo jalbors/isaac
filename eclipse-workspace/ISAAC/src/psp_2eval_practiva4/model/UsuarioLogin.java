@@ -1,7 +1,7 @@
 package psp_2eval_practiva4.model;
 
 //clase para el login de usuarios
-public class UsuarioLogin {
+public class UsuarioLogin extends RecivirToken{
 
 	private String email;
 	private String password;
@@ -28,6 +28,11 @@ public class UsuarioLogin {
 
 	public Usuario getUsuario() {
 		return usuario;
+	}
+	
+	public String RecivirToken() {
+		return email;
+		
 	}
 
 	@Override
