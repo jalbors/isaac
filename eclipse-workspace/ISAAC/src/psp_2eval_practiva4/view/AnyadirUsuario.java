@@ -27,12 +27,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	 * Creates new form Postamenta
 	 */
 	public AnyadirUsuario(String token) {
-		//hasta que no acaba initr components no recive el token
-		
 		this.tokenAReicivr = token;
 		System.out.println("Anyradir tok.  "+tokenAReicivr);
-		
-		//necesito pasarle el token en init componentes para tenerlo ahi dentro
+		//llamo a init components pasandole el token que me pasan 
 		initComponents(token);
 		
 		
@@ -60,14 +57,10 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents(String tok) {
-		//nulos dunnow why
-		String receptor="";
-		this.tokenAReicivr = receptor;
-		
-		System.out.println("token dobler "+ tok);
-		
-		System.out.println(" ola k ase"+this.tokenAReicivr);
-		System.out.println("receptor : " +receptor);
+
+		//este token es el que voy a enviar al controlador para validar que es un usuario logueado
+		System.out.println("token FINAL "+ tok);
+
 		
 		jButton1 = new javax.swing.JButton();
 		jTextField1 = new javax.swing.JTextField();
@@ -106,10 +99,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				String apellido = jTextField6.getText();
 				String email = jTextField2.getText();
 				String pass = jTextField3.getText();
-				//String pass2 = jTextField5.getText();
 				double dinero = Double.parseDouble(jTextField5.getText());
 
-				//aqui recojo los campos
+				//genero el controlador y le envio los atributos y el token
 				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, tok);
 
 				System.out.println(po.getUserADevolver().toString());
@@ -138,8 +130,6 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 
-				
-				// String nombre = jLabel6.getText();
 
 			}
 		});

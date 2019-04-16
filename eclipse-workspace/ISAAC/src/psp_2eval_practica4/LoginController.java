@@ -12,7 +12,6 @@ import psp_2eval_practiva4.model.UsuarioLogin;
 import psp_2eval_practiva4.view.ListarUsuarios;
 
 public class LoginController {
-	public static String TOKEN = null;
 
 	private UsuarioLogin userLoged = null;
 	private Usuario user = null;
@@ -29,20 +28,27 @@ public class LoginController {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
 		String pas = encrytpSHA256(password);
+		
+		//creo un usuario con los datos recividos del usuario
 		UsuarioLogin nuevoAlumno = new UsuarioLogin(email, pas);
+		
+		//genero el http
 		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/login",
 				gson.toJson(nuevoAlumno), "POST", "");
+		
+		// getJsonRespuesta() -> 200
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
+			
+			//genero el usuario
 			userLoged = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
-
 			System.out.println("token 1  "+userLoged.getToken());
 
+			//le envio el token a la siguiente vista y la abro
 			String tokenAEnv = userLoged.getToken().trim();
 			ListarUsuarios an = new ListarUsuarios(tokenAEnv);
 			an.setVisible(true);
-
-			// VARIABLE ESTATICA... :(
-			// TOKEN = userLoged.getToken();
+			
+			//la vista anterior es cerrada en la clase anterior
 
 			return userLoged;
 		} else {

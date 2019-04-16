@@ -4,6 +4,7 @@ package psp_2eval_practiva4.view;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -13,9 +14,13 @@ import psp_2eval_practiva4.model.Usuario;
 @SuppressWarnings("serial")
 public class ListarUsuarios extends javax.swing.JFrame {
 	public static ArrayList<Usuario> USUARIOS = null;
+
+	private List<Usuario> usuariosADevolver = null;
+
+	// guardo el token aqui desde login controller y en jButton2ActionPerformed se
+	// lo envio a la siguiente clase
 	private String tokenAEnv;
-	
-	
+
 	public String getToken() {
 		return tokenAEnv;
 	}
@@ -24,20 +29,29 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		this.tokenAEnv = token;
 	}
 
+	public List<Usuario> getUsuariosADevolver() {
+		return usuariosADevolver;
+	}
+
+	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
+		this.usuariosADevolver = usuariosADevolver;
+	}
+
 	/**
 	 * Creates new form NewJFrame
 	 */
 	public ListarUsuarios() {
 		initComponents();
 	}
-	
+
+	// recojo el token que me llega y inicio la clase normal, no hago nada con el
+	// token solo lo paso
 	public ListarUsuarios(String token) {
 		this.tokenAEnv = token;
-		System.out.println("Listar us: "+tokenAEnv);
+		System.out.println("Listar us: " + tokenAEnv);
 		initComponents();
 	}
 
-	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
 		jFrame1 = new javax.swing.JFrame();
@@ -47,7 +61,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jScrollPane2 = new javax.swing.JScrollPane();
 		jTable1 = new javax.swing.JTable();
 		jScrollPane3 = new javax.swing.JScrollPane();
-		//jTextArea2 = new javax.swing.JTextArea();
 		jButton3 = new javax.swing.JButton();
 		jButton4 = new javax.swing.JButton();
 		jButton5 = new javax.swing.JButton();
@@ -68,17 +81,17 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
 		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jorge\\Pictures\\contactaConNosotros.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
+		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
-				// llama a la clase get con el metodo get para listar usuarios
-				ListarUsuariosController g = new ListarUsuariosController(USUARIOS);
+				usuariosADevolver = new ArrayList<>();
 
-				//jTextArea2.setText(g.getUserADevolver().toString());
+				// llama a la clase get con el metodo get para listar usuarios
+				ListarUsuariosController g = new ListarUsuariosController((ArrayList<Usuario>) usuariosADevolver);
 
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
@@ -121,10 +134,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		}
 
 		getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 90));
-
-		//jTextArea2.setColumns(20);
-		//jTextArea2.setRows(5);
-		//jScrollPane3.setViewportView(jTextArea2);
 
 		getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 490, -1));
 
@@ -169,11 +178,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}// </editor-fold>
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
+		//clica al boton y se abre anyadir usuario enviando el token recogido antes
+		//abro esta ventana y cierro la actual
 		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv);
 		jf1.setVisible(true);
 		this.setVisible(false);
-		
+
 	}
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {

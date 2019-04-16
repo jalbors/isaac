@@ -13,6 +13,7 @@ public class AnyadirUsuarioController {
 
 	private Usuario userADevolver = null;
 
+	//receptor es el token que me llega
 	public AnyadirUsuarioController(String nombre, String apellido, String email, String contra, double dinero, String receptor) {
 		//usuarioLogged();
 		this.userADevolver = postito(nombre, apellido, email, contra, dinero, receptor);
@@ -23,23 +24,29 @@ public class AnyadirUsuarioController {
 		super();
 	}
 
-	//el metodo funciona hasta que le paso un token, ahi explota
-	//campos que recive cuando el usuario crea uno nuevo y devuelve un usuario
+	//receptor es el token
 	private Usuario postito(String nombre, String apellido, String email, String contra, double dinero, String receptor) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
+		//le envio la contra encriptada para guardarla guardada
 		String pas = encrytpSHA256(contra);
+		
+		//creo el usuario
 		Usuario nuevoAlumno = new Usuario(nombre, apellido, email, pas, dinero, "USER");
 
 		System.out.println("receptor fginal:  "+ receptor);
+		
+		//le paso el token aqui y le envio el json a la api
 		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/",
 				gson.toJson(nuevoAlumno), "POST", receptor);
 		
+		//201
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_CREATED) {
 			
-			System.out.println("3   Aqui entra?");
+			//devuelvo el usuario que me llega de la api con los datos insertados en la BD
 			userADevolver = gson.fromJson(respuesta.getJsonRespuesta(), Usuario.class);
 			return userADevolver;
+			
 		} else {
 			System.out.println(
 					"Se ha producido un error creando el nuevo alumno: Codigo " + respuesta.getCodigoPeticion());
