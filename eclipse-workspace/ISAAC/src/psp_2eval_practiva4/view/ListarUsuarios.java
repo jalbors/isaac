@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import psp_2eval_practica4.ListarUsuariosController;
 import psp_2eval_practiva4.model.Usuario;
 
+@SuppressWarnings("serial")
 public class ListarUsuarios extends javax.swing.JFrame {
 	public static ArrayList<Usuario> USUARIOS = null;
 	private String tokenAEnv;
@@ -32,10 +33,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	
 	public ListarUsuarios(String token) {
 		this.tokenAEnv = token;
+		System.out.println("Listar us: "+tokenAEnv);
 		initComponents();
 	}
 
-	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
@@ -170,8 +171,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv);
-		this.setVisible(false);
 		jf1.setVisible(true);
+		this.setVisible(false);
+		
 	}
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,6 +231,5 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private javax.swing.JScrollPane jScrollPane2;
 	private javax.swing.JScrollPane jScrollPane3;
 	private javax.swing.JTable jTable1;
-	private javax.swing.JTextArea jTextArea2;
 	// End of variables declaration
 }

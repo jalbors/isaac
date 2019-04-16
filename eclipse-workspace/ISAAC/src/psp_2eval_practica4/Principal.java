@@ -4,7 +4,6 @@ import java.net.HttpURLConnection;
 
 import com.google.gson.Gson;
 
-import psp_2eval_practiva4.model.RecivirToken;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
@@ -30,7 +29,6 @@ public class Principal {
 			
 			//aqui me llega el token y lo guardo y lo envio a la clase recivir token
 			String tokenAEnv = userLoged.getToken();
-			RecivirToken rt = new RecivirToken(tokenAEnv);
 			
 			
 			//VARIABLE ESTATICA... :(
