@@ -29,16 +29,17 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	public AnyadirUsuario(String token) {
 		//hasta que no acaba initr components no recive el token
 		
-
 		this.tokenAReicivr = token;
 		System.out.println("Anyradir tok.  "+tokenAReicivr);
-		initComponents();
+		
+		//necesito pasarle el token en init componentes para tenerlo ahi dentro
+		initComponents(token);
 		
 		
 	}
 	
 	public AnyadirUsuario() {
-		initComponents();
+		//initComponents();
 	}
 	
 	
@@ -58,10 +59,14 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	 */
 	
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
-	private void initComponents() {
-		
+	private void initComponents(String tok) {
+		//nulos dunnow why
 		String receptor="";
 		this.tokenAReicivr = receptor;
+		
+		System.out.println("token dobler "+ tok);
+		
+		System.out.println(" ola k ase"+this.tokenAReicivr);
 		System.out.println("receptor : " +receptor);
 		
 		jButton1 = new javax.swing.JButton();
@@ -105,7 +110,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				double dinero = Double.parseDouble(jTextField5.getText());
 
 				//aqui recojo los campos
-				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, receptor);
+				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, tok);
 
 				System.out.println(po.getUserADevolver().toString());
 
