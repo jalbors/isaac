@@ -15,7 +15,6 @@ public class AnyadirUsuarioController {
 
 	//receptor es el token que me llega
 	public AnyadirUsuarioController(String nombre, String apellido, String email, String contra, double dinero, String receptor) {
-		//usuarioLogged();
 		this.userADevolver = postito(nombre, apellido, email, contra, dinero, receptor);
 
 	}

@@ -2,6 +2,7 @@ package psp_2eval_practiva4.model;
 
 import java.net.HttpURLConnection;
 
+//clase respuesta (gestor http)
 public class Respuesta {
 	private int codigoPeticion;
 	private String jsonRespuesta;

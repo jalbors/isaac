@@ -42,22 +42,24 @@ public class Eliminar extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                
+                //recojo el campo con el id a eliminar
                 int identi = Integer.parseInt(jTextField2.getText());
-
 				EliminarController eliminar = new EliminarController(identi);
+				
+				//llamo a alerta
 				alerta();
 				
-                
             }
 
 			private void alerta() {
+				
+				//se ejecuta alerta
 				Alerta ale = new Alerta();
 				ale.setVisible(true);
 				
 			}
 
-			
-            
         });
 
         jButton2.setText("Volver");
@@ -118,50 +120,44 @@ public class Eliminar extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                       
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+        //cierra la pestaña
         //disponse();
 
     }                                           
 
     private void jButton2StateChanged(javax.swing.event.ChangeEvent evt) {                                      
-        // TODO add your handling code here:
+       
     }                                     
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {     
+    	
+    	//cierro esta ventana y paso a listar usuarios
     	this.setVisible(false);
     	ListarUsuarios u = new ListarUsuarios();
     	u.setVisible(true);
     	
     }                                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {     
+    	
     	//this.setVisible(false);
     	
     	
     }                                        
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {      
+    	
     }                                      
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {   
+    	
     }                                      
 
-    /**
-     * @param args the command line arguments
-     */
+  
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -178,23 +174,19 @@ public class Eliminar extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Eliminar().setVisible(true);
             }
         });
     }
-
-    // Variables declaration - do not modify                     
+                   
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JTextField jTextField2;
-    // End of variables declaration                   
+    private javax.swing.JTextField jTextField2;   
 }

@@ -80,7 +80,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-		jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jorge\\Pictures\\contactaConNosotros.jpg")); // NOI18N
+		jLabel1.setIcon(new javax.swing.ImageIcon("../../resources/images/contactaConNosotros.jpg")); // NOI18N
 		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
 
 		jButton1.setText("Listar");
