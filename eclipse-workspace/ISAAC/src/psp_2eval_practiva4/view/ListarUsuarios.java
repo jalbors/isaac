@@ -1,4 +1,3 @@
-
 package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;

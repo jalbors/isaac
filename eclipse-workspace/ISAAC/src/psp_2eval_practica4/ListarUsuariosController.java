@@ -39,6 +39,8 @@ public class ListarUsuariosController {
 			if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 				usuariosADevolver = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
 				}.getType());
+				
+				System.out.println(usuariosADevolver.toString());
 				return (ArrayList<Usuario>) usuariosADevolver;
 
 			} else {
