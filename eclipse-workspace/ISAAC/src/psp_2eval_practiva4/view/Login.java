@@ -45,7 +45,6 @@ public class Login extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				// aqui es cuando el usuario se loguea y pulsa el boton de login
-
 				String nombre = jTextField1.getText();
 				String apellido = jTextField2.getText();
 

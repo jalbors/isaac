@@ -17,33 +17,12 @@ import psp_2eval_practiva4.model.Usuario;
 
 @SuppressWarnings("serial")
 public class ListarUsuarios extends javax.swing.JFrame {
-	public static ArrayList<Usuario> USUARIOS = null;
-
-	private List<Usuario> usuariosADevolver = null;
 
 	// guardo el token aqui desde login controller y en jButton2ActionPerformed se
 	// lo envio a la siguiente clase
 	private String tokenAEnv;
+	private List<Usuario> usuariosADevolver = null;
 
-	public String getToken() {
-		return tokenAEnv;
-	}
-
-	public void setToken(String token) {
-		this.tokenAEnv = token;
-	}
-
-	public List<Usuario> getUsuariosADevolver() {
-		return usuariosADevolver;
-	}
-
-	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
-		this.usuariosADevolver = usuariosADevolver;
-	}
-
-	/**
-	 * Creates new form NewJFrame
-	 */
 	public ListarUsuarios() {
 		initComponents();
 	}
@@ -246,6 +225,23 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			}
 		});
 	}
+	
+	public String getToken() {
+		return tokenAEnv;
+	}
+
+	public void setToken(String token) {
+		this.tokenAEnv = token;
+	}
+
+	public List<Usuario> getUsuariosADevolver() {
+		return usuariosADevolver;
+	}
+
+	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
+		this.usuariosADevolver = usuariosADevolver;
+	}
+
 
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
