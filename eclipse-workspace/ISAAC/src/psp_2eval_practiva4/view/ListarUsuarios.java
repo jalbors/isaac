@@ -219,7 +219,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.setVisible(false);
 		// abrir nueva ventana
-		Eliminar eliminar = new Eliminar();
+		Eliminar eliminar = new Eliminar(this.tokenAEnv);
 		eliminar.setVisible(true);
 
 	}

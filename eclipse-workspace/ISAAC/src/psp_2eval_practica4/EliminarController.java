@@ -9,8 +9,8 @@ public class EliminarController {
 
 	private Usuario usuario = null;
 
-	public EliminarController(int idAEliminar) {
-		this.usuario = eliminar(idAEliminar);
+	public EliminarController(int idAEliminar, String token) {
+		this.usuario = eliminar(idAEliminar, token);
 	}
 
 	public EliminarController() {
@@ -25,11 +25,11 @@ public class EliminarController {
 		this.usuario = usuario;
 	}
 
-	private Usuario eliminar(int idAEliminar) {
+	private Usuario eliminar(int idAEliminar, String tok) {
 		Respuesta respuesta = null;
 
 		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios" + "/" + idAEliminar;
-		respuesta = GestorHTTP.peticion(urlConId, "", "DELETE", "");
+		respuesta = GestorHTTP.peticion(urlConId, "", "DELETE", tok);
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 
 			System.out.println("user eliminado");
