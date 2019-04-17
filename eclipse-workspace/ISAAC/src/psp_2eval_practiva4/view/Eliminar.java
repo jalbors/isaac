@@ -71,7 +71,7 @@ public class Eliminar extends javax.swing.JFrame {
 			private void alerta() {
 
 				// se ejecuta alerta
-				Alerta ale = new Alerta();
+				Alerta ale = new Alerta(tok);
 				ale.setVisible(true);
 
 			}

@@ -5,6 +5,7 @@
  */
 package psp_2eval_practiva4.view;
 
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
@@ -16,9 +17,26 @@ import java.awt.event.WindowEvent;
 public class Alerta extends javax.swing.JFrame {
 
 	
-	public Alerta() {
+	private String token;
+	
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Alerta(String tok) {
+		this.token = tok;
+		System.out.println("alerta token "+this.token);
 		initComponents();
 	}
+	
+	public Alerta() {
+		super();
+	}
+	
 
 	private void initComponents() {
 
@@ -57,7 +75,7 @@ public class Alerta extends javax.swing.JFrame {
 						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		//cierro esta españa y llamo a la de eliminar y la cierro tambien
@@ -66,7 +84,7 @@ public class Alerta extends javax.swing.JFrame {
 		//close();
 		
 		//vuelvo a listar usuarios
-		ListarUsuarios lis = new ListarUsuarios();
+		ListarUsuarios lis = new ListarUsuarios(this.token);
 		lis.setVisible(true);
 		
 		

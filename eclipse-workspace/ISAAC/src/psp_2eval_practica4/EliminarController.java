@@ -10,7 +10,7 @@ public class EliminarController {
 	private Usuario usuario = null;
 
 	public EliminarController(int idAEliminar, String token) {
-		this.usuario = eliminar(idAEliminar, token);
+		eliminar(idAEliminar, token);
 	}
 
 	public EliminarController() {
@@ -25,7 +25,7 @@ public class EliminarController {
 		this.usuario = usuario;
 	}
 
-	private Usuario eliminar(int idAEliminar, String tok) {
+	private void eliminar(int idAEliminar, String tok) {
 		Respuesta respuesta = null;
 
 		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios" + "/" + idAEliminar;
@@ -34,11 +34,7 @@ public class EliminarController {
 
 			System.out.println("user con id: "+ idAEliminar +" eliminado");
 
-			return null;
-
 		}
-
-		return null;
 
 	}
 

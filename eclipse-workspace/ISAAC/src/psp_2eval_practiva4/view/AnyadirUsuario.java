@@ -5,11 +5,9 @@
  */
 package psp_2eval_practiva4.view;
 
-
 import javax.swing.table.DefaultTableModel;
 
 import psp_2eval_practica4.AnyadirUsuarioController;
-import psp_2eval_practiva4.model.Usuario;
 
 /**
  *
@@ -20,25 +18,22 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	/**
 	 * 
 	 */
-	static Usuario user = null;
 	private String tokenAReicivr;
 
 	public AnyadirUsuario(String token) {
-		
-		//guardo el token recivido
+
+		// guardo el token recivido y compruebo que recupera el string
 		this.tokenAReicivr = token;
-		System.out.println("Anyradir tok.  "+tokenAReicivr);
-		//llamo a init components pasandole el token que me pasan 
+		System.out.println("Anyradir tok.  " + tokenAReicivr);
+
+		// llamo a init components pasandole el token que me pasan
 		initComponents(token);
-		
-		
+
 	}
-	
+
 	public AnyadirUsuario() {
-		//initComponents();
+
 	}
-	
-	
 
 	public String getTokenAReicivr() {
 		return tokenAReicivr;
@@ -50,10 +45,10 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 	private void initComponents(String tok) {
 
-		//este token es el que voy a enviar al controlador para validar que es un usuario logueado
-		System.out.println("token FINAL "+ tok);
+		// este token es el que voy a enviar al controlador para validar que es un
+		// usuario logueado
+		System.out.println("token FINAL " + tok);
 
-		
 		jButton1 = new javax.swing.JButton();
 		jTextField1 = new javax.swing.JTextField();
 		jTextField2 = new javax.swing.JTextField();
@@ -81,9 +76,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 		jButton1.setText("Registrate");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
-			
-			
-			
+
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
@@ -93,7 +86,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				String pass = jTextField3.getText();
 				double dinero = Double.parseDouble(jTextField5.getText());
 
-				//genero el controlador y le envio los atributos y el token
+				// genero el controlador y le envio los atributos y el token
 				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, tok);
 
 				System.out.println(po.getUserADevolver().toString());
@@ -109,18 +102,15 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 					fila[4] = po.getUserADevolver().getMoney();
 					fila[5] = po.getUserADevolver().getRol();
 					modelo.addRow(fila);
-				}
 
+				}
 
 			}
 		});
-		
-		
-		
+
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
-
 
 			}
 		});
@@ -264,44 +254,27 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		pack();
 	}
 
-	private static String toke;
-	
-	public static String getToke() {
-		return toke;
-	}
-
-	public static void setToke(String toke) {
-		AnyadirUsuario.toke = toke;
-	}
-
-	public String jor(String p) {
-		toke = p;
-		return toke;
-		
-	}
-	
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
-	
+
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-	
-		//para cerrar una ventana
-				this.setVisible(false);
-				ListarUsuarios lista = new ListarUsuarios();
-				lista.setVisible(true);
-				
+
+		// para cerrar una ventana
+		this.setVisible(false);
+		ListarUsuarios lista = new ListarUsuarios(this.tokenAReicivr);
+		lista.setVisible(true);
+
 	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
-		
+
 	}
 
 	private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {
-	
-		
+
 	}
+
 	public static void main(String args[]) {
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -323,9 +296,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 			java.util.logging.Logger.getLogger(AnyadirUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null,
 					ex);
 		}
-		// </editor-fold>
-
-		/* Create and display the form */
+		
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new AnyadirUsuario().setVisible(true);
