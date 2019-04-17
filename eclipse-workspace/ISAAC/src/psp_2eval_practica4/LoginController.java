@@ -7,14 +7,12 @@ import java.util.Base64;
 import com.google.gson.Gson;
 
 import psp_2eval_practiva4.model.Respuesta;
-import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
 import psp_2eval_practiva4.view.ListarUsuarios;
 
 public class LoginController {
 
 	private UsuarioLogin userLoged = null;
-	private Usuario user = null;
 
 	public LoginController() {
 		super();
@@ -39,14 +37,15 @@ public class LoginController {
 			userLoged = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
 			System.out.println("token 1  "+userLoged.getToken());
 
-			//le envio el token a la siguiente vista y la abro
+			//recupero y envio el token a la siguiente vista y la abro
 			String tokenAEnv = userLoged.getToken().trim();
 			ListarUsuarios an = new ListarUsuarios(tokenAEnv);
 			an.setVisible(true);
-			
 			//la vista anterior es cerrada en la clase anterior
-
+			
+			
 			return userLoged;
+			
 		} else {
 			System.out.println("Se ha producido un error: Codigo " + respuesta.getCodigoPeticion());
 		}
@@ -69,14 +68,7 @@ public class LoginController {
 		this.userLoged = userLoged;
 	}
 
-	public Usuario getUser() {
-		return user;
-	}
-
-	public void setUser(Usuario user) {
-		this.user = user;
-	}
-
+	//metodo para encriptar la contrasenya - SHA-256
 	public static String encrytpSHA256(String mensaje) {
 		MessageDigest md;
 

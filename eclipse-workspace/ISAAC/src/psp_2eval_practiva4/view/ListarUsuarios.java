@@ -247,7 +247,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		});
 	}
 
-	// Variables declaration - do not modify
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
@@ -263,5 +262,4 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private javax.swing.JScrollPane jScrollPane2;
 	private javax.swing.JScrollPane jScrollPane3;
 	private javax.swing.JTable jTable1;
-	// End of variables declaration
 }
