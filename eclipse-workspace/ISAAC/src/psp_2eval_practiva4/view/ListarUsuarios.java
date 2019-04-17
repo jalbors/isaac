@@ -1,11 +1,16 @@
 
 package psp_2eval_practiva4.view;
 
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
 import psp_2eval_practica4.ListarUsuariosController;
@@ -80,7 +85,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-		jLabel1.setIcon(new javax.swing.ImageIcon("../../resources/images/contactaConNosotros.jpg")); // NOI18N
+		jLabel1.setIcon(imagen());
 		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
 
 		jButton1.setText("Listar");
@@ -177,6 +182,21 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		pack();
 	}// </editor-fold>
 
+
+	public ImageIcon imagen(){
+		
+		BufferedImage image;
+		try {
+			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
+			ImageIcon icon = new ImageIcon(image);
+			return icon;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		
 		//clica al boton y se abre anyadir usuario enviando el token recogido antes
@@ -185,6 +205,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jf1.setVisible(true);
 		this.setVisible(false);
 
+		
 	}
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,6 +232,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// close();
 
 	}
+	
+	@Override
+    public Image getIconImage() {
+
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("resources/icon.png"));
+
+        return retValue;
+    }
 
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
