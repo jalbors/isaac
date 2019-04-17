@@ -50,9 +50,8 @@ public class Login extends javax.swing.JFrame {
 				String apellido = jTextField2.getText();
 
 				// con los campos recuperados por el user los envio
-				LoginController control = new LoginController(nombre, apellido);
-				// esto imprime bien
-				System.out.println(control.getUserLoged().toString());
+				LoginController control = new LoginController();
+				control.prueba(nombre, apellido);
 
 			}
 		});

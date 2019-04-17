@@ -1,7 +1,6 @@
 
 package psp_2eval_practiva4.view;
 
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -180,9 +179,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setJMenuBar(jMenuBar1);
 
 		pack();
-	}// </editor-fold>
+	}
 
-
+	//metodo que devuelve una imagen
 	public ImageIcon imagen(){
 		
 		BufferedImage image;
@@ -232,14 +231,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// close();
 
 	}
-	
-	@Override
-    public Image getIconImage() {
 
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("resources/icon.png"));
-
-        return retValue;
-    }
 
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);

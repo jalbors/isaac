@@ -1,13 +1,13 @@
 
 package psp_2eval_practiva4.view;
 
-import psp_2eval_practica4.BuscarIdController;
 import psp_2eval_practica4.EliminarController;
 
 /**
  *
  * @author Jorge
  */
+@SuppressWarnings("serial")
 public class Eliminar extends javax.swing.JFrame {
 
 	/**
@@ -31,7 +31,6 @@ public class Eliminar extends javax.swing.JFrame {
 		this.token = token;
 	}
 
-	@SuppressWarnings("unchecked")
 	private void initComponents(String tok) {
 		
 		System.out.println("token ELIMINAR "+ tok);
@@ -61,6 +60,7 @@ public class Eliminar extends javax.swing.JFrame {
 
 				// recojo el campo con el id a eliminar
 				int identi = Integer.parseInt(jTextField2.getText());
+				@SuppressWarnings("unused")
 				EliminarController eliminar = new EliminarController(identi, tok);
 
 				// llamo a alerta

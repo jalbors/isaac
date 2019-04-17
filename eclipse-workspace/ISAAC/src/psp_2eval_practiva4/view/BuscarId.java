@@ -16,6 +16,7 @@ import psp_2eval_practica4.BuscarIdController;
  *
  * @author Jorge
  */
+@SuppressWarnings("serial")
 public class BuscarId extends javax.swing.JFrame {
 
 	

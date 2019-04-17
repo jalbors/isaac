@@ -20,10 +20,6 @@ public class LoginController {
 		super();
 	}
 
-	public LoginController(String email, String password) {
-		this.userLoged = postito(email, password);
-	}
-
 	private UsuarioLogin postito(String email, String password) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
@@ -56,6 +52,13 @@ public class LoginController {
 		}
 		return nuevoAlumno;
 
+	}
+	
+	//desde la clase llamo a esta clase publica que devuelve el resultado del usuario logged
+	public UsuarioLogin prueba(String email, String password) {
+		this.userLoged = postito(email, password);
+		return this.userLoged;
+		
 	}
 
 	public UsuarioLogin getUserLoged() {

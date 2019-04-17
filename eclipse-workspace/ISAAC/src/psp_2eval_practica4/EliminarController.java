@@ -32,7 +32,7 @@ public class EliminarController {
 		respuesta = GestorHTTP.peticion(urlConId, "", "DELETE", tok);
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 
-			System.out.println("user eliminado");
+			System.out.println("user con id: "+ idAEliminar +" eliminado");
 
 			return null;
 
