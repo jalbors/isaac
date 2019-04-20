@@ -31,7 +31,7 @@ public class Login extends javax.swing.JFrame {
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
 		jLabel1.setText("Email");
 
-		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); 
+		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14));
 		jLabel2.setText("Contraseña");
 
 		jButton1.setText("Login");
@@ -50,7 +50,7 @@ public class Login extends javax.swing.JFrame {
 			}
 		});
 
-		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); 
+		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24));
 		jLabel3.setText("Bienvenido, logueate.");
 
 		jMenu1.setText("File");
@@ -94,11 +94,11 @@ public class Login extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 		// se cierra la ventana
 		this.setVisible(false);
 	}
-	
+
 	public static void main(String args[]) {
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -116,7 +116,7 @@ public class Login extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		
+
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new Login().setVisible(true);

@@ -202,7 +202,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		//cerrar la ventana actual
 		this.setVisible(false);
-		Editar edit = new Editar();
+		Editar edit = new Editar(this.tokenAEnv);
 		edit.setVisible(true);
 		
 		

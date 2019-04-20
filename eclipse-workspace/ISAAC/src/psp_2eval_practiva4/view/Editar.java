@@ -14,8 +14,14 @@ public class Editar extends javax.swing.JFrame {
 
 	private Usuario user = null;
 	private EditarController controller = null;
+	private String token = "";
 
 	public Editar() {
+//		initComponents();
+	}
+
+	public Editar(String tokenAEnv) {
+		this.token = tokenAEnv;
 		initComponents();
 	}
 
@@ -114,7 +120,7 @@ public class Editar extends javax.swing.JFrame {
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
 		}, new String[] { "Id", "Nombre", "Apellido", "Email", "Dinero" }));
-		
+
 		jScrollPane1.setViewportView(jTable1);
 
 		jLabel2.setText("Nombre");
@@ -142,7 +148,7 @@ public class Editar extends javax.swing.JFrame {
 				String dinero = String.valueOf(jTextField6.getText());
 
 				controller.editedUsuario(id, nomb, apell, email, cont, Double.parseDouble(dinero));
-				
+
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 				int lista = 1;
 				Object fila[] = new Object[6];
@@ -155,7 +161,6 @@ public class Editar extends javax.swing.JFrame {
 					fila[5] = controller.getUsuario().getRol();
 					modelo.addRow(fila);
 				}
-				
 
 			}
 		});
@@ -253,20 +258,20 @@ public class Editar extends javax.swing.JFrame {
 	}// </editor-fold>
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.setVisible(false);
-		ListarUsuarios listar = new ListarUsuarios();
+		ListarUsuarios listar = new ListarUsuarios(this.token);
 		listar.setVisible(true);
 	}
 
@@ -287,7 +292,7 @@ public class Editar extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		
+
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new Editar().setVisible(true);
@@ -301,6 +306,14 @@ public class Editar extends javax.swing.JFrame {
 
 	public void setUser(Usuario user) {
 		this.user = user;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	private javax.swing.JButton jButton1;
