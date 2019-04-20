@@ -140,6 +140,12 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 			}
 		});
+		
+		jButton3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton3ActionPerformed(evt);
+			}
+		});
 
 		jMenu1.setText("File");
 		jMenuBar1.add(jMenu1);
@@ -172,6 +178,15 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		return null;
 		
 	}
+
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		// llama al jframe para cambiar de ventana y lo pone visible
+
+		// metodo para cerrar la ventana actual y pasar a la siguiente
+		// close();
+
+	}
 	
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		
@@ -183,12 +198,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		
 	}
-
-	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		// abrir nueva ventana
-		BuscarId buscar = new BuscarId();
-		buscar.setVisible(true);
+	
+	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+		//cerrar la ventana actual
+		this.setVisible(false);
+		Editar edit = new Editar();
+		edit.setVisible(true);
+		
+		
 
 	}
 
@@ -201,12 +218,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	}
 
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
 
-		// llama al jframe para cambiar de ventana y lo pone visible
-
-		// metodo para cerrar la ventana actual y pasar a la siguiente
-		// close();
+		// abrir nueva ventana
+		BuscarId buscar = new BuscarId();
+		buscar.setVisible(true);
 
 	}
 
