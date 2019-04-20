@@ -23,9 +23,7 @@ public class EliminarController {
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 
 			System.out.println("user con id: " + idAEliminar + " eliminado");
-//			Alerta u = new Alerta();
-//			u.setVisible(true);
-			
+
 		}
 
 	}

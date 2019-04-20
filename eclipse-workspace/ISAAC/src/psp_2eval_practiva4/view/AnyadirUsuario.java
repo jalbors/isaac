@@ -82,7 +82,8 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				double dinero = Double.parseDouble(jTextField5.getText());
 
 				// genero el controlador y le envio los atributos y el token
-				AnyadirUsuarioController po = new AnyadirUsuarioController(nombre, apellido, email, pass, dinero, tok);
+				AnyadirUsuarioController po = new AnyadirUsuarioController();
+				po.userFinalAnyadido(nombre, apellido, email, pass, dinero, tok);
 
 				System.out.println(po.getUserADevolver().toString());
 

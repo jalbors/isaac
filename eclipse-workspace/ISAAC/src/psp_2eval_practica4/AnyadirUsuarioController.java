@@ -13,14 +13,14 @@ public class AnyadirUsuarioController {
 
 	private Usuario userADevolver = null;
 
-	//receptor es el token que me llega
-	public AnyadirUsuarioController(String nombre, String apellido, String email, String contra, double dinero, String receptor) {
-		this.userADevolver = postito(nombre, apellido, email, contra, dinero, receptor);
-
-	}
-
 	public AnyadirUsuarioController() {
 		super();
+	}
+	
+	//llamo al metodo que devuelve userADevolver relleno
+	public Usuario userFinalAnyadido(String nombre, String apellido, String email, String contra, double dinero, String receptor) {
+		this.userADevolver = postito(nombre, apellido, email, contra, dinero, receptor);
+		return this.userADevolver;
 	}
 
 	//receptor es el token
@@ -62,7 +62,7 @@ public class AnyadirUsuarioController {
 		this.userADevolver = userADevolver;
 	}
 	
-
+	//metodo para encriptar la contrasenya
 	public static String encrytpSHA256(String mensaje) {
 		MessageDigest md;
 

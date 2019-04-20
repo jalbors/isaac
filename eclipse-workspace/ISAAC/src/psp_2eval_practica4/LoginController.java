@@ -17,6 +17,14 @@ public class LoginController {
 	public LoginController() {
 		super();
 	}
+	
+	// desde la clase llamo a esta clase publica que devuelve el resultado del
+	// usuario logged
+	public UsuarioLogin prueba(String email, String password) {
+		this.userLoged = postito(email, password);
+		return this.userLoged;
+
+	}
 
 	private UsuarioLogin postito(String email, String password) {
 		Respuesta respuesta = null;
@@ -50,14 +58,6 @@ public class LoginController {
 			System.out.println("Se ha producido un error: Codigo " + respuesta.getCodigoPeticion());
 		}
 		return nuevoAlumno;
-
-	}
-
-	// desde la clase llamo a esta clase publica que devuelve el resultado del
-	// usuario logged
-	public UsuarioLogin prueba(String email, String password) {
-		this.userLoged = postito(email, password);
-		return this.userLoged;
 
 	}
 
