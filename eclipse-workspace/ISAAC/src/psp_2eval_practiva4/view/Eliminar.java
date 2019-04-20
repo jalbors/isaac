@@ -17,6 +17,7 @@ public class Eliminar extends javax.swing.JFrame {
 	}
 
 	public Eliminar(String tokenAEnv) {
+		this.token = tokenAEnv;
 		initComponents(tokenAEnv);
 	}
 
@@ -146,7 +147,8 @@ public class Eliminar extends javax.swing.JFrame {
 
 		// cierro esta ventana y paso a listar usuarios
 		this.setVisible(false);
-		ListarUsuarios u = new ListarUsuarios();
+		System.out.println("token recivido papa "+this.token);
+		ListarUsuarios u = new ListarUsuarios(this.token);
 		u.setVisible(true);
 
 	}

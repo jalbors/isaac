@@ -136,7 +136,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 		jLabel7.setText("Dinero a ingresar");
 
-		jButton2.setText("Cancelar");
+		jButton2.setText("Volver");
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
 				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL" }));

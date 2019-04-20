@@ -21,6 +21,7 @@ public class Editar extends javax.swing.JFrame {
 	}
 
 	public Editar(String tokenAEnv) {
+		//guardo el token
 		this.token = tokenAEnv;
 		initComponents();
 	}
@@ -88,12 +89,13 @@ public class Editar extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
+				//recojo el id y se lo paso al controlador para recuperar el usuario ya creado
 				int idAEditar = Integer.parseInt(jTextField1.getText());
 				controller = new EditarController();
-
 				user = controller.devolver(idAEditar);
 				System.out.println(user.toString());
 
+				//hago visible etiquetas para editarlas
 				jLabel2.setVisible(true);
 				jLabel3.setVisible(true);
 				jLabel4.setVisible(true);
@@ -106,6 +108,7 @@ public class Editar extends javax.swing.JFrame {
 				jTextField5.setVisible(true);
 				jTextField6.setVisible(true);
 
+				//del usuario de la BD relleno los campos ya visibles con los valores
 				jTextField2.setText(user.getName());
 				jTextField3.setText(user.getSurname());
 				jTextField4.setText(user.getEmail());
@@ -138,6 +141,7 @@ public class Editar extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
 
+				//recojo los campos ya editados por el usuario
 				int id = controller.getUsuario().getIdUser();
 				System.out.println("id " + id);
 				String nomb = jTextField2.getText();
@@ -147,8 +151,10 @@ public class Editar extends javax.swing.JFrame {
 				String cont = jTextField5.getText();
 				String dinero = String.valueOf(jTextField6.getText());
 
+				//llamo al controlador
 				controller.editedUsuario(id, nomb, apell, email, cont, Double.parseDouble(dinero));
 
+				//relleno la tabla con los nuevos datos
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 				int lista = 1;
 				Object fila[] = new Object[6];
@@ -255,7 +261,7 @@ public class Editar extends javax.swing.JFrame {
 				.addGap(28, 28, 28).addComponent(jButton3).addContainerGap()));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
 
