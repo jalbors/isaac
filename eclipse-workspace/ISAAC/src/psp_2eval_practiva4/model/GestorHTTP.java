@@ -1,4 +1,4 @@
-package psp_2eval_practica4;
+package psp_2eval_practiva4.model;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

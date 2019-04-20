@@ -6,6 +6,7 @@ import java.util.Base64;
 
 import com.google.gson.Gson;
 
+import psp_2eval_practiva4.model.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.UsuarioLogin;
 import psp_2eval_practiva4.view.ListarUsuarios;
@@ -51,7 +52,6 @@ public class LoginController {
 			// la vista anterior es cerrada en la clase anterior
 
 			// devuelvo el usuario generado
-
 			return user;
 
 		} else {

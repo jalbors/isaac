@@ -73,10 +73,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				usuariosADevolver = new ArrayList<>();
 
 				// llama a la clase get con el metodo get para listar usuarios
-				ListarUsuariosController g = new ListarUsuariosController((ArrayList<Usuario>) usuariosADevolver);
+				ListarUsuariosController usuFinales = new ListarUsuariosController();
+				usuFinales.usuariosFinales((ArrayList<Usuario>) usuariosADevolver);
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-				List<Usuario> lista = g.getUserADevolver();
+				List<Usuario> lista = usuFinales.getUserADevolver();
 				Object fila[] = new Object[6];
 				for (int i = 0; i < lista.size(); i++) {
 					fila[0] = lista.get(i).getIdUser();

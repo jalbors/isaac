@@ -7,6 +7,7 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import psp_2eval_practiva4.model.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
@@ -14,20 +15,13 @@ public class ListarUsuariosController {
 
 	private ArrayList<Usuario> usuariosADevolver = null;
 
-	public ListarUsuariosController(ArrayList<Usuario> use) {
-		this.usuariosADevolver = get(use);
-	}
-
 	public ListarUsuariosController() {
 		super();
 	}
-
-	public ArrayList<Usuario> getUserADevolver() {
-		return usuariosADevolver;
-	}
-
-	public void setUserADevolver(ArrayList<Usuario> userADevolver) {
-		this.usuariosADevolver = userADevolver;
+	
+	public ArrayList<Usuario> usuariosFinales(ArrayList<Usuario> use){
+		this.usuariosADevolver = get(use);
+		return this.usuariosADevolver;
 	}
 
 	private ArrayList<Usuario> get(ArrayList<Usuario> use) {
@@ -52,6 +46,14 @@ public class ListarUsuariosController {
 		}
 		return null;
 
+	}
+	
+	public ArrayList<Usuario> getUserADevolver() {
+		return usuariosADevolver;
+	}
+
+	public void setUserADevolver(ArrayList<Usuario> userADevolver) {
+		this.usuariosADevolver = userADevolver;
 	}
 
 }

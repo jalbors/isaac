@@ -2,6 +2,7 @@ package psp_2eval_practica4;
 
 import java.net.HttpURLConnection;
 
+import psp_2eval_practiva4.model.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.view.Alerta;
 

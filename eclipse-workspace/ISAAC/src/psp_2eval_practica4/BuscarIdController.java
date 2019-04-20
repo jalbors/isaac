@@ -4,6 +4,7 @@ import java.net.HttpURLConnection;
 
 import com.google.gson.Gson;
 
+import psp_2eval_practiva4.model.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
