@@ -22,41 +22,43 @@ public class LoginController {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
 		String pas = encrytpSHA256(password);
-		
-		//creo un usuario con los datos recividos del usuario
+		UsuarioLogin user = null;
+		// creo un usuario con los datos recividos del usuario
 		UsuarioLogin nuevoAlumno = new UsuarioLogin(email, pas);
-		
-		//genero el http
+
+		// genero el http
 		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/login",
 				gson.toJson(nuevoAlumno), "POST", "");
-		
+
 		// getJsonRespuesta() -> 200
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
-			
-			//genero el usuario
-			userLoged = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
-			System.out.println("token 1  "+userLoged.getToken());
 
-			//recupero y envio el token a la siguiente vista y la abro
-			ListarUsuarios an = new ListarUsuarios(userLoged.getToken().trim());
+			// genero el usuario
+			user = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
+			System.out.println("token 1  " + user.getToken());
+
+			// recupero y envio el token a la siguiente vista y la abro
+			ListarUsuarios an = new ListarUsuarios(user.getToken().trim());
 			an.setVisible(true);
-			//la vista anterior es cerrada en la clase anterior
-			
-			//devuelvo el usuario generado
-			return userLoged;
-			
+			// la vista anterior es cerrada en la clase anterior
+
+			// devuelvo el usuario generado
+
+			return user;
+
 		} else {
 			System.out.println("Se ha producido un error: Codigo " + respuesta.getCodigoPeticion());
 		}
 		return nuevoAlumno;
 
 	}
-	
-	//desde la clase llamo a esta clase publica que devuelve el resultado del usuario logged
+
+	// desde la clase llamo a esta clase publica que devuelve el resultado del
+	// usuario logged
 	public UsuarioLogin prueba(String email, String password) {
 		this.userLoged = postito(email, password);
 		return this.userLoged;
-		
+
 	}
 
 	public UsuarioLogin getUserLoged() {
@@ -67,7 +69,7 @@ public class LoginController {
 		this.userLoged = userLoged;
 	}
 
-	//metodo para encriptar la contrasenya - SHA-256
+	// metodo para encriptar la contrasenya - SHA-256
 	public static String encrytpSHA256(String mensaje) {
 		MessageDigest md;
 

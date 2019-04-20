@@ -60,8 +60,8 @@ public class Eliminar extends javax.swing.JFrame {
 				// recojo el campo con el id a eliminar
 				int identi = Integer.parseInt(jTextField2.getText());
 				@SuppressWarnings("unused")
-				EliminarController eliminar = new EliminarController(identi, tok);
-
+				EliminarController eliminar = new EliminarController();
+				eliminar.eli(identi, tok);
 				// llamo a alerta
 				alerta();
 

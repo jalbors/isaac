@@ -74,10 +74,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 				// llama a la clase get con el metodo get para listar usuarios
 				ListarUsuariosController g = new ListarUsuariosController((ArrayList<Usuario>) usuariosADevolver);
-
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-				ArrayList<Usuario> lista = g.getUserADevolver();
+				List<Usuario> lista = g.getUserADevolver();
 				Object fila[] = new Object[6];
 				for (int i = 0; i < lista.size(); i++) {
 					fila[0] = lista.get(i).getIdUser();
@@ -194,6 +193,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+		//cerrar la ventana actual
 		this.setVisible(false);
 		// abrir nueva ventana
 		Eliminar eliminar = new Eliminar(this.tokenAEnv);
@@ -209,7 +209,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// close();
 
 	}
-
 
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
@@ -240,7 +239,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
 		this.usuariosADevolver = usuariosADevolver;
 	}
-
 
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;

@@ -10,14 +10,20 @@ import psp_2eval_practiva4.model.Usuario;
 public class BuscarIdController {
 	private Usuario usuario = null;
 
-	public BuscarIdController(int idABuscar) {
-		this.usuario = getId(idABuscar);
-	}
+//	public BuscarIdController(int idABuscar) {
+//		this.usuario = getId(idABuscar);
+//	}
 
 	public BuscarIdController() {
 		super();
 	}
 
+
+	public Usuario devolver(int idABuscar) {
+		this.usuario = getId(idABuscar);
+		return this.usuario;
+	}
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -41,7 +47,7 @@ public class BuscarIdController {
 			System.out.println(
 					"Se ha producido un error obteniendo el id " + id + ": Coigo " + respuesta.getCodigoPeticion());
 		}
-		return usuario;
+		return usuario; 
 	}
 
 }

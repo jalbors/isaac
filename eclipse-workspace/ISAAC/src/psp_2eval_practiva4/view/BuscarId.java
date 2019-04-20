@@ -59,7 +59,8 @@ public class BuscarId extends javax.swing.JFrame {
 
 				int identi = Integer.parseInt(jTextField2.getText());
 
-				BuscarIdController get = new BuscarIdController(identi);
+				BuscarIdController get = new BuscarIdController();
+				get.devolver(identi);
 				System.out.println(get.getUsuario().toString());
 
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();

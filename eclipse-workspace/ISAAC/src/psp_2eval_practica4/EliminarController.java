@@ -3,26 +3,16 @@ package psp_2eval_practica4;
 import java.net.HttpURLConnection;
 
 import psp_2eval_practiva4.model.Respuesta;
-import psp_2eval_practiva4.model.Usuario;
+import psp_2eval_practiva4.view.Alerta;
 
 public class EliminarController {
-
-	private Usuario usuario = null;
-
-	public EliminarController(int idAEliminar, String token) {
-		eliminar(idAEliminar, token);
-	}
 
 	public EliminarController() {
 		super();
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void eli(int idAEliminar, String token) {
+		eliminar(idAEliminar, token);
 	}
 
 	private void eliminar(int idAEliminar, String tok) {
@@ -32,8 +22,10 @@ public class EliminarController {
 		respuesta = GestorHTTP.peticion(urlConId, "", "DELETE", tok);
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
 
-			System.out.println("user con id: "+ idAEliminar +" eliminado");
-
+			System.out.println("user con id: " + idAEliminar + " eliminado");
+//			Alerta u = new Alerta();
+//			u.setVisible(true);
+			
 		}
 
 	}
