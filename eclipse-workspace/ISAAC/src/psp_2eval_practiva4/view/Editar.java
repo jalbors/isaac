@@ -17,7 +17,7 @@ public class Editar extends javax.swing.JFrame {
 	private String token = "";
 
 	public Editar() {
-//		initComponents();
+		initComponents();
 	}
 
 	public Editar(String tokenAEnv) {

@@ -1,3 +1,4 @@
+
 package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
@@ -42,15 +43,25 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jButton2 = new javax.swing.JButton();
 		jScrollPane2 = new javax.swing.JScrollPane();
 		jTable1 = new javax.swing.JTable();
-		jScrollPane3 = new javax.swing.JScrollPane();
 		jButton3 = new javax.swing.JButton();
 		jButton4 = new javax.swing.JButton();
 		jButton5 = new javax.swing.JButton();
+		jLabel2 = new javax.swing.JLabel();
+		jLabel3 = new javax.swing.JLabel();
 		jMenuBar1 = new javax.swing.JMenuBar();
-		jMenu1 = new javax.swing.JMenu();
+		jMenu4 = new javax.swing.JMenu();
+		jMenuItem2 = new javax.swing.JMenuItem();
+		jSeparator5 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem3 = new javax.swing.JMenuItem();
+		jSeparator6 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem4 = new javax.swing.JMenuItem();
+		jSeparator7 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem5 = new javax.swing.JMenuItem();
+		jSeparator8 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem6 = new javax.swing.JMenuItem();
 		jMenu2 = new javax.swing.JMenu();
 		jMenu3 = new javax.swing.JMenu();
-		jMenu4 = new javax.swing.JMenu();
+		jMenu10 = new javax.swing.JMenu();
 
 		javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
 		jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -63,7 +74,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
 		jLabel1.setIcon(imagen());
-		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 500, 170));
+		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 500, 170));
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +102,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 			}
 		});
-		getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+		getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+
 
 		jButton2.setText("Crear");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +111,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jButton2ActionPerformed(evt);
 			}
 		});
-		getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+		getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
 				// cabecera ce la tabla
@@ -115,55 +127,97 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			jTable1.getColumnModel().getColumn(5).setHeaderValue("ROL");
 		}
 
-		getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 500, 90));
+		getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 500, 90));
 
-		getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 490, -1));
+		jButton3.setText("jButton3");
+		jButton3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton3ActionPerformed(evt);
+			}
+		});
+		getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
 
-		jButton3.setText("Editar");
-		getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
-
-		jButton4.setText("Eliminar");
-		getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
-
+		jButton4.setText("jButton4");
 		jButton4.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton4ActionPerformed(evt);
 
 			}
 		});
+		getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
 
-		jButton5.setText("Buscar Id");
-		getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
-
+		jButton5.setText("jButton5");
 		jButton5.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton5ActionPerformed(evt);
-
 			}
 		});
-		
-		jButton3.addActionListener(new java.awt.event.ActionListener() {
+		getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
+
+		jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+		jLabel2.setText("Bienvenido Usuaio");
+		getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 240, 40));
+
+		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+		jLabel3.setText("Elija la operación ha realizar:");
+		getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+
+		jMenu4.setText("Menú rápido");
+
+		jMenuItem2.setText("jMenuItem2");
+		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton3ActionPerformed(evt);
+				jMenuItem2ActionPerformed(evt);
 			}
 		});
+		jMenu4.add(jMenuItem2);
+		jMenu4.add(jSeparator5);
 
-		jMenu1.setText("File");
-		jMenuBar1.add(jMenu1);
+		jMenuItem3.setText("jMenuItem3");
+		jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem3ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem3);
+		jMenu4.add(jSeparator6);
 
-		jMenu2.setText("Edit");
+		jMenuItem4.setText("jMenuItem4");
+		jMenu4.add(jMenuItem4);
+		jMenu4.add(jSeparator7);
+
+		jMenuItem5.setText("jMenuItem5");
+		jMenu4.add(jMenuItem5);
+		jMenu4.add(jSeparator8);
+
+		jMenuItem6.setText("jMenuItem6");
+		jMenu4.add(jMenuItem6);
+
+		jMenuBar1.add(jMenu4);
+
+		jMenu2.setText("Información Usuario Logueado");
+		jMenu2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu2ActionPerformed(evt);
+			}
+		});
 		jMenuBar1.add(jMenu2);
 
-		jMenu3.setText("Componentes");
+		jMenu3.setText("Sobre mí");
+		jMenu3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu3ActionPerformed(evt);
+			}
+		});
 		jMenuBar1.add(jMenu3);
 
-		jMenu4.setText("Mi cuenta");
-		jMenuBar1.add(jMenu4);
+		jMenu10.setText("Salir");
+		jMenuBar1.add(jMenu10);
 
 		setJMenuBar(jMenuBar1);
 
 		pack();
-	}
+	}// </editor-fold>
 
 	//metodo que devuelve una imagen
 	public ImageIcon imagen(){
@@ -231,6 +285,41 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
 	}
+  
+  
+  public String getToken() {
+    return tokenAEnv;
+  }
+  
+  public void setToken(String token) {
+    this.tokenAEnv = token;
+  }
+  
+  public List<Usuario> getUsuariosADevolver() {
+    return usuariosADevolver;
+  }
+  
+  public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
+    this.usuariosADevolver = usuariosADevolver;
+  }
+
+	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
+
+	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
+
+	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+		//item del menu de arriuba
+		Editar edi = new Editar();
+		edi.setVisible(true);
+	}
+
+	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
 	public static void main(String args[]) {
 
@@ -240,23 +329,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			}
 		});
 	}
-	
-	public String getToken() {
-		return tokenAEnv;
-	}
 
-	public void setToken(String token) {
-		this.tokenAEnv = token;
-	}
-
-	public List<Usuario> getUsuariosADevolver() {
-		return usuariosADevolver;
-	}
-
-	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
-		this.usuariosADevolver = usuariosADevolver;
-	}
-
+	// Variables declaration - do not modify
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
@@ -264,12 +338,23 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private javax.swing.JButton jButton5;
 	private javax.swing.JFrame jFrame1;
 	private javax.swing.JLabel jLabel1;
-	private javax.swing.JMenu jMenu1;
+	private javax.swing.JLabel jLabel2;
+	private javax.swing.JLabel jLabel3;
+	private javax.swing.JMenu jMenu10;
 	private javax.swing.JMenu jMenu2;
 	private javax.swing.JMenu jMenu3;
 	private javax.swing.JMenu jMenu4;
 	private javax.swing.JMenuBar jMenuBar1;
+	private javax.swing.JMenuItem jMenuItem2;
+	private javax.swing.JMenuItem jMenuItem3;
+	private javax.swing.JMenuItem jMenuItem4;
+	private javax.swing.JMenuItem jMenuItem5;
+	private javax.swing.JMenuItem jMenuItem6;
 	private javax.swing.JScrollPane jScrollPane2;
-	private javax.swing.JScrollPane jScrollPane3;
+	private javax.swing.JPopupMenu.Separator jSeparator5;
+	private javax.swing.JPopupMenu.Separator jSeparator6;
+	private javax.swing.JPopupMenu.Separator jSeparator7;
+	private javax.swing.JPopupMenu.Separator jSeparator8;
 	private javax.swing.JTable jTable1;
+	// End of variables declaration
 }
