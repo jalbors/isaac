@@ -1,4 +1,3 @@
-
 package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
@@ -60,8 +59,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jSeparator8 = new javax.swing.JPopupMenu.Separator();
 		jMenuItem6 = new javax.swing.JMenuItem();
 		jMenu2 = new javax.swing.JMenu();
+		jMenuItem8 = new javax.swing.JMenuItem();
 		jMenu3 = new javax.swing.JMenu();
+		jMenuItem7 = new javax.swing.JMenuItem();
 		jMenu10 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
 
 		javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
 		jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -98,12 +100,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 					modelo.addRow(fila);
 				}
 
-				
 				// jScrollPane2.setVisible(true);
 				// jTable1.setVisible(true);
 			}
 		});
-		
+
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
 				// cabecera ce la tabla
 
@@ -154,6 +155,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jLabel3.setText("Elija la operación ha realizar:");
 
 		jMenu4.setText("Menú rápido");
+		jMenu4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu4ActionPerformed(evt);
+			}
+		});
 
 		jMenuItem2.setText("jMenuItem2");
 		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,14 +176,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jMenuItem3ActionPerformed(evt);
 			}
 		});
-		
-		jMenu10.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jMenuItem10ActionPerformed(evt);
-				close();
-			}
-		});
-		
 		jMenu4.add(jMenuItem3);
 		jMenu4.add(jSeparator6);
 
@@ -186,6 +184,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jSeparator7);
 
 		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem5ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem5);
 		jMenu4.add(jSeparator8);
 
@@ -200,6 +203,15 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jMenu2ActionPerformed(evt);
 			}
 		});
+
+		jMenuItem8.setText("Información");
+		jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem8ActionPerformed(evt);
+			}
+		});
+		jMenu2.add(jMenuItem8);
+
 		jMenuBar1.add(jMenu2);
 
 		jMenu3.setText("Sobre mí");
@@ -208,9 +220,32 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jMenu3ActionPerformed(evt);
 			}
 		});
+
+		jMenuItem7.setText("Sobre mí");
+		jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem7ActionPerformed(evt);
+			}
+		});
+		jMenu3.add(jMenuItem7);
+
 		jMenuBar1.add(jMenu3);
 
 		jMenu10.setText("Salir");
+		jMenu10.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu10ActionPerformed(evt);
+			}
+		});
+
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+			}
+		});
+		jMenu10.add(jMenuItem1);
+
 		jMenuBar1.add(jMenu10);
 
 		setJMenuBar(jMenuBar1);
@@ -220,18 +255,26 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
 				.createSequentialGroup()
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup().addGap(150, 150, 150).addComponent(jLabel2,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGroup(layout.createSequentialGroup().addGap(20, 20, 20)
+						.addGroup(layout.createSequentialGroup()
 								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel3).addComponent(jLabel1)
+										.addGroup(layout.createSequentialGroup().addGap(150, 150, 150).addComponent(
+												jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 240,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addGroup(layout.createSequentialGroup().addGap(20, 20, 20)
+												.addGroup(layout
+														.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+														.addComponent(jLabel3).addComponent(jLabel1))))
+								.addGap(0, 0, Short.MAX_VALUE))
+						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+								.addGap(0, 0, Short.MAX_VALUE)
+								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addGroup(layout.createSequentialGroup().addComponent(jButton1)
-												.addGap(36, 36, 36).addComponent(jButton2).addGap(26, 26, 26)
-												.addComponent(jButton3).addGap(31, 31, 31).addComponent(jButton4)
-												.addGap(18, 18, 18).addComponent(jButton5))
+												.addGap(32, 32, 32).addComponent(jButton2).addGap(29, 29, 29)
+												.addComponent(jButton3).addGap(26, 26, 26).addComponent(jButton4)
+												.addGap(26, 26, 26).addComponent(jButton5))
 										.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500,
 												javax.swing.GroupLayout.PREFERRED_SIZE))))
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+				.addContainerGap()));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
 				.createSequentialGroup().addGap(10, 10, 10)
 				.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
@@ -240,13 +283,12 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
-				.addGap(25, 25, 25)
-				.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
-						javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addGap(18, 18, 18)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton1)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jButton1)
 						.addComponent(jButton2).addComponent(jButton3).addComponent(jButton4).addComponent(jButton5))
-				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+				.addGap(18, 18, 18).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(26, Short.MAX_VALUE)));
 
 		pack();
 	}// </editor-fold>
@@ -267,11 +309,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		// llama al jframe para cambiar de ventana y lo pone visible
-
-		// metodo para cerrar la ventana actual y pasar a la siguiente
-		// close();
 
 	}
 
@@ -310,6 +347,49 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	}
 
+	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+		// item del menu de arriuba
+		Editar edi = new Editar();
+		edi.setVisible(true);
+	}
+
+	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		close();
+	}
+
+	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+	
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
@@ -329,28 +409,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
 		this.usuariosADevolver = usuariosADevolver;
-	}
-
-	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// item del menu de arriuba
-		Editar edi = new Editar();
-		edi.setVisible(true);
-	}
-
-	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-	
-	private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {
-		close();
 	}
 
 	public static void main(String args[]) {
@@ -377,11 +435,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private javax.swing.JMenu jMenu3;
 	private javax.swing.JMenu jMenu4;
 	private javax.swing.JMenuBar jMenuBar1;
+	private javax.swing.JMenuItem jMenuItem1;
 	private javax.swing.JMenuItem jMenuItem2;
 	private javax.swing.JMenuItem jMenuItem3;
 	private javax.swing.JMenuItem jMenuItem4;
 	private javax.swing.JMenuItem jMenuItem5;
 	private javax.swing.JMenuItem jMenuItem6;
+	private javax.swing.JMenuItem jMenuItem7;
+	private javax.swing.JMenuItem jMenuItem8;
 	private javax.swing.JScrollPane jScrollPane2;
 	private javax.swing.JPopupMenu.Separator jSeparator5;
 	private javax.swing.JPopupMenu.Separator jSeparator6;

@@ -256,7 +256,7 @@ public class Editar extends javax.swing.JFrame {
 				.addGap(42, 42, 42).addComponent(jButton2)
 				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
 				.addComponent(jLabel7).addGap(18, 18, 18)
-				.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 42,
+				.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
 				.addGap(28, 28, 28).addComponent(jButton3).addContainerGap()));
 
