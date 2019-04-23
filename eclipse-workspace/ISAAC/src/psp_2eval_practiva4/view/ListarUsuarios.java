@@ -71,10 +71,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				.addGap(0, 300, Short.MAX_VALUE));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
 		jLabel1.setIcon(imagen());
-		getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 500, 170));
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -100,19 +98,12 @@ public class ListarUsuarios extends javax.swing.JFrame {
 					modelo.addRow(fila);
 				}
 
+				
+				// jScrollPane2.setVisible(true);
+				// jTable1.setVisible(true);
 			}
 		});
-		getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
-
-
-		jButton2.setText("Crear");
-		jButton2.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton2ActionPerformed(evt);
-			}
-		});
-		getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
-
+		
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
 				// cabecera ce la tabla
 
@@ -127,40 +118,40 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			jTable1.getColumnModel().getColumn(5).setHeaderValue("ROL");
 		}
 
-		getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 500, 90));
+		jButton2.setText("Crear");
+		jButton2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton2ActionPerformed(evt);
+			}
+		});
 
-		jButton3.setText("jButton3");
+		jButton3.setText("Editar");
 		jButton3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton3ActionPerformed(evt);
 			}
 		});
-		getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
 
-		jButton4.setText("jButton4");
+		jButton4.setText("Eliminar");
 		jButton4.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton4ActionPerformed(evt);
 
 			}
 		});
-		getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
 
-		jButton5.setText("jButton5");
+		jButton5.setText("Buscar por id");
 		jButton5.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton5ActionPerformed(evt);
 			}
 		});
-		getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
 		jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-		jLabel2.setText("Bienvenido Usuaio");
-		getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 240, 40));
+		jLabel2.setText("Bienvenido Usuario");
 
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 		jLabel3.setText("Elija la operación ha realizar:");
-		getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
 		jMenu4.setText("Menú rápido");
 
@@ -179,6 +170,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jMenuItem3ActionPerformed(evt);
 			}
 		});
+		
+		jMenu10.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem10ActionPerformed(evt);
+				close();
+			}
+		});
+		
 		jMenu4.add(jMenuItem3);
 		jMenu4.add(jSeparator6);
 
@@ -216,12 +215,45 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		setJMenuBar(jMenuBar1);
 
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup().addGap(150, 150, 150).addComponent(jLabel2,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGroup(layout.createSequentialGroup().addGap(20, 20, 20)
+								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(jLabel3).addComponent(jLabel1)
+										.addGroup(layout.createSequentialGroup().addComponent(jButton1)
+												.addGap(36, 36, 36).addComponent(jButton2).addGap(26, 26, 26)
+												.addComponent(jButton3).addGap(31, 31, 31).addComponent(jButton4)
+												.addGap(18, 18, 18).addComponent(jButton5))
+										.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500,
+												javax.swing.GroupLayout.PREFERRED_SIZE))))
+				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup().addGap(10, 10, 10)
+				.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addGap(29, 29, 29)
+				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
+				.addGap(25, 25, 25)
+				.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton1)
+						.addComponent(jButton2).addComponent(jButton3).addComponent(jButton4).addComponent(jButton5))
+				.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+
 		pack();
 	}// </editor-fold>
 
-	//metodo que devuelve una imagen
-	public ImageIcon imagen(){
-		
+	// metodo que devuelve una imagen
+	public ImageIcon imagen() {
+
 		BufferedImage image;
 		try {
 			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
@@ -231,7 +263,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			e.printStackTrace();
 		}
 		return null;
-		
+
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,30 +274,27 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// close();
 
 	}
-	
+
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		
-		//clica al boton y se abre anyadir usuario enviando el token recogido antes
-		//abro esta ventana y cierro la actual
+
+		// clica al boton y se abre anyadir usuario enviando el token recogido antes
+		// abro esta ventana y cierro la actual
 		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv);
 		jf1.setVisible(true);
 		this.setVisible(false);
 
-		
 	}
-	
+
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-		//cerrar la ventana actual
+		// cerrar la ventana actual
 		this.setVisible(false);
 		Editar edit = new Editar(this.tokenAEnv);
 		edit.setVisible(true);
-		
-		
 
 	}
 
 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-		//cerrar la ventana actual
+		// cerrar la ventana actual
 		this.setVisible(false);
 		// abrir nueva ventana
 		Eliminar eliminar = new Eliminar(this.tokenAEnv);
@@ -285,23 +314,22 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
 	}
-  
-  
-  public String getToken() {
-    return tokenAEnv;
-  }
-  
-  public void setToken(String token) {
-    this.tokenAEnv = token;
-  }
-  
-  public List<Usuario> getUsuariosADevolver() {
-    return usuariosADevolver;
-  }
-  
-  public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
-    this.usuariosADevolver = usuariosADevolver;
-  }
+
+	public String getToken() {
+		return tokenAEnv;
+	}
+
+	public void setToken(String token) {
+		this.tokenAEnv = token;
+	}
+
+	public List<Usuario> getUsuariosADevolver() {
+		return usuariosADevolver;
+	}
+
+	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
+		this.usuariosADevolver = usuariosADevolver;
+	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
@@ -312,13 +340,17 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		//item del menu de arriuba
+		// item del menu de arriuba
 		Editar edi = new Editar();
 		edi.setVisible(true);
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+	}
+	
+	private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {
+		close();
 	}
 
 	public static void main(String args[]) {
