@@ -78,7 +78,7 @@ public class Alerta extends javax.swing.JFrame {
 		//close();
 		
 		//vuelvo a listar usuarios
-		ListarUsuarios lis = new ListarUsuarios(this.token);
+		ListarUsuarios lis = new ListarUsuarios(this.token, "");
 		lis.setVisible(true);
 		
 		

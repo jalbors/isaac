@@ -60,7 +60,6 @@ public class Eliminar extends javax.swing.JFrame {
 
 				// recojo el campo con el id a eliminar
 				int identi = Integer.parseInt(jTextField2.getText());
-				@SuppressWarnings("unused")
 				EliminarController eliminar = new EliminarController();
 				eliminar.eli(identi, tok);
 				// llamo a alerta
@@ -73,8 +72,10 @@ public class Eliminar extends javax.swing.JFrame {
 				// se ejecuta alerta
 				Alerta ale = new Alerta(tok);
 				ale.setVisible(true);
+				cerrarVentanaActual();
 
 			}
+
 
 		});
 
@@ -138,6 +139,12 @@ public class Eliminar extends javax.swing.JFrame {
 		// disponse();
 
 	}
+	
+
+	private void cerrarVentanaActual() {
+		this.setVisible(false);
+		
+	}
 
 	private void jButton2StateChanged(javax.swing.event.ChangeEvent evt) {
 
@@ -146,9 +153,9 @@ public class Eliminar extends javax.swing.JFrame {
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
 		// cierro esta ventana y paso a listar usuarios
-		this.setVisible(false);
+		//this.setVisible(false);
 		System.out.println("token recivido papa "+this.token);
-		ListarUsuarios u = new ListarUsuarios(this.token);
+		ListarUsuarios u = new ListarUsuarios(this.token,"");
 		u.setVisible(true);
 
 	}

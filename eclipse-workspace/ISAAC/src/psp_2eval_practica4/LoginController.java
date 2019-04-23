@@ -47,7 +47,7 @@ public class LoginController {
 			System.out.println("token 1  " + user.getToken());
 
 			// recupero y envio el token a la siguiente vista y la abro
-			ListarUsuarios an = new ListarUsuarios(user.getToken().trim());
+			ListarUsuarios an = new ListarUsuarios(user.getToken().trim(), email);
 			an.setVisible(true);
 			// la vista anterior es cerrada en la clase anterior
 
