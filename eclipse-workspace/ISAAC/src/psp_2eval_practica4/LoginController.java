@@ -30,6 +30,7 @@ public class LoginController {
 	private UsuarioLogin postito(String email, String password) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
+		//encrpto la pass para compararla
 		String pas = encrytpSHA256(password);
 		UsuarioLogin user = null;
 		// creo un usuario con los datos recividos del usuario
