@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
@@ -55,6 +50,7 @@ public class BuscarId extends javax.swing.JFrame {
 		jMenuItem1 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
 
 		jTextField2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +58,8 @@ public class BuscarId extends javax.swing.JFrame {
 			}
 		});
 
-		jLabel1.setText("Introduce el id a buscar");
+		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+		jLabel1.setText("Introduce el id a buscar:");
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
 				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL" }));
@@ -78,7 +75,7 @@ public class BuscarId extends javax.swing.JFrame {
 				try {
 					if (StringUtils.isEmpty(identi)) {
 						new AlertaLogin().setVisible(true);
-					}else {
+					} else {
 						int finalMente = Integer.parseInt(identi);
 						BuscarIdController get = new BuscarIdController();
 						get.devolver(finalMente);
@@ -234,17 +231,17 @@ public class BuscarId extends javax.swing.JFrame {
 						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
 						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(40, 40, 40)));
+						.addGap(39, 39, 39)));
 
 		pack();
 	}// </editor-fold>
 
 	private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		// TODO add your handling code here:
 		// disponse();
 
 	}
-
+	
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
@@ -261,15 +258,15 @@ public class BuscarId extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		// TODO add your handling code here:
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		// TODO add your handling code here:
 	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-
+		// TODO add your handling code here:
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
