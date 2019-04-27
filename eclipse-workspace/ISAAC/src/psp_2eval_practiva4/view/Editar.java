@@ -38,7 +38,6 @@ public class Editar extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-		String nombew = "";
 		jLabel1 = new javax.swing.JLabel();
 		jTextField1 = new javax.swing.JTextField();
 		jButton1 = new javax.swing.JButton();
@@ -75,11 +74,6 @@ public class Editar extends javax.swing.JFrame {
 		jLabel8 = new javax.swing.JLabel();
 		jLabel9 = new javax.swing.JLabel();
 		jLabel10 = new javax.swing.JLabel();
-		jLabel10.setVisible(false);
-
-		jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-		// System.out.println("nombre:"+ user.getName());
-		jLabel10.setText("Introduzca los datos a editar de: ");
 
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu4 = new javax.swing.JMenu();
@@ -147,6 +141,10 @@ public class Editar extends javax.swing.JFrame {
 					jTextField6.setText(String.valueOf(user.getMoney()));
 
 					jButton2.setVisible(true);
+					
+					jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+					jLabel10.setText("Introduzca los datos a editar de: "+ user.getName());
+					
 				}
 
 			}
@@ -423,18 +421,18 @@ public class Editar extends javax.swing.JFrame {
 				.addGap(58, 58, 58)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,43 +442,43 @@ public class Editar extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	// metodo que devuelve una imagen
@@ -522,18 +520,7 @@ public class Editar extends javax.swing.JFrame {
 		this.pacazo = pacazo;
 	}
 
-	/**
-	 * @param args the command line arguments
-	 */
 	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-		// (optional) ">
-		/*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -550,9 +537,7 @@ public class Editar extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		// </editor-fold>
 
-		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new Editar().setVisible(true);
@@ -560,7 +545,6 @@ public class Editar extends javax.swing.JFrame {
 		});
 	}
 
-	// Variables declaration - do not modify
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
@@ -599,5 +583,4 @@ public class Editar extends javax.swing.JFrame {
 	private javax.swing.JTextField jTextField4;
 	private javax.swing.JTextField jTextField5;
 	private javax.swing.JTextField jTextField6;
-	// End of variables declaration
 }

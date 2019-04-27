@@ -44,7 +44,7 @@ public class LoginController {
 
 			// genero el usuario
 			user = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
-			System.out.println("token 1  " + user.getToken());
+			System.out.println("token postito  " + user.getToken());
 
 			// devuelvo el usuario generado
 			return user;
@@ -67,14 +67,12 @@ public class LoginController {
 	// metodo para encriptar la contrasenya - SHA-256
 	public static String encrytpSHA256(String mensaje) {
 		MessageDigest md;
-
 		try {
 			md = MessageDigest.getInstance("SHA-256");
 			byte dataBytes[] = mensaje.getBytes();
 			md.update(dataBytes);
 			byte resumen[] = md.digest();
 			return new String(Base64.getEncoder().encode(resumen));
-
 		} catch (Exception e) {
 			return e.getMessage();
 
