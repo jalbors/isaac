@@ -11,8 +11,11 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
+import org.apache.commons.lang.StringUtils;
+
 import psp_2eval_practica4.ListarUsuariosController;
 import psp_2eval_practiva4.model.Usuario;
+import psp_2eval_practiva4.model.UsuarioLogin;
 
 @SuppressWarnings("serial")
 public class ListarUsuarios extends javax.swing.JFrame {
@@ -20,6 +23,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	// guardo el token aqui desde login controller y en jButton2ActionPerformed se
 	// lo envio a la siguiente clase
 	private String tokenAEnv;
+	private UsuarioLogin paquito;
 	private List<Usuario> usuariosADevolver = null;
 	private String email;
 
@@ -27,15 +31,17 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		initComponents();
 	}
 
-
 	// recojo el token que me llega y inicio la clase normal, no hago nada con el
 	// token solo lo paso
-	//el nombre es para dar la bienvenida la primera vez que se logea
-	public ListarUsuarios(String token, String nombre) {
+	// el nombre es para dar la bienvenida la primera vez que se logea
+
+	public ListarUsuarios(String token, String nombre, UsuarioLogin paco) {
 		this.tokenAEnv = token;
 		this.email = nombre;
+		this.paquito = paco;
 		System.out.println("nombre " + this.email);
 		System.out.println("Listar us: " + tokenAEnv);
+		System.out.println("pacazo listar -->   "+this.paquito);
 		initComponents(nombre);
 	}
 
@@ -78,6 +84,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				.addGap(0, 300, Short.MAX_VALUE));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
+		setResizable(false);
 
 		jLabel1.setIcon(imagen());
 
@@ -159,13 +167,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 		jLabel3.setText("Elija la operación ha realizar:");
 
-		jMenu4.setText("Menú rápido");
-		jMenu4.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jMenu4ActionPerformed(evt);
-			}
-		});
-
 		jMenuItem2.setText("jMenuItem2");
 		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,16 +185,17 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem3);
 		jMenu4.add(jSeparator6);
 
+		jMenu4.setText("Menú rápido");
+		jMenu4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu4ActionPerformed(evt);
+			}
+		});
+
 		jMenuItem4.setText("jMenuItem4");
 		jMenu4.add(jMenuItem4);
 		jMenu4.add(jSeparator7);
 
-		jMenuItem5.setText("jMenuItem5");
-		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jMenuItem5ActionPerformed(evt);
-			}
-		});
 		jMenu4.add(jMenuItem5);
 		jMenu4.add(jSeparator8);
 
@@ -206,6 +208,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenu2ActionPerformed(evt);
+			}
+		});
+
+		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem5ActionPerformed(evt);
 			}
 		});
 
@@ -236,13 +245,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		jMenuBar1.add(jMenu3);
 
-		jMenu10.setText("Salir");
-		jMenu10.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jMenu10ActionPerformed(evt);
-			}
-		});
-
 		jMenuItem1.setText("Salir");
 		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +253,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		});
 		jMenu10.add(jMenuItem1);
 
+		jMenu10.setText("Salir");
+		jMenu10.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu10ActionPerformed(evt);
+			}
+		});
+
 		jMenuBar1.add(jMenu10);
 
 		setJMenuBar(jMenuBar1);
@@ -258,41 +267,36 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
 		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup()
+				.createSequentialGroup().addGap(20, 20, 20)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup().addGap(20, 20, 20)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel3).addComponent(jLabel1))
-								.addGap(0, 0, Short.MAX_VALUE))
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-								.addGap(0, 0, Short.MAX_VALUE)
+						.addGroup(layout.createSequentialGroup().addComponent(jLabel3)
+								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addGroup(layout.createSequentialGroup()
 								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addGroup(layout.createSequentialGroup().addComponent(jButton1)
-												.addGap(32, 32, 32).addComponent(jButton2).addGap(29, 29, 29)
-												.addComponent(jButton3).addGap(26, 26, 26).addComponent(jButton4)
-												.addGap(26, 26, 26).addComponent(jButton5))
-										.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500,
-												javax.swing.GroupLayout.PREFERRED_SIZE))))
-				.addContainerGap())
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-						layout.createSequentialGroup().addGap(0, 0, Short.MAX_VALUE).addComponent(jLabel2,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(25, 25, 25)));
+												.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
+												.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
+												.addGap(18, 18, 18).addComponent(jButton5))
+										.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(jLabel1).addComponent(jScrollPane2,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 500,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGap(0, 22, Short.MAX_VALUE)))));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
+				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(21, 21, 21)
 				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
-				.addGap(18, 18, 18)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jButton1)
-						.addComponent(jButton2).addComponent(jButton3).addComponent(jButton4).addComponent(jButton5))
+				.addGap(18, 18, 18).addComponent(jLabel3).addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
+						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
 				.addGap(18, 18, 18).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(37, Short.MAX_VALUE)));
+				.addContainerGap(27, Short.MAX_VALUE)));
 
 		pack();
 	}// </editor-fold>
-	
+
 	private void initComponents(String email) {
 
 		jFrame1 = new javax.swing.JFrame();
@@ -332,6 +336,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				.addGap(0, 300, Short.MAX_VALUE));
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
+		setResizable(false);
 
 		jLabel1.setIcon(imagen());
 
@@ -408,9 +414,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		});
 
 		jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-		if(!email.equalsIgnoreCase("")) {
+		if (StringUtils.isNotEmpty(email)) {
 			jLabel2.setText("Bienvenido usuario: " + email);
-		}else {
+		} else {
 			jLabel2.setText("Bienvenido de vuelta usuario");
 		}
 
@@ -471,6 +477,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem8ActionPerformed(evt);
+				
+				
 			}
 		});
 		jMenu2.add(jMenuItem8);
@@ -516,37 +524,32 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
 		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup()
+				.createSequentialGroup().addGap(20, 20, 20)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup().addGap(20, 20, 20)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addComponent(jLabel3).addComponent(jLabel1))
-								.addGap(0, 0, Short.MAX_VALUE))
-						.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-								.addGap(0, 0, Short.MAX_VALUE)
+						.addGroup(layout.createSequentialGroup().addComponent(jLabel3)
+								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addGroup(layout.createSequentialGroup()
 								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 										.addGroup(layout.createSequentialGroup().addComponent(jButton1)
-												.addGap(32, 32, 32).addComponent(jButton2).addGap(29, 29, 29)
-												.addComponent(jButton3).addGap(26, 26, 26).addComponent(jButton4)
-												.addGap(26, 26, 26).addComponent(jButton5))
-										.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500,
-												javax.swing.GroupLayout.PREFERRED_SIZE))))
-				.addContainerGap())
-				.addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-						layout.createSequentialGroup().addGap(0, 0, Short.MAX_VALUE).addComponent(jLabel2,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(25, 25, 25)));
+												.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
+												.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
+												.addGap(18, 18, 18).addComponent(jButton5))
+										.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addComponent(jLabel1).addComponent(jScrollPane2,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 500,
+												javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGap(0, 22, Short.MAX_VALUE)))));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
+				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(21, 21, 21)
 				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
-				.addGap(18, 18, 18)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jButton1)
-						.addComponent(jButton2).addComponent(jButton3).addComponent(jButton4).addComponent(jButton5))
+				.addGap(18, 18, 18).addComponent(jLabel3).addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
+						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
 				.addGap(18, 18, 18).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 82,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(37, Short.MAX_VALUE)));
+				.addContainerGap(27, Short.MAX_VALUE)));
 
 		pack();
 	}// </editor-fold>
@@ -566,24 +569,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	}
 
-	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-
-	}
-
-	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		// clica al boton y se abre anyadir usuario enviando el token recogido antes
-		// abro esta ventana y cierro la actual
-		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv);
-		jf1.setVisible(true);
-		this.setVisible(false);
-
-	}
-
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// cerrar la ventana actual
 		this.setVisible(false);
-		Editar edit = new Editar(this.tokenAEnv);
+		Editar edit = new Editar(this.tokenAEnv, this.paquito);
 		edit.setVisible(true);
 
 	}
@@ -592,9 +581,23 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// cerrar la ventana actual
 		this.setVisible(false);
 		// abrir nueva ventana
-		Eliminar eliminar = new Eliminar(this.tokenAEnv);
+		Eliminar eliminar = new Eliminar(this.tokenAEnv, this.paquito);
 		eliminar.setVisible(true);
 
+	}
+
+	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		// clica al boton y se abre anyadir usuario enviando el token recogido antes
+		// abro esta ventana y cierro la actual
+		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv, this.paquito);
+		jf1.setVisible(true);
+		this.setVisible(false);
+
+	}
+
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
 	}
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -603,6 +606,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		BuscarId buscar = new BuscarId();
 		buscar.setVisible(true);
 
+	}
+
+	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
+
+	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
 	}
 
 	public void close() {
@@ -628,6 +639,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	public List<Usuario> getUsuariosADevolver() {
 		return usuariosADevolver;
+	}
+
+	public UsuarioLogin getPaquito() {
+		return paquito;
+	}
+
+	public void setPaquito(UsuarioLogin paquito) {
+		this.paquito = paquito;
 	}
 
 	public void setUsuariosADevolver(List<Usuario> usuariosADevolver) {
@@ -661,18 +680,16 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
+		
+		
+		//pasarle aqui paquito
+		
+		
+		
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
 

@@ -5,6 +5,7 @@ import java.awt.event.WindowEvent;
 import org.apache.commons.lang.StringUtils;
 
 import psp_2eval_practica4.LoginController;
+import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**
  *
@@ -14,7 +15,8 @@ import psp_2eval_practica4.LoginController;
 public class Login extends javax.swing.JFrame {
 
 	private String email;
-
+	private UsuarioLogin paco = null;
+	
 	public Login() {
 		initComponents();
 	}
@@ -57,7 +59,10 @@ public class Login extends javax.swing.JFrame {
 					cerrarVentanaActual();
 					// le envio los datos
 					LoginController control = new LoginController();
-					control.prueba(email, pass);
+					paco = control.prueba(email, pass);
+					ListarUsuarios an = new ListarUsuarios(paco.getToken().trim(), paco.getEmail().trim(), paco);
+					an.setVisible(true);
+					System.out.println("paco "+paco.toString());
 				}
 			}
 		});
@@ -152,6 +157,16 @@ public class Login extends javax.swing.JFrame {
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
+	}
+	
+	
+
+	public UsuarioLogin getPaco() {
+		return paco;
+	}
+
+	public void setPaco(UsuarioLogin paco) {
+		this.paco = paco;
 	}
 
 	public static void main(String args[]) {

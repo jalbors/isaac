@@ -9,7 +9,6 @@ import com.google.gson.Gson;
 import psp_2eval_practiva4.model.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.UsuarioLogin;
-import psp_2eval_practiva4.view.ListarUsuarios;
 
 public class LoginController {
 
@@ -46,11 +45,6 @@ public class LoginController {
 			// genero el usuario
 			user = gson.fromJson(respuesta.getJsonRespuesta(), UsuarioLogin.class);
 			System.out.println("token 1  " + user.getToken());
-
-			// recupero y envio el token a la siguiente vista y la abro
-			ListarUsuarios an = new ListarUsuarios(user.getToken().trim(), email);
-			an.setVisible(true);
-			// la vista anterior es cerrada en la clase anterior
 
 			// devuelvo el usuario generado
 			return user;

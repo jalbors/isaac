@@ -3,6 +3,8 @@ package psp_2eval_practiva4.view;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
+import psp_2eval_practiva4.model.UsuarioLogin;
+
 /**
  *
  * @author Jorge
@@ -10,9 +12,9 @@ import java.awt.event.WindowEvent;
 @SuppressWarnings("serial")
 public class Alerta extends javax.swing.JFrame {
 
-	
 	private String token;
-	
+	private UsuarioLogin paquito;
+
 	public String getToken() {
 		return token;
 	}
@@ -21,16 +23,24 @@ public class Alerta extends javax.swing.JFrame {
 		this.token = token;
 	}
 
-	public Alerta(String tok) {
+	public Alerta(String tok, UsuarioLogin paq) {
 		this.token = tok;
-		System.out.println("alerta token "+this.token);
+		this.paquito = paq;
+		System.out.println("alerta token " + this.token);
 		initComponents();
 	}
-	
+
 	public Alerta() {
 		super();
 	}
-	
+
+	public UsuarioLogin getPaquito() {
+		return paquito;
+	}
+
+	public void setPaquito(UsuarioLogin paquito) {
+		this.paquito = paquito;
+	}
 
 	private void initComponents() {
 
@@ -72,27 +82,25 @@ public class Alerta extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		//cierro esta españa y llamo a la de eliminar y la cierro tambien
+		// cierro esta españa y llamo a la de eliminar y la cierro tambien
 		this.setVisible(false);
-		
-		//close();
-		
-		//vuelvo a listar usuarios
-		ListarUsuarios lis = new ListarUsuarios(this.token, "");
+
+		// close();
+
+		// vuelvo a listar usuarios
+		ListarUsuarios lis = new ListarUsuarios(this.token, "", this.paquito);
 		lis.setVisible(true);
-		
-		
+
 	}
 
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
-		
+
 		ListarUsuarios lis = new ListarUsuarios();
 		lis.setVisible(true);
 	}
 
-	
 	public static void main(String args[]) {
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -110,7 +118,7 @@ public class Alerta extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Alerta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-	
+
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new Alerta().setVisible(true);
