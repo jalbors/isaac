@@ -53,7 +53,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		// este token es el que voy a enviar al controlador para validar que es un
 		// usuario logueado
 		System.out.println("token FINAL " + tok);
-
+		this.setTitle("SGE - Añadir usuario");
 
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();

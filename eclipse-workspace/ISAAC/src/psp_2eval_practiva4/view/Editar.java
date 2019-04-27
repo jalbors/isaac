@@ -38,6 +38,9 @@ public class Editar extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
+		
+		this.setTitle("SGE - Editar usuario");
+		
 		jLabel1 = new javax.swing.JLabel();
 		jTextField1 = new javax.swing.JTextField();
 		jButton1 = new javax.swing.JButton();

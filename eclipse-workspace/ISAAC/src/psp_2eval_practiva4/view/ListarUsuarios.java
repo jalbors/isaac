@@ -1,7 +1,5 @@
 package psp_2eval_practiva4.view;
 
-import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,57 +39,53 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		this.paquito = paco;
 		System.out.println("nombre " + this.email);
 		System.out.println("Listar us: " + tokenAEnv);
-		System.out.println("pacazo listar -->   "+this.paquito);
+		System.out.println("pacazo listar -->   " + this.paquito);
 		initComponents(nombre);
 	}
-	
-    private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jSeparator5 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jSeparator6 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator7 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jSeparator8 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu10 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+	private void initComponents() {
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+		jFrame1 = new javax.swing.JFrame();
+		jLabel1 = new javax.swing.JLabel();
+		jButton1 = new javax.swing.JButton();
+		jButton2 = new javax.swing.JButton();
+		jScrollPane2 = new javax.swing.JScrollPane();
+		jTable1 = new javax.swing.JTable();
+		jButton3 = new javax.swing.JButton();
+		jButton4 = new javax.swing.JButton();
+		jButton5 = new javax.swing.JButton();
+		jLabel2 = new javax.swing.JLabel();
+		jLabel3 = new javax.swing.JLabel();
+		jMenuBar1 = new javax.swing.JMenuBar();
+		jMenu4 = new javax.swing.JMenu();
+		jMenuItem2 = new javax.swing.JMenuItem();
+		jSeparator5 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem3 = new javax.swing.JMenuItem();
+		jSeparator6 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem4 = new javax.swing.JMenuItem();
+		jSeparator7 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem5 = new javax.swing.JMenuItem();
+		jSeparator8 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem6 = new javax.swing.JMenuItem();
+		jMenu2 = new javax.swing.JMenu();
+		jMenuItem8 = new javax.swing.JMenuItem();
+		jMenu3 = new javax.swing.JMenu();
+		jMenuItem7 = new javax.swing.JMenuItem();
+		jMenu10 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
-        setResizable(false);
+		javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+		jFrame1.getContentPane().setLayout(jFrame1Layout);
+		jFrame1Layout.setHorizontalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 400, Short.MAX_VALUE));
+		jFrame1Layout.setVerticalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 300, Short.MAX_VALUE));
 
-    	jLabel1.setIcon(imagen());
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
+		setResizable(false);
+
+		jLabel1.setIcon(imagen());
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -172,205 +166,185 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			jLabel2.setText("Bienvenido de vuelta usuario");
 		}
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Elija la operación ha realizar:");
+		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+		jLabel3.setText("Elija la operación ha realizar:");
 
-        jMenu4.setText("Menú rápido");
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
-            }
-        });
+		jMenu4.setText("Menú rápido");
+		jMenu4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu4ActionPerformed(evt);
+			}
+		});
 
-        jMenuItem2.setText("jMenuItem2");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem2);
-        jMenu4.add(jSeparator5);
+		jMenuItem2.setText("jMenuItem2");
+		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem2ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem2);
+		jMenu4.add(jSeparator5);
 
-        jMenuItem3.setText("jMenuItem3");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem3);
-        jMenu4.add(jSeparator6);
+		jMenuItem3.setText("jMenuItem3");
+		jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem3ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem3);
+		jMenu4.add(jSeparator6);
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenu4.add(jMenuItem4);
-        jMenu4.add(jSeparator7);
+		jMenuItem4.setText("jMenuItem4");
+		jMenu4.add(jMenuItem4);
+		jMenu4.add(jSeparator7);
 
-        jMenuItem5.setText("jMenuItem5");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem5);
-        jMenu4.add(jSeparator8);
+		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem5ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem5);
+		jMenu4.add(jSeparator8);
 
-        jMenuItem6.setText("jMenuItem6");
-        jMenu4.add(jMenuItem6);
+		jMenuItem6.setText("jMenuItem6");
+		jMenu4.add(jMenuItem6);
 
-        jMenuBar1.add(jMenu4);
+		jMenuBar1.add(jMenu4);
 
-        jMenu2.setText("Información Usuario Logueado");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
+		jMenu2.setText("Información Usuario Logueado");
+		jMenu2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu2ActionPerformed(evt);
+			}
+		});
 
-        jMenuItem8.setText("Información");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem8);
+		jMenuItem8.setText("Información");
+		jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem8ActionPerformed(evt);
 
-        jMenuBar1.add(jMenu2);
+			}
+		});
+		jMenu2.add(jMenuItem8);
 
-        jMenu3.setText("Sobre mí");
-        jMenu3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu3ActionPerformed(evt);
-            }
-        });
+		jMenuBar1.add(jMenu2);
 
-        jMenuItem7.setText("Sobre mí");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem7);
+		jMenu3.setText("Sobre mí");
+		jMenu3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu3ActionPerformed(evt);
+			}
+		});
 
-        jMenuBar1.add(jMenu3);
+		jMenuItem7.setText("Sobre mí");
+		jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem7ActionPerformed(evt);
+			}
+		});
+		jMenu3.add(jMenuItem7);
 
-        jMenu10.setText("Salir");
-        jMenu10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu10ActionPerformed(evt);
-            }
-        });
+		jMenuBar1.add(jMenu3);
 
-        jMenuItem1.setText("Salir");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu10.add(jMenuItem1);
+		jMenu10.setText("Salir");
+		jMenu10.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu10ActionPerformed(evt);
+			}
+		});
 
-        jMenuBar1.add(jMenu10);
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+			}
+		});
+		jMenu10.add(jMenuItem1);
 
-        setJMenuBar(jMenuBar1);
+		jMenuBar1.add(jMenu10);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
+		setJMenuBar(jMenuBar1);
 
-        pack();
-    }// </editor-fold>                        
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(layout.createSequentialGroup().addGap(115, 115, 115)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel3).addComponent(jLabel1)))
+								.addGroup(layout.createSequentialGroup().addGap(198, 198, 198).addComponent(jButton1)
+										.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
+										.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
+										.addGap(18, 18, 18).addComponent(jButton5)))
+						.addContainerGap(111, Short.MAX_VALUE)));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
+				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
+				.addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
+						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
+				.addGap(41, 41, 41).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(72, Short.MAX_VALUE)));
 
-    
-    private void initComponents(String email) {
-    	  jFrame1 = new javax.swing.JFrame();
-          jLabel1 = new javax.swing.JLabel();
-          jButton1 = new javax.swing.JButton();
-          jButton2 = new javax.swing.JButton();
-          jScrollPane2 = new javax.swing.JScrollPane();
-          jTable1 = new javax.swing.JTable();
-          jButton3 = new javax.swing.JButton();
-          jButton4 = new javax.swing.JButton();
-          jButton5 = new javax.swing.JButton();
-          jLabel2 = new javax.swing.JLabel();
-          jLabel3 = new javax.swing.JLabel();
-          jMenuBar1 = new javax.swing.JMenuBar();
-          jMenu4 = new javax.swing.JMenu();
-          jMenuItem2 = new javax.swing.JMenuItem();
-          jSeparator5 = new javax.swing.JPopupMenu.Separator();
-          jMenuItem3 = new javax.swing.JMenuItem();
-          jSeparator6 = new javax.swing.JPopupMenu.Separator();
-          jMenuItem4 = new javax.swing.JMenuItem();
-          jSeparator7 = new javax.swing.JPopupMenu.Separator();
-          jMenuItem5 = new javax.swing.JMenuItem();
-          jSeparator8 = new javax.swing.JPopupMenu.Separator();
-          jMenuItem6 = new javax.swing.JMenuItem();
-          jMenu2 = new javax.swing.JMenu();
-          jMenuItem8 = new javax.swing.JMenuItem();
-          jMenu3 = new javax.swing.JMenu();
-          jMenuItem7 = new javax.swing.JMenuItem();
-          jMenu10 = new javax.swing.JMenu();
-          jMenuItem1 = new javax.swing.JMenuItem();
+		pack();
+	}// </editor-fold>
 
-          javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-          jFrame1.getContentPane().setLayout(jFrame1Layout);
-          jFrame1Layout.setHorizontalGroup(
-              jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGap(0, 400, Short.MAX_VALUE)
-          );
-          jFrame1Layout.setVerticalGroup(
-              jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGap(0, 300, Short.MAX_VALUE)
-          );
+	private void initComponents(String email) {
 
-          setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-          setLocationByPlatform(true);
-          setResizable(false);
+		this.setTitle("SGE - Home");
 
-      	jLabel1.setIcon(imagen());
+		jFrame1 = new javax.swing.JFrame();
+		jLabel1 = new javax.swing.JLabel();
+		jButton1 = new javax.swing.JButton();
+		jButton2 = new javax.swing.JButton();
+		jScrollPane2 = new javax.swing.JScrollPane();
+		jTable1 = new javax.swing.JTable();
+		jButton3 = new javax.swing.JButton();
+		jButton4 = new javax.swing.JButton();
+		jButton5 = new javax.swing.JButton();
+		jLabel2 = new javax.swing.JLabel();
+		jLabel3 = new javax.swing.JLabel();
+		jMenuBar1 = new javax.swing.JMenuBar();
+		jMenu4 = new javax.swing.JMenu();
+		jMenuItem2 = new javax.swing.JMenuItem();
+		jSeparator5 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem3 = new javax.swing.JMenuItem();
+		jSeparator6 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem4 = new javax.swing.JMenuItem();
+		jSeparator7 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem5 = new javax.swing.JMenuItem();
+		jSeparator8 = new javax.swing.JPopupMenu.Separator();
+		jMenuItem6 = new javax.swing.JMenuItem();
+		jMenu2 = new javax.swing.JMenu();
+		jMenuItem8 = new javax.swing.JMenuItem();
+		jMenu3 = new javax.swing.JMenu();
+		jMenuItem7 = new javax.swing.JMenuItem();
+		jMenu10 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
+
+		javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+		jFrame1.getContentPane().setLayout(jFrame1Layout);
+		jFrame1Layout.setHorizontalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 400, Short.MAX_VALUE));
+		jFrame1Layout.setVerticalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGap(0, 300, Short.MAX_VALUE));
+
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
+		setResizable(false);
+
+		jLabel1.setIcon(imagen());
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -382,6 +356,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				// llama a la clase get con el metodo get para listar usuarios
 				ListarUsuariosController usuFinales = new ListarUsuariosController();
 				usuFinales.usuariosFinales((ArrayList<Usuario>) usuariosADevolver);
+
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 				List<Usuario> lista = usuFinales.getUserADevolver();
@@ -451,289 +426,273 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			jLabel2.setText("Bienvenido de vuelta usuario");
 		}
 
-          jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-          jLabel3.setText("Elija la operación ha realizar:");
+		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+		jLabel3.setText("Elija la operación ha realizar:");
 
-          jMenu4.setText("Menú rápido");
-          jMenu4.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenu4ActionPerformed(evt);
-              }
-          });
+		jMenu4.setText("Menú rápido");
+		jMenu4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu4ActionPerformed(evt);
+			}
+		});
 
-          jMenuItem2.setText("jMenuItem2");
-          jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem2ActionPerformed(evt);
-              }
-          });
-          jMenu4.add(jMenuItem2);
-          jMenu4.add(jSeparator5);
+		jMenuItem2.setText("jMenuItem2");
+		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem2ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem2);
+		jMenu4.add(jSeparator5);
 
-          jMenuItem3.setText("jMenuItem3");
-          jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem3ActionPerformed(evt);
-              }
-          });
-          jMenu4.add(jMenuItem3);
-          jMenu4.add(jSeparator6);
+		jMenuItem3.setText("jMenuItem3");
+		jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem3ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem3);
+		jMenu4.add(jSeparator6);
 
-          jMenuItem4.setText("jMenuItem4");
-          jMenu4.add(jMenuItem4);
-          jMenu4.add(jSeparator7);
+		jMenuItem4.setText("jMenuItem4");
+		jMenu4.add(jMenuItem4);
+		jMenu4.add(jSeparator7);
 
-          jMenuItem5.setText("jMenuItem5");
-          jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem5ActionPerformed(evt);
-              }
-          });
-          jMenu4.add(jMenuItem5);
-          jMenu4.add(jSeparator8);
+		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem5ActionPerformed(evt);
+			}
+		});
+		jMenu4.add(jMenuItem5);
+		jMenu4.add(jSeparator8);
 
-          jMenuItem6.setText("jMenuItem6");
-          jMenu4.add(jMenuItem6);
+		jMenuItem6.setText("jMenuItem6");
+		jMenu4.add(jMenuItem6);
 
-          jMenuBar1.add(jMenu4);
+		jMenuBar1.add(jMenu4);
 
-          jMenu2.setText("Información Usuario Logueado");
-          jMenu2.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenu2ActionPerformed(evt);
-              }
-          });
+		jMenu2.setText("Información Usuario Logueado");
+		jMenu2.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu2ActionPerformed(evt);
+			}
+		});
 
-          jMenuItem8.setText("Información");
-          jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem8ActionPerformed(evt);
-              }
-          });
-          jMenu2.add(jMenuItem8);
+		jMenuItem8.setText("Información");
+		jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem8ActionPerformed(evt);
+			}
+		});
+		jMenu2.add(jMenuItem8);
 
-          jMenuBar1.add(jMenu2);
+		jMenuBar1.add(jMenu2);
 
-          jMenu3.setText("Sobre mí");
-          jMenu3.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenu3ActionPerformed(evt);
-              }
-          });
+		jMenu3.setText("Sobre mí");
+		jMenu3.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu3ActionPerformed(evt);
+			}
+		});
 
-          jMenuItem7.setText("Sobre mí");
-          jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem7ActionPerformed(evt);
-              }
-          });
-          jMenu3.add(jMenuItem7);
+		jMenuItem7.setText("Sobre mí");
+		jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem7ActionPerformed(evt);
+			}
+		});
+		jMenu3.add(jMenuItem7);
 
-          jMenuBar1.add(jMenu3);
+		jMenuBar1.add(jMenu3);
 
-          jMenu10.setText("Salir");
-          jMenu10.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenu10ActionPerformed(evt);
-              }
-          });
+		jMenu10.setText("Salir");
+		jMenu10.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu10ActionPerformed(evt);
+			}
+		});
 
-          jMenuItem1.setText("Salir");
-          jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-              public void actionPerformed(java.awt.event.ActionEvent evt) {
-                  jMenuItem1ActionPerformed(evt);
-              }
-          });
-          jMenu10.add(jMenuItem1);
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+			}
+		});
+		jMenu10.add(jMenuItem1);
 
-          jMenuBar1.add(jMenu10);
+		jMenuBar1.add(jMenu10);
 
-          setJMenuBar(jMenuBar1);
+		setJMenuBar(jMenuBar1);
 
-          javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-          getContentPane().setLayout(layout);
-          layout.setHorizontalGroup(
-              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(layout.createSequentialGroup()
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                      .addGroup(layout.createSequentialGroup()
-                          .addGap(115, 115, 115)
-                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                              .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                      .addGroup(layout.createSequentialGroup()
-                          .addGap(155, 155, 155)
-                          .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addComponent(jLabel3)
-                              .addComponent(jLabel1)))
-                      .addGroup(layout.createSequentialGroup()
-                          .addGap(198, 198, 198)
-                          .addComponent(jButton1)
-                          .addGap(18, 18, 18)
-                          .addComponent(jButton2)
-                          .addGap(18, 18, 18)
-                          .addComponent(jButton3)
-                          .addGap(18, 18, 18)
-                          .addComponent(jButton4)
-                          .addGap(18, 18, 18)
-                          .addComponent(jButton5)))
-                  .addContainerGap(111, Short.MAX_VALUE))
-          );
-          layout.setVerticalGroup(
-              layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(layout.createSequentialGroup()
-                  .addContainerGap()
-                  .addComponent(jLabel2)
-                  .addGap(28, 28, 28)
-                  .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(jLabel3)
-                  .addGap(18, 18, 18)
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                      .addComponent(jButton5)
-                      .addComponent(jButton4)
-                      .addComponent(jButton3)
-                      .addComponent(jButton2)
-                      .addComponent(jButton1))
-                  .addGap(41, 41, 41)
-                  .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addContainerGap(72, Short.MAX_VALUE))
-          );
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(layout.createSequentialGroup()
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(layout.createSequentialGroup().addGap(115, 115, 115)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+														javax.swing.GroupLayout.PREFERRED_SIZE)
+												.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592,
+														javax.swing.GroupLayout.PREFERRED_SIZE)))
+								.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
+										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addComponent(jLabel3).addComponent(jLabel1)))
+								.addGroup(layout.createSequentialGroup().addGap(198, 198, 198).addComponent(jButton1)
+										.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
+										.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
+										.addGap(18, 18, 18).addComponent(jButton5)))
+						.addContainerGap(111, Short.MAX_VALUE)));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
+				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
+				.addGap(18, 18, 18)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
+						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
+				.addGap(41, 41, 41).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(72, Short.MAX_VALUE)));
 
-          pack();
-    }
-    
- // metodo que devuelve una imagen
- 	public ImageIcon imagen() {
+		pack();
+	}
 
- 		BufferedImage image;
- 		try {
- 			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
- 			ImageIcon icon = new ImageIcon(image);
- 			return icon;
- 		} catch (IOException e) {
- 			e.printStackTrace();
- 		}
- 		return null;
+	// metodo que devuelve una imagen
+	public ImageIcon imagen() {
 
- 	}
+		BufferedImage image;
+		try {
+			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
+			ImageIcon icon = new ImageIcon(image);
+			return icon;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 
- 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
- 		// cerrar la ventana actual
- 		this.setVisible(false);
- 		Editar edit = new Editar(this.tokenAEnv, this.paquito);
- 		edit.setVisible(true);
+	}
 
- 	}
+	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+		// cerrar la ventana actual
+		this.setVisible(false);
+		Editar edit = new Editar(this.tokenAEnv, this.paquito);
+		edit.setVisible(true);
 
- 	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
- 		// cerrar la ventana actual
- 		this.setVisible(false);
- 		// abrir nueva ventana
- 		Eliminar eliminar = new Eliminar(this.tokenAEnv, this.paquito);
- 		eliminar.setVisible(true);
+	}
 
- 	}
+	private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+		// cerrar la ventana actual
+		this.setVisible(false);
+		// abrir nueva ventana
+		Eliminar eliminar = new Eliminar(this.tokenAEnv, this.paquito);
+		eliminar.setVisible(true);
 
- 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+	}
 
- 		// clica al boton y se abre anyadir usuario enviando el token recogido antes
- 		// abro esta ventana y cierro la actual
- 		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv, this.paquito);
- 		jf1.setVisible(true);
- 		this.setVisible(false);
+	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
- 	}
+		// clica al boton y se abre anyadir usuario enviando el token recogido antes
+		// abro esta ventana y cierro la actual
+		AnyadirUsuario jf1 = new AnyadirUsuario(this.tokenAEnv, this.paquito);
+		jf1.setVisible(true);
+		this.setVisible(false);
 
- 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
- 		// TODO add your handling code here:
- 	}
+	}
 
- 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
- 		// abrir nueva ventana
- 		BuscarId buscar = new BuscarId();
- 		buscar.setVisible(true);
+	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
 
- 	}                                    
+		// abrir nueva ventana
+		BuscarId buscar = new BuscarId();
+		buscar.setVisible(true);
 
-    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-    }                                      
+	}
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-    }                                      
+	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
-    }                                       
+	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+		System.out.println("pakito el xoxo " + this.paquito);
+		AlertaInformacion al = new AlertaInformacion(this.paquito, this.tokenAEnv);
+		al.setVisible(true);
+	}
 
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
-    }                                      
+	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    public static void main(String args[]) {
-  
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ListarUsuarios().setVisible(true);
-            }
-        });
-    }
+	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+	}
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPopupMenu.Separator jSeparator5;
-    private javax.swing.JPopupMenu.Separator jSeparator6;
-    private javax.swing.JPopupMenu.Separator jSeparator7;
-    private javax.swing.JPopupMenu.Separator jSeparator8;
-    private javax.swing.JTable jTable1;
-    // End of variables declaration                   
+	public static void main(String args[]) {
+
+		java.awt.EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				new ListarUsuarios().setVisible(true);
+			}
+		});
+	}
+
+	// Variables declaration - do not modify
+	private javax.swing.JButton jButton1;
+	private javax.swing.JButton jButton2;
+	private javax.swing.JButton jButton3;
+	private javax.swing.JButton jButton4;
+	private javax.swing.JButton jButton5;
+	private javax.swing.JFrame jFrame1;
+	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel jLabel2;
+	private javax.swing.JLabel jLabel3;
+	private javax.swing.JMenu jMenu10;
+	private javax.swing.JMenu jMenu2;
+	private javax.swing.JMenu jMenu3;
+	private javax.swing.JMenu jMenu4;
+	private javax.swing.JMenuBar jMenuBar1;
+	private javax.swing.JMenuItem jMenuItem1;
+	private javax.swing.JMenuItem jMenuItem2;
+	private javax.swing.JMenuItem jMenuItem3;
+	private javax.swing.JMenuItem jMenuItem4;
+	private javax.swing.JMenuItem jMenuItem5;
+	private javax.swing.JMenuItem jMenuItem6;
+	private javax.swing.JMenuItem jMenuItem7;
+	private javax.swing.JMenuItem jMenuItem8;
+	private javax.swing.JScrollPane jScrollPane2;
+	private javax.swing.JPopupMenu.Separator jSeparator5;
+	private javax.swing.JPopupMenu.Separator jSeparator6;
+	private javax.swing.JPopupMenu.Separator jSeparator7;
+	private javax.swing.JPopupMenu.Separator jSeparator8;
+	private javax.swing.JTable jTable1;
+	// End of variables declaration
 }

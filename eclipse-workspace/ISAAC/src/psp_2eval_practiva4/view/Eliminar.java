@@ -45,6 +45,7 @@ public class Eliminar extends javax.swing.JFrame {
 	private void initComponents(String tok, UsuarioLogin paq) {
 
 		System.out.println("token ELIMINAR " + tok);
+		this.setTitle("SGE - Eliminar usuario");
 
 		jLabel1 = new javax.swing.JLabel();
 		jTextField2 = new javax.swing.JTextField();

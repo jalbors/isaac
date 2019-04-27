@@ -22,6 +22,8 @@ public class Login extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
+		
+		this.setTitle("SGE - Login");
 
 		jLabel1 = new javax.swing.JLabel();
 		jTextField1 = new javax.swing.JTextField();
@@ -35,7 +37,7 @@ public class Login extends javax.swing.JFrame {
 		jMenuItem1 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setResizable(false);
+		this.setResizable(false);
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
 		jLabel1.setText("Introduzca su email: ");
