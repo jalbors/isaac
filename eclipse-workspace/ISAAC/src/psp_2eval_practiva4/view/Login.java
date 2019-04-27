@@ -38,6 +38,7 @@ public class Login extends javax.swing.JFrame {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		this.setResizable(false);
+		setLocationByPlatform(true);
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
 		jLabel1.setText("Introduzca su email: ");

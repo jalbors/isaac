@@ -36,7 +36,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 		jMenu1 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		jLabel1.setText("Información del usuario logueado:");

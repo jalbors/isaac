@@ -635,6 +635,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		new AlertaYo().setVisible(true);
+		
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
