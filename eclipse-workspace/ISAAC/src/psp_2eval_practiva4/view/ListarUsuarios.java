@@ -155,6 +155,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jSeparator6);
 
 		jMenuItem4.setText("jMenuItem4");
+		jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem4ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem4);
 		jMenu4.add(jSeparator7);
 
@@ -168,6 +173,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jSeparator8);
 
 		jMenuItem6.setText("jMenuItem6");
+		jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem6ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem6);
 
 		jMenuBar1.add(jMenu4);
@@ -408,6 +418,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jSeparator6);
 
 		jMenuItem4.setText("Nombre");
+		jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem4ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem4);
 		jMenu4.add(jSeparator7);
 
@@ -421,6 +436,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jSeparator8);
 
 		jMenuItem6.setText("F. Contratación");
+		jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem6ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem6);
 
 		jMenuBar1.add(jMenu4);
@@ -577,6 +597,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		new OrdenarPorUsuarios().setVisible(true); 
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -603,9 +624,20 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
+	
+	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+		new OrdenarPorFecha().setVisible(true);
+	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		new OrdenarPorSalario().setVisible(true);
+	}
+	
+	private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
+		// TODO add your handling code here:
+		new OrdenarPorNombre().setVisible(true);
 	}
 	
 	public void close() {
