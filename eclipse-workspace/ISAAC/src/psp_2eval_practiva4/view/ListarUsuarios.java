@@ -85,34 +85,12 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setLocationByPlatform(true);
 		setResizable(false);
 
-		jLabel1.setIcon(imagen());
+		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/contactaConNosotros.jpg"))); // NOI18N
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
-
-				usuariosADevolver = new ArrayList<>();
-
-				// llama a la clase get con el metodo get para listar usuarios
-				ListarUsuariosController usuFinales = new ListarUsuariosController();
-				usuFinales.usuariosFinales((ArrayList<Usuario>) usuariosADevolver);
-				// funcion para mostrar los datos en la table cada uno en su fila y columna
-				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-				List<Usuario> lista = usuFinales.getUserADevolver();
-				Object fila[] = new Object[6];
-				for (int i = 0; i < lista.size(); i++) {
-					fila[0] = lista.get(i).getIdUser();
-					fila[1] = lista.get(i).getName();
-					fila[2] = lista.get(i).getSurname();
-					fila[3] = lista.get(i).getEmail();
-					fila[4] = lista.get(i).getMoney();
-					fila[5] = lista.get(i).getRegisterDate();
-					modelo.addRow(fila);
-				}
-
-				// jScrollPane2.setVisible(true);
-				// jTable1.setVisible(true);
 			}
 		});
 
@@ -123,34 +101,17 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			}
 		});
 
-		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
-				// cabecera ce la tabla
-
-				"ID", "Nombre", "Apellido", "Email", "Dinero/mes", "F. Contratación" }));
+		jTable1.setModel(new javax.swing.table.DefaultTableModel(
+				new Object[][] { { null, null, null, null, null, null }, { null, null, null, null, null, null },
+						{ null, null, null, null, null, null }, { null, null, null, null, null, null },
+						{ null, null, null, null, null, null }, { null, null, null, null, null, null },
+						{ null, null, null, null, null, null }, { null, null, null, null, null, null } },
+				new String[] { "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6" }));
 		jScrollPane2.setViewportView(jTable1);
-		if (jTable1.getColumnModel().getColumnCount() > 0) {
-			jTable1.getColumnModel().getColumn(0).setHeaderValue("ID");
-			jTable1.getColumnModel().getColumn(1).setHeaderValue("Nombre");
-			jTable1.getColumnModel().getColumn(2).setHeaderValue("Apellido");
-			jTable1.getColumnModel().getColumn(3).setHeaderValue("Email");
-			jTable1.getColumnModel().getColumn(4).setHeaderValue("Dinero/mes");
-			jTable1.getColumnModel().getColumn(5).setHeaderValue("F. Contratación");
-		}
 
 		jButton3.setText("Editar");
-		jButton3.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton3ActionPerformed(evt);
-			}
-		});
 
 		jButton4.setText("Eliminar");
-		jButton4.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton4ActionPerformed(evt);
-
-			}
-		});
 
 		jButton5.setText("Buscar por id");
 		jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -160,11 +121,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		});
 
 		jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-		if (StringUtils.isNotEmpty(email)) {
-			jLabel2.setText("Bienvenido usuario: " + email);
-		} else {
-			jLabel2.setText("Bienvenido de vuelta usuario");
-		}
+		jLabel2.setText("Bienvenido Usuario");
 
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 		jLabel3.setText("Elija la operación ha realizar:");
@@ -223,7 +180,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem8ActionPerformed(evt);
-
 			}
 		});
 		jMenu2.add(jMenuItem8);
@@ -268,34 +224,30 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup()
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(layout.createSequentialGroup().addGap(115, 115, 115)
-										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
-										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel3).addComponent(jLabel1)))
-								.addGroup(layout.createSequentialGroup().addGap(198, 198, 198).addComponent(jButton1)
-										.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
-										.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
-										.addGap(18, 18, 18).addComponent(jButton5)))
-						.addContainerGap(111, Short.MAX_VALUE)));
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup().addGap(115, 115, 115).addComponent(jScrollPane2,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
+								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(jLabel3).addComponent(jLabel1).addComponent(jLabel2,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+												javax.swing.GroupLayout.PREFERRED_SIZE)))
+						.addGroup(layout.createSequentialGroup().addGap(172, 172, 172).addComponent(jButton1)
+								.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18).addComponent(jButton3)
+								.addGap(18, 18, 18).addComponent(jButton4).addGap(18, 18, 18).addComponent(jButton5)))
+				.addContainerGap(115, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
 				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
 				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
-				.addGap(18, 18, 18)
+				.addGap(20, 20, 20).addComponent(jLabel3).addGap(18, 18, 18)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
 						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
-				.addGap(41, 41, 41).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
+				.addGap(32, 32, 32).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(72, Short.MAX_VALUE)));
+				.addContainerGap(36, Short.MAX_VALUE)));
 
 		pack();
 	}// </editor-fold>
@@ -356,7 +308,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				// llama a la clase get con el metodo get para listar usuarios
 				ListarUsuariosController usuFinales = new ListarUsuariosController();
 				usuFinales.usuariosFinales((ArrayList<Usuario>) usuariosADevolver);
-
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 				List<Usuario> lista = usuFinales.getUserADevolver();
@@ -527,37 +478,33 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup()
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(layout.createSequentialGroup().addGap(115, 115, 115)
-										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 458,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 592,
-														javax.swing.GroupLayout.PREFERRED_SIZE)))
-								.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
-										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(jLabel3).addComponent(jLabel1)))
-								.addGroup(layout.createSequentialGroup().addGap(198, 198, 198).addComponent(jButton1)
-										.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18)
-										.addComponent(jButton3).addGap(18, 18, 18).addComponent(jButton4)
-										.addGap(18, 18, 18).addComponent(jButton5)))
-						.addContainerGap(111, Short.MAX_VALUE)));
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup().addGap(115, 115, 115).addComponent(jScrollPane2,
+								javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGroup(layout.createSequentialGroup().addGap(155, 155, 155)
+								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+										.addComponent(jLabel3).addComponent(jLabel1).addComponent(jLabel2,
+												javax.swing.GroupLayout.PREFERRED_SIZE, 458,
+												javax.swing.GroupLayout.PREFERRED_SIZE)))
+						.addGroup(layout.createSequentialGroup().addGap(172, 172, 172).addComponent(jButton1)
+								.addGap(18, 18, 18).addComponent(jButton2).addGap(18, 18, 18).addComponent(jButton3)
+								.addGap(18, 18, 18).addComponent(jButton4).addGap(18, 18, 18).addComponent(jButton5)))
+				.addContainerGap(115, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
 				.createSequentialGroup().addContainerGap().addComponent(jLabel2).addGap(28, 28, 28)
 				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jLabel3)
-				.addGap(18, 18, 18)
+				.addGap(20, 20, 20).addComponent(jLabel3).addGap(18, 18, 18)
 				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER).addComponent(jButton5)
 						.addComponent(jButton4).addComponent(jButton3).addComponent(jButton2).addComponent(jButton1))
-				.addGap(41, 41, 41).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
+				.addGap(32, 32, 32).addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155,
 						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(72, Short.MAX_VALUE)));
+				.addContainerGap(36, Short.MAX_VALUE)));
 
 		pack();
-	}
+	}// </editor-fold>
 
 	// metodo que devuelve una imagen
 	public ImageIcon imagen() {
@@ -636,11 +583,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 		new AlertaYo().setVisible(true);
-		
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		System.out.println("pakito el xoxo " + this.paquito);
 		AlertaInformacion al = new AlertaInformacion(this.paquito, this.tokenAEnv);
 		al.setVisible(true);

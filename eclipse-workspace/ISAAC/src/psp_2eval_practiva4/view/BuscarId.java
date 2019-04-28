@@ -26,6 +26,7 @@ public class BuscarId extends javax.swing.JFrame {
 	private void initComponents() {
 		
 		this.setTitle("SGE - Buscar por id");
+		this.setResizable(false);
 
 		jTextField2 = new javax.swing.JTextField();
 		jLabel1 = new javax.swing.JLabel();
