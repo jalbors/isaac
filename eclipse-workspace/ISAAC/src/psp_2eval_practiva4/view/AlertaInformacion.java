@@ -24,10 +24,12 @@ public class AlertaInformacion extends javax.swing.JFrame {
 	}
 
 	private void initComponents(UsuarioLogin use) {
-		
+		setResizable(false);
 		this.setTitle("SGE - Información del usuario");
-		this.setResizable(false);
 		
+		setLocationByPlatform(true);
+		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+
 		jLabel1 = new javax.swing.JLabel();
 		jLabel4 = new javax.swing.JLabel();
 		jButton1 = new javax.swing.JButton();
@@ -35,8 +37,6 @@ public class AlertaInformacion extends javax.swing.JFrame {
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu1 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
-
-		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		jLabel1.setText("Información del usuario logueado:");
@@ -47,7 +47,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
-				
+
 			}
 		});
 
@@ -90,7 +90,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 
 		pack();
 	}// </editor-fold>
-	
+
 	private void initComponents() {
 
 		jLabel1 = new javax.swing.JLabel();

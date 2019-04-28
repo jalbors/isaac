@@ -18,24 +18,26 @@ public class ListarUsuariosController {
 	public ListarUsuariosController() {
 		super();
 	}
-	
-	public ArrayList<Usuario> usuariosFinales(ArrayList<Usuario> use){
-		this.usuariosADevolver = get(use);
+
+	public ArrayList<Usuario> usuariosFinales() {
+		this.usuariosADevolver = get();
 		return this.usuariosADevolver;
 	}
 
-	private ArrayList<Usuario> get(ArrayList<Usuario> use) {
+	private ArrayList<Usuario> get() {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
+		ArrayList<Usuario> usuarios = null;
 		try {
 
 			respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/", "", "GET", "");
 			if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_OK) {
-				usuariosADevolver = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
-				}.getType());
 				
-				System.out.println(usuariosADevolver.toString());
-				return (ArrayList<Usuario>) usuariosADevolver;
+				usuarios = gson.fromJson(respuesta.getJsonRespuesta(), new TypeToken<List<Usuario>>() {
+				}.getType());
+
+				System.out.println(usuarios.toString());
+				return (ArrayList<Usuario>) usuarios;
 
 			} else {
 				System.out.println("Se ha producido un error: Codigo " + respuesta.getCodigoPeticion());
@@ -47,7 +49,7 @@ public class ListarUsuariosController {
 		return null;
 
 	}
-	
+
 	public ArrayList<Usuario> getUserADevolver() {
 		return usuariosADevolver;
 	}

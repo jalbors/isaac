@@ -68,6 +68,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        
         jTextField6 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -137,7 +138,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 						fila[2] = po.getUserADevolver().getSurname();
 						fila[3] = po.getUserADevolver().getEmail();
 						fila[4] = po.getUserADevolver().getMoney();
-						fila[5] = po.getUserADevolver().getRol();
+						fila[5] = po.getUserADevolver().getRegisterDate();
 						modelo.addRow(fila);
 
 					}
@@ -183,7 +184,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
         jButton2.setText("Volver");
 
     	jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
-				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL" }));
+				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "F. Contratación" }));
 		jScrollPane1.setViewportView(jTable1);
 
 		jLabel8.setIcon(imagen()); // NOI18N
@@ -378,7 +379,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                       
 
 	public ImageIcon imagen() {
 
@@ -395,7 +396,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -408,15 +409,15 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}                                        
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+      
     }                                           
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+       
     }                                           
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+      
     }                                          
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           

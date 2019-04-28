@@ -3,7 +3,6 @@ package psp_2eval_practiva4.view;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import org.apache.commons.lang.StringUtils;
-
 import psp_2eval_practica4.LoginController;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
@@ -14,15 +13,12 @@ import psp_2eval_practiva4.model.UsuarioLogin;
 @SuppressWarnings("serial")
 public class Login extends javax.swing.JFrame {
 
-	private String email;
-	private UsuarioLogin paco = null;
-	
 	public Login() {
 		initComponents();
 	}
 
 	private void initComponents() {
-		
+
 		this.setTitle("SGE - Login");
 
 		jLabel1 = new javax.swing.JLabel();
@@ -50,7 +46,10 @@ public class Login extends javax.swing.JFrame {
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
-
+				
+				UsuarioLogin paco = null;
+				String email = "";
+				
 				// aqui es cuando el usuario se loguea y pulsa el boton de login
 				email = jTextField1.getText();
 				String pass = String.valueOf(jPasswordField1.getPassword()).trim();
@@ -59,13 +58,20 @@ public class Login extends javax.swing.JFrame {
 					AlertaLogin ale = new AlertaLogin();
 					ale.setVisible(true);
 				} else {
-					cerrarVentanaActual();
-					// le envio los datos
-					LoginController control = new LoginController();
-					paco = control.prueba(email, pass);
-					ListarUsuarios an = new ListarUsuarios(paco.getToken().trim(), paco.getEmail().trim(), paco);
-					an.setVisible(true);
-					System.out.println("paco "+paco.toString());
+					try {
+						// le envio los datos
+						LoginController control = new LoginController();
+						paco = control.prueba(email, pass);
+						ListarUsuarios an = new ListarUsuarios(paco.getToken().trim(), paco.getEmail().trim(), paco);
+						an.setVisible(true);
+						cerrarVentanaActual();
+						System.out.println("paco " + paco.toString());
+					} catch (Exception e) {
+						e.printStackTrace();
+
+						// alerta de datos introducidos erroneos
+					}
+
 				}
 			}
 		});
@@ -145,14 +151,6 @@ public class Login extends javax.swing.JFrame {
 		this.setVisible(false);
 	}
 
-	public String getNombreAEnviar() {
-		return email;
-	}
-
-	public void setNombreAEnviar(String nombreAEnviar) {
-		this.email = nombreAEnviar;
-	}
-
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
@@ -160,16 +158,6 @@ public class Login extends javax.swing.JFrame {
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
-	}
-	
-	
-
-	public UsuarioLogin getPaco() {
-		return paco;
-	}
-
-	public void setPaco(UsuarioLogin paco) {
-		this.paco = paco;
 	}
 
 	public static void main(String args[]) {

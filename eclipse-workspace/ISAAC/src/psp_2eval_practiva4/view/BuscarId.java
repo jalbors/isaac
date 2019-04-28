@@ -65,7 +65,7 @@ public class BuscarId extends javax.swing.JFrame {
 		jLabel1.setText("Introduce el id a buscar:");
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {},
-				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "ROL" }));
+				new String[] { "ID", "NOMBRE", "APELLIDO", "EMAIL", "DINERO", "F. Contratación" }));
 		jScrollPane1.setViewportView(jTable1);
 
 		jButton1.setText("Buscar");
@@ -93,7 +93,7 @@ public class BuscarId extends javax.swing.JFrame {
 							fila[2] = get.getUsuario().getSurname();
 							fila[3] = get.getUsuario().getEmail();
 							fila[4] = get.getUsuario().getMoney();
-							fila[5] = get.getUsuario().getRol();
+							fila[5] = get.getUsuario().getRegisterDate();
 							modelo.addRow(fila);
 						}
 					}

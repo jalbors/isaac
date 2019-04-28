@@ -1,8 +1,9 @@
 package psp_2eval_practiva4.view;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -22,9 +23,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	// lo envio a la siguiente clase
 	private String tokenAEnv;
 	private UsuarioLogin paquito;
-	private List<Usuario> usuariosADevolver = null;
 	private String email;
 
+	//constructor necesario para el main de abajo
+	//no es utilizado ya que esta clase nunca es iniciada
+	//por si sola
 	public ListarUsuarios() {
 		initComponents();
 	}
@@ -303,11 +306,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
-				usuariosADevolver = new ArrayList<>();
-
 				// llama a la clase get con el metodo get para listar usuarios
 				ListarUsuariosController usuFinales = new ListarUsuariosController();
-				usuFinales.usuariosFinales((ArrayList<Usuario>) usuariosADevolver);
+				usuFinales.usuariosFinales();
 				// funcion para mostrar los datos en la table cada uno en su fila y columna
 				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 				List<Usuario> lista = usuFinales.getUserADevolver();
@@ -380,23 +381,24 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 		jLabel3.setText("Elija la operación ha realizar:");
 
-		jMenu4.setText("Menú rápido");
+		jMenu4.setText("Encontrar por...   ");
 		jMenu4.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenu4ActionPerformed(evt);
 			}
 		});
 
-		jMenuItem2.setText("jMenuItem2");
+		jMenuItem2.setText("Administradores");
 		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem2ActionPerformed(evt);
+				
 			}
 		});
 		jMenu4.add(jMenuItem2);
 		jMenu4.add(jSeparator5);
 
-		jMenuItem3.setText("jMenuItem3");
+		jMenuItem3.setText("Usuarios");
 		jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem3ActionPerformed(evt);
@@ -405,11 +407,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem3);
 		jMenu4.add(jSeparator6);
 
-		jMenuItem4.setText("jMenuItem4");
+		jMenuItem4.setText("Nombre");
 		jMenu4.add(jMenuItem4);
 		jMenu4.add(jSeparator7);
 
-		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.setText("Salario");
 		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem5ActionPerformed(evt);
@@ -418,12 +420,12 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem5);
 		jMenu4.add(jSeparator8);
 
-		jMenuItem6.setText("jMenuItem6");
+		jMenuItem6.setText("F. Contratación");
 		jMenu4.add(jMenuItem6);
 
 		jMenuBar1.add(jMenu4);
 
-		jMenu2.setText("Información Usuario Logueado");
+		jMenu2.setText("Información Usuario Logueado   ");
 		jMenu2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenu2ActionPerformed(evt);
@@ -440,7 +442,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		jMenuBar1.add(jMenu2);
 
-		jMenu3.setText("Sobre mí");
+		jMenu3.setText("Sobre mí   ");
 		jMenu3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenu3ActionPerformed(evt);
@@ -570,6 +572,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		new OrdenarPorAdministrador().setVisible(true); 
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -578,6 +581,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+		close();
 	}
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -602,6 +606,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+	}
+	
+	public void close() {
+		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
 	}
 
 	public static void main(String args[]) {

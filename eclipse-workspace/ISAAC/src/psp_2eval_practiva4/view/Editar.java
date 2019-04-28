@@ -74,6 +74,9 @@ public class Editar extends javax.swing.JFrame {
 		
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        
+        jLabel7.setVisible(false);
+        
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -134,6 +137,7 @@ public class Editar extends javax.swing.JFrame {
 					jTextField4.setVisible(true);
 					jTextField5.setVisible(true);
 					jTextField6.setVisible(true);
+					 
 
 					// del usuario de la BD relleno los campos ya visibles con los valores
 					jTextField2.setText(user.getName());
@@ -143,6 +147,8 @@ public class Editar extends javax.swing.JFrame {
 					jTextField6.setText(String.valueOf(user.getMoney()));
 
 					jButton2.setVisible(true);
+					
+				
 					
 					jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 					jLabel10.setText("Introduzca los datos a editar de: "+ user.getName());
@@ -183,6 +189,7 @@ public class Editar extends javax.swing.JFrame {
 				String cont = jTextField5.getText();
 				String dinero = String.valueOf(jTextField6.getText());
 				jLabel10.setVisible(true);
+				
 
 				// llamo al controlador
 				controller.editedUsuario(id, nomb, apell, email, cont, Double.parseDouble(dinero));
@@ -200,6 +207,7 @@ public class Editar extends javax.swing.JFrame {
 					fila[5] = controller.getUsuario().getRol();
 					modelo.addRow(fila);
 				}
+				jLabel7.setVisible(true);
 
 			}
 		});
@@ -219,7 +227,7 @@ public class Editar extends javax.swing.JFrame {
         jLabel9.setText("Editar usuario:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Introduzca los datos a editar de: ");
+       // jLabel10.setText("Introduzca los datos a editar de: ");
 
         jMenu4.setText("Menú rápido");
         jMenu4.addActionListener(new java.awt.event.ActionListener() {
