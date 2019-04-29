@@ -96,9 +96,7 @@ public class Alerta extends javax.swing.JFrame {
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
-
-		ListarUsuarios lis = new ListarUsuarios();
-		lis.setVisible(true);
+		
 	}
 
 	public static void main(String args[]) {

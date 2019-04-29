@@ -178,6 +178,8 @@ public class Editar extends javax.swing.JFrame {
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
+				
+				//CONTROLAR EXCEPCION CUANDO NO CAMBIO TODOS LOS DATOS
 
 				// recojo los campos ya editados por el usuario
 				int id = controller.getUsuario().getIdUser();
@@ -432,18 +434,18 @@ public class Editar extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                     
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+       
     }                                           
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+       
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+       
     }                                        
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -453,43 +455,43 @@ public class Editar extends javax.swing.JFrame {
 	}                                       
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        
     }                                          
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+       
     }                                          
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        
     }                                          
 
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+      
     }                                      
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        
     }                                          
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+       
     }                                      
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        
     }                                          
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        
     }                                      
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        
     }                                          
 
     private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
+       
     }        
     
  // metodo que devuelve una imagen
@@ -530,43 +532,7 @@ public class Editar extends javax.swing.JFrame {
  	public void setPacazo(UsuarioLogin pacazo) {
  		this.pacazo = pacazo;
  	}
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Editar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Editar().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify                     
+                 
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -604,6 +570,5 @@ public class Editar extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    // End of variables declaration                   
+    private javax.swing.JTextField jTextField6;           
 }

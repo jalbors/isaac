@@ -12,11 +12,15 @@ import psp_2eval_practiva4.model.Usuario;
 @SuppressWarnings("serial")
 public class OrdenarPorUsuarios extends javax.swing.JFrame {
 
+	private boolean dist;
+
 	public OrdenarPorUsuarios() {
 		initComponents();
 	}
 
 	private void initComponents() {
+
+		dist = true;
 
 		jLabel1 = new javax.swing.JLabel();
 		jScrollPane1 = new javax.swing.JScrollPane();
@@ -54,25 +58,28 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
-				// llama a la clase get con el metodo get para listar usuarios
-				OrdenarPorUsuariosController usuFinales = new OrdenarPorUsuariosController();
-				usuFinales.usuariosFinales();
-				// funcion para mostrar los datos en la table cada uno en su fila y columna
-				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-				List<Usuario> lista = usuFinales.getUsuariosADevolver();
-				Object fila[] = new Object[6];
-				for (int i = 0; i < lista.size(); i++) {
-					fila[0] = lista.get(i).getIdUser();
-					fila[1] = lista.get(i).getName();
-					fila[2] = lista.get(i).getSurname();
-					fila[3] = lista.get(i).getEmail();
-					fila[4] = lista.get(i).getMoney();
-					fila[5] = lista.get(i).getRol();
-					modelo.addRow(fila);
+				if (dist == false) {
+					//alerta
+				} else {
+					// llama a la clase get con el metodo get para listar usuarios
+					OrdenarPorUsuariosController usuFinales = new OrdenarPorUsuariosController();
+					usuFinales.usuariosFinales();
+					// funcion para mostrar los datos en la table cada uno en su fila y columna
+					DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+					List<Usuario> lista = usuFinales.getUsuariosADevolver();
+					Object fila[] = new Object[6];
+					for (int i = 0; i < lista.size(); i++) {
+						fila[0] = lista.get(i).getIdUser();
+						fila[1] = lista.get(i).getName();
+						fila[2] = lista.get(i).getSurname();
+						fila[3] = lista.get(i).getEmail();
+						fila[4] = lista.get(i).getMoney();
+						fila[5] = lista.get(i).getRol();
+						modelo.addRow(fila);
+					}
+					dist=false;
 				}
 
-				// jScrollPane2.setVisible(true);
-				// jTable1.setVisible(true);
 			}
 		});
 
@@ -128,35 +135,6 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.setVisible(false);
-	}
-
-	public static void main(String args[]) {
-		try {
-			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
-					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-					break;
-				}
-			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(OrdenarPorUsuarios.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(OrdenarPorUsuarios.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(OrdenarPorUsuarios.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-			java.util.logging.Logger.getLogger(OrdenarPorUsuarios.class.getName())
-					.log(java.util.logging.Level.SEVERE, null, ex);
-		}
-
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new OrdenarPorUsuarios().setVisible(true);
-			}
-		});
 	}
 
 	private javax.swing.JButton jButton1;
