@@ -6,6 +6,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.table.DefaultTableModel;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import psp_2eval_practica4.BuscarIdController;
 
@@ -83,6 +84,7 @@ public class BuscarId extends javax.swing.JFrame {
 						BuscarIdController get = new BuscarIdController();
 						get.devolver(finalMente);
 						System.out.println(get.getUsuario().toString());
+						System.out.println(ToStringBuilder.reflectionToString(get.getUsuario()));
 
 						DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 						int lista = 1;

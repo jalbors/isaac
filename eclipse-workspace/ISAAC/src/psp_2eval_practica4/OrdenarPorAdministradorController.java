@@ -4,6 +4,8 @@ import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -38,6 +40,7 @@ public class OrdenarPorAdministradorController {
 			}.getType());
 
 			System.out.println(usuarios.toString());
+			System.out.println(ToStringBuilder.reflectionToString(usuarios));
 			return (ArrayList<Usuario>) usuarios;
 
 		} else {

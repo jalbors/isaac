@@ -42,7 +42,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void initComponents(String email) {
 		dist = true;
-		this.setTitle("SGE - Home");
+		this.setTitle("SGE - Home");		
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setLocationByPlatform(true);
+		setResizable(false);
 
 		jFrame1 = new javax.swing.JFrame();
 		jLabel1 = new javax.swing.JLabel();
@@ -80,10 +83,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jFrame1Layout.setVerticalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGap(0, 300, Short.MAX_VALUE));
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setLocationByPlatform(true);
-		setResizable(false);
-
 		jLabel1.setIcon(imagen());
 
 		jButton1.setText("Listar");
@@ -92,7 +91,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				if (dist == false) {
-
+					
+					AlertaListarUsuarios ale = new AlertaListarUsuarios();
+					ale.setVisible(true);
 					// alerta de ya tienes todos los usuarios listados
 
 				} else {
@@ -307,22 +308,23 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				.addContainerGap(36, Short.MAX_VALUE)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	// metodo que devuelve una imagen
-	public ImageIcon imagen() {
+ 	public ImageIcon imagen() {
 
-		BufferedImage image;
-		try {
-			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
-			ImageIcon icon = new ImageIcon(image);
-			return icon;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
+ 		BufferedImage image;
+ 		try {
+ 			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
+ 			ImageIcon icon = new ImageIcon(image);
+ 			return icon;
+ 		} catch (IOException e) {
+ 			e.printStackTrace();
+ 		}
+ 		return null;
 
-	}
+ 	}
+
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// cerrar la ventana actual
@@ -352,7 +354,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,30 +366,30 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new OrdenarPorAdministrador().setVisible(true);
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new OrdenarPorUsuarios().setVisible(true);
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		close();
 	}
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new AlertaYo().setVisible(true);
 	}
 
@@ -399,25 +401,25 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new OrdenarPorFecha().setVisible(true);
 	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new OrdenarPorSalario().setVisible(true);
 	}
 
 	private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		new OrdenarPorNombre().setVisible(true);
 	}
 

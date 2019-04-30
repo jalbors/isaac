@@ -29,7 +29,7 @@ public class Eliminar extends javax.swing.JFrame {
 	public Eliminar(String tokenAEnv, UsuarioLogin paq) {
 		this.token = tokenAEnv;
 		this.paquito = paq;
-		initComponents(tokenAEnv, paq);
+		initComponents(tokenAEnv);
 	}
 
 	private String token;
@@ -42,7 +42,7 @@ public class Eliminar extends javax.swing.JFrame {
 		this.token = token;
 	}
 
-	private void initComponents(String tok, UsuarioLogin paq) {
+	private void initComponents(String tok) {
 
 		System.out.println("token ELIMINAR " + tok);
 		this.setTitle("SGE - Eliminar usuario");
@@ -100,13 +100,6 @@ public class Eliminar extends javax.swing.JFrame {
 
 			}
 
-			private void alerta() {
-				// se ejecuta alerta
-				Alerta ale = new Alerta(tok, paq);
-				ale.setVisible(true);
-				cerrarVentanaActual();
-
-			}
 
 		});
 
@@ -243,6 +236,14 @@ public class Eliminar extends javax.swing.JFrame {
 
 	private void cerrarVentanaActual() {
 		this.setVisible(false);
+
+	}
+
+	private void alerta() {
+		// se ejecuta alerta
+		Alerta ale = new Alerta(this.token, this.paquito);
+		ale.setVisible(true);
+		cerrarVentanaActual();
 
 	}
 
