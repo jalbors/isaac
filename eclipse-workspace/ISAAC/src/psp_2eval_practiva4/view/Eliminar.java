@@ -5,6 +5,9 @@
  */
 package psp_2eval_practiva4.view;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 import org.apache.commons.lang.StringUtils;
 
 import psp_2eval_practica4.EliminarController;
@@ -124,23 +127,24 @@ public class Eliminar extends javax.swing.JFrame {
 			}
 		});
 
-		jMenu4.setText("Menú rápido");
+		jMenu4.setText("Filtrar por...   ");
 		jMenu4.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenu4ActionPerformed(evt);
 			}
 		});
 
-		jMenuItem2.setText("jMenuItem2");
+		jMenuItem2.setText("Administradores");
 		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem2ActionPerformed(evt);
+
 			}
 		});
 		jMenu4.add(jMenuItem2);
 		jMenu4.add(jSeparator5);
 
-		jMenuItem3.setText("jMenuItem3");
+		jMenuItem3.setText("Usuarios");
 		jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem3ActionPerformed(evt);
@@ -149,11 +153,16 @@ public class Eliminar extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem3);
 		jMenu4.add(jSeparator6);
 
-		jMenuItem4.setText("jMenuItem4");
+		jMenuItem4.setText("Nombre");
+		jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem4ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem4);
 		jMenu4.add(jSeparator7);
 
-		jMenuItem5.setText("jMenuItem5");
+		jMenuItem5.setText("Salario");
 		jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem5ActionPerformed(evt);
@@ -162,7 +171,12 @@ public class Eliminar extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem5);
 		jMenu4.add(jSeparator8);
 
-		jMenuItem6.setText("jMenuItem6");
+		jMenuItem6.setText("F. Contratación");
+		jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem6ActionPerformed(evt);
+			}
+		});
 		jMenu4.add(jMenuItem6);
 
 		jMenuBar1.add(jMenu4);
@@ -281,23 +295,7 @@ public class Eliminar extends javax.swing.JFrame {
 
 	}
 
-	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
 
@@ -305,20 +303,59 @@ public class Eliminar extends javax.swing.JFrame {
 		// TODO add your handling code here:
 	}
 
-	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-	}
-
-	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
+	}
+
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		close();
+	}
+
+	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorAdministrador().setVisible(true);
+	}
+
+	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorUsuarios().setVisible(true);
+	}
+
+	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorSalario().setVisible(true);
+	}
+
+	private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorNombre().setVisible(true);
+	}
+
+	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorFecha().setVisible(true);
+	}
+
+	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new AlertaYo().setVisible(true);
+	}
+
+	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		System.out.println("pakito el xoxo " + this.paquito);
+		AlertaInformacion al = new AlertaInformacion(this.paquito, this.token);
+		al.setVisible(true);
+	}
+
+	public void close() {
+		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
 	}
 
 	private javax.swing.JButton jButton1;

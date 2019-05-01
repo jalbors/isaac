@@ -352,6 +352,19 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	}
 
+	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
+
+	}
+
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		close();
+	}
+
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
 
 		new OrdenarPorAdministrador().setVisible(true);
@@ -362,9 +375,19 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		new OrdenarPorUsuarios().setVisible(true);
 	}
 
-	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
 
-		close();
+		new OrdenarPorSalario().setVisible(true);
+	}
+
+	private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorNombre().setVisible(true);
+	}
+
+	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		new OrdenarPorFecha().setVisible(true);
 	}
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -377,29 +400,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		System.out.println("pakito el xoxo " + this.paquito);
 		AlertaInformacion al = new AlertaInformacion(this.paquito, this.tokenAEnv);
 		al.setVisible(true);
-	}
-
-	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-
-	}
-
-	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-
-	}
-
-	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		new OrdenarPorFecha().setVisible(true);
-	}
-
-	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		new OrdenarPorSalario().setVisible(true);
-	}
-
-	private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		new OrdenarPorNombre().setVisible(true);
 	}
 
 	public void close() {
