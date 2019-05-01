@@ -21,7 +21,7 @@ public class Eliminar extends javax.swing.JFrame {
 	 * Creates new form Eliminar
 	 */
 	private UsuarioLogin paquito;
-	
+
 	public Eliminar() {
 		// initComponents();
 	}
@@ -88,18 +88,25 @@ public class Eliminar extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				if (StringUtils.isEmpty(jTextField2.getText())) {
-					// meter una alerta aqui
+
+					AlertaEliminar el = new AlertaEliminar();
+					el.setVisible(true);
 
 				} else {
-					// recojo el campo con el id a eliminar
-					int identi = Integer.parseInt(jTextField2.getText());
-					EliminarController eliminar = new EliminarController();
-					eliminar.eli(identi, tok);
-					alerta();
+					try {
+						// recojo el campo con el id a eliminar
+						int identi = Integer.parseInt(jTextField2.getText());
+						EliminarController eliminar = new EliminarController();
+						eliminar.eli(identi, tok);
+						alerta();
+					} catch (NumberFormatException e) {
+						AlertaEliminarNumero nu = new AlertaEliminarNumero();
+						nu.setVisible(true);
+					}
+
 				}
 
 			}
-
 
 		});
 
@@ -260,7 +267,7 @@ public class Eliminar extends javax.swing.JFrame {
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		cerrarVentanaActual();
 		System.out.println("token recivido papa " + this.token);
-		System.out.println("pakazo "+this.paquito);
+		System.out.println("pakazo " + this.paquito);
 		ListarUsuarios u = new ListarUsuarios(this.token, "", this.paquito);
 		u.setVisible(true);
 

@@ -46,10 +46,10 @@ public class Login extends javax.swing.JFrame {
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
-				
+
 				UsuarioLogin paco = null;
 				String email = "";
-				
+
 				// aqui es cuando el usuario se loguea y pulsa el boton de login
 				email = jTextField1.getText();
 				String pass = String.valueOf(jPasswordField1.getPassword()).trim();
@@ -67,9 +67,10 @@ public class Login extends javax.swing.JFrame {
 						cerrarVentanaActual();
 						System.out.println("paco " + paco.toString());
 					} catch (Exception e) {
-						e.printStackTrace();
 
-						// alerta de datos introducidos erroneos
+						AlertaLoginDatos ale = new AlertaLoginDatos();
+						ale.setVisible(true);
+
 					}
 
 				}
@@ -135,7 +136,7 @@ public class Login extends javax.swing.JFrame {
 						.addContainerGap()));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 

@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 
 import psp_2eval_practica4.EditarController;
+import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
@@ -223,13 +224,13 @@ public class Editar extends javax.swing.JFrame {
 
 		jLabel7.setText("Usuario Actualizado con exito: ");
 
-        jLabel8.setIcon(imagen()); // NOI18N
+		Imagen imagen = new Imagen();
+        jLabel8.setIcon(imagen.imagenDevolver("/resources/images/edi.jpg")); 
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); 
         jLabel9.setText("Editar usuario:");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-       // jLabel10.setText("Introduzca los datos a editar de: ");
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); 
 
         jMenu4.setText("Menú rápido");
         jMenu4.addActionListener(new java.awt.event.ActionListener() {
@@ -493,21 +494,6 @@ public class Editar extends javax.swing.JFrame {
     private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {                                        
        
     }        
-    
- // metodo que devuelve una imagen
- 	public ImageIcon imagen() {
-
- 		BufferedImage image;
- 		try {
- 			image = ImageIO.read(getClass().getResource("/resources/images/edi.jpg"));
- 			ImageIcon icon = new ImageIcon(image);
- 			return icon;
- 		} catch (IOException e) {
- 			e.printStackTrace();
- 		}
- 		return null;
-
- 	}
 
  	public Usuario getUser() {
  		return user;

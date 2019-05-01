@@ -5,9 +5,9 @@ package psp_2eval_practiva4.view;
  * @author Jorge
  */
 @SuppressWarnings("serial")
-public class AlertaListarUsuarios extends javax.swing.JFrame {
+public class AlertaAnyadirUsuarioCamposRequeridos extends javax.swing.JFrame {
 
-    public AlertaListarUsuarios() {
+    public AlertaAnyadirUsuarioCamposRequeridos() {
         initComponents();
     }
                           
@@ -24,8 +24,8 @@ public class AlertaListarUsuarios extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
-        jLabel1.setText("Los usuarios ya han sido listados");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+        jLabel1.setText("Introduzca los campos requeridos");
 
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +72,7 @@ public class AlertaListarUsuarios extends javax.swing.JFrame {
         );
 
         pack();
-    }                       
+    }                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
     	this.setVisible(false);
@@ -81,8 +81,7 @@ public class AlertaListarUsuarios extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
     	this.setVisible(false);
 	}
-
-                 
+     
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;

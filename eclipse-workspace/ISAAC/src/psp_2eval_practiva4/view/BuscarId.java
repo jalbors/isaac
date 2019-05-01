@@ -25,7 +25,7 @@ public class BuscarId extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-		
+
 		this.setTitle("SGE - Buscar por id");
 		this.setResizable(false);
 
@@ -78,8 +78,12 @@ public class BuscarId extends javax.swing.JFrame {
 
 				try {
 					if (StringUtils.isEmpty(identi)) {
-						new AlertaLogin().setVisible(true);
+
+						AlertaBuscarPorId al = new AlertaBuscarPorId();
+						al.setVisible(true);
+
 					} else {
+
 						int finalMente = Integer.parseInt(identi);
 						BuscarIdController get = new BuscarIdController();
 						get.devolver(finalMente);
@@ -100,7 +104,9 @@ public class BuscarId extends javax.swing.JFrame {
 						}
 					}
 				} catch (NumberFormatException e) {
-					e.printStackTrace();
+					
+					AlertaBuscarPorIdNumero nu = new AlertaBuscarPorIdNumero();
+					nu.setVisible(true);
 				}
 
 			}
@@ -245,7 +251,7 @@ public class BuscarId extends javax.swing.JFrame {
 		// disponse();
 
 	}
-	
+
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
@@ -262,43 +268,43 @@ public class BuscarId extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private javax.swing.JButton jButton1;

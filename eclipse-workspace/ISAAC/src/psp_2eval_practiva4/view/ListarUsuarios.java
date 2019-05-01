@@ -2,17 +2,11 @@ package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.List;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
-
 import org.apache.commons.lang.StringUtils;
-
 import psp_2eval_practica4.ListarUsuariosController;
+import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
@@ -29,7 +23,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	// recojo el token que me llega y inicio la clase normal, no hago nada con el
 	// token solo lo paso
 	// el nombre es para dar la bienvenida la primera vez que se logea
-
 	public ListarUsuarios(String token, String nombre, UsuarioLogin paco) {
 		this.tokenAEnv = token;
 		this.email = nombre;
@@ -42,7 +35,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 	private void initComponents(String email) {
 		dist = true;
-		this.setTitle("SGE - Home");		
+		this.setTitle("SGE - Home");
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setLocationByPlatform(true);
 		setResizable(false);
@@ -83,7 +76,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jFrame1Layout.setVerticalGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGap(0, 300, Short.MAX_VALUE));
 
-		jLabel1.setIcon(imagen());
+		// clase general que devuelve una iamgen
+		Imagen ima = new Imagen();
+		jLabel1.setIcon(ima.imagenDevolver("/resources/images/contactaConNosotros.jpg"));
 
 		jButton1.setText("Listar");
 		jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +86,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				if (dist == false) {
-					
+
 					AlertaListarUsuarios ale = new AlertaListarUsuarios();
 					ale.setVisible(true);
 					// alerta de ya tienes todos los usuarios listados
@@ -104,7 +99,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 					DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
 					List<Usuario> lista = usuFinales.getUserADevolver();
 					Object fila[] = new Object[6];
-					System.out.println(lista.size());
+					// System.out.println(lista.size());
 					for (int i = 0; i < lista.size(); i++) {
 						fila[0] = lista.get(i).getIdUser();
 						fila[1] = lista.get(i).getName();
@@ -309,22 +304,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 		pack();
 	}
-
-	// metodo que devuelve una imagen
- 	public ImageIcon imagen() {
-
- 		BufferedImage image;
- 		try {
- 			image = ImageIO.read(getClass().getResource("/resources/images/contactaConNosotros.jpg"));
- 			ImageIcon icon = new ImageIcon(image);
- 			return icon;
- 		} catch (IOException e) {
- 			e.printStackTrace();
- 		}
- 		return null;
-
- 	}
-
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		// cerrar la ventana actual
