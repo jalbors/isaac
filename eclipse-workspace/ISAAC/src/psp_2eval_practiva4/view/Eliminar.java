@@ -102,6 +102,8 @@ public class Eliminar extends javax.swing.JFrame {
 					} catch (NumberFormatException e) {
 						AlertaEliminarNumero nu = new AlertaEliminarNumero();
 						nu.setVisible(true);
+					} catch (NullPointerException e) {
+						new AlertaUsuarioNoExiste().setVisible(true);
 					}
 
 				}

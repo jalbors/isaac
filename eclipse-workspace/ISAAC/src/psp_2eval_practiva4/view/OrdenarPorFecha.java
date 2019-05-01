@@ -12,17 +12,17 @@ import psp_2eval_practiva4.model.Usuario;
  */
 @SuppressWarnings("serial")
 public class OrdenarPorFecha extends javax.swing.JFrame {
-	
+
 	private boolean dist;
-	
+
 	public OrdenarPorFecha() {
 		initComponents();
 	}
 
 	private void initComponents() {
-		
+
 		dist = true;
-		
+
 		jLabel1 = new javax.swing.JLabel();
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jTable1 = new javax.swing.JTable();
@@ -30,6 +30,7 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 		jButton2 = new javax.swing.JButton();
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu1 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 		setResizable(false);
@@ -59,9 +60,11 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
-				if(dist==false) {
-					//alerta
-				}else {
+				if (dist == false) {
+
+					new AlertaNombre().setVisible(true);
+
+				} else {
 					// llama a la clase get con el metodo get para listar usuarios
 					OrdenarPorSalarioController usuFinales = new OrdenarPorSalarioController();
 					usuFinales.usuariosFinales();
@@ -78,9 +81,9 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 						fila[5] = lista.get(i).getRegisterDate();
 						modelo.addRow(fila);
 					}
-					dist=false;
+					dist = false;
 				}
-				
+
 			}
 		});
 
@@ -92,6 +95,16 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 		});
 
 		jMenu1.setText("Salir");
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+
+			}
+		});
+
+		jMenu1.add(jMenuItem1);
+
 		jMenuBar1.add(jMenu1);
 
 		setJMenuBar(jMenuBar1);
@@ -138,10 +151,15 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 		this.setVisible(false);
 	}
 
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+		this.setVisible(false);
+	}
+
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JMenu jMenu1;
+	private javax.swing.JMenuItem jMenuItem1;
 	private javax.swing.JMenuBar jMenuBar1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTable jTable1;

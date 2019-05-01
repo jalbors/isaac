@@ -29,6 +29,7 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 		jButton2 = new javax.swing.JButton();
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu1 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 		setResizable(false);
@@ -59,7 +60,10 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				if (dist == false) {
-					// alerta
+					
+					AlertaAdmin ad = new AlertaAdmin();
+					ad.setVisible(true);
+					
 				} else {
 					
 					// llama a la clase get con el metodo get para listar usuarios
@@ -92,7 +96,18 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 		});
 
 		jMenu1.setText("Salir");
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+		
+			}
+		});
+		
+		jMenu1.add(jMenuItem1);
+
 		jMenuBar1.add(jMenu1);
+
 
 		setJMenuBar(jMenuBar1);
 
@@ -137,11 +152,16 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.setVisible(false);
 	}
+	
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+		this.setVisible(false);	
+	}
 
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JMenu jMenu1;
+	private javax.swing.JMenuItem jMenuItem1;
 	private javax.swing.JMenuBar jMenuBar1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTable jTable1;

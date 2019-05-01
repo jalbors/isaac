@@ -5,11 +5,12 @@ import com.google.gson.Gson;
 import psp_2eval_practica4.utilities.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
+import psp_2eval_practiva4.view.AlertaEditar;
 
 public class EditarController {
 
 	private Usuario usuario = null;
-	private Usuario usuarioDevuelto = null;
+	private Integer usuarioDevuelto = null;
 
 	public EditarController() {
 		super();
@@ -20,13 +21,14 @@ public class EditarController {
 		return this.usuario;
 	}
 
-	public Usuario editedUsuario(int id, String nombre, String apellido, String email, String contra, double dinero) {
+	public int editedUsuario(int id, String nombre, String apellido, String email, String contra, double dinero) {
 		this.usuarioDevuelto = edit(id, nombre, apellido, email, contra, dinero);
 		return this.usuarioDevuelto;
 	}
 
-	private Usuario edit(int id, String nombre, String apellido, String email, String contra, double dinero) {
-		//int dineroFinal = Integer.parseInt(dinero);
+	
+	//devolver numeros para controlar excepciones ;););)
+	private int edit(int id, String nombre, String apellido, String email, String contra, double dinero) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
 		Usuario us = new Usuario(nombre, apellido, email, contra, dinero);
@@ -37,12 +39,15 @@ public class EditarController {
 
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_CREATED) {
 			System.out.println("Usuario con id " + id + " actualizado");
+			return 1;
 		} else {
+
+			//new AlertaEditar().setVisible(true);
 			System.out.println(
 					"Se ha producido un error actualizando  id " + id + ": Codigo " + respuesta.getCodigoPeticion());
+			return 2;
 		}
 
-		return null;
 	}
 
 	private Usuario getId(int id) {
@@ -71,11 +76,11 @@ public class EditarController {
 		this.usuario = usuario;
 	}
 
-	public Usuario getUsuarioDevuelto() {
+	public Integer getUsuarioDevuelto() {
 		return usuarioDevuelto;
 	}
 
-	public void setUsuarioDevuelto(Usuario usuarioDevuelto) {
+	public void setUsuarioDevuelto(Integer usuarioDevuelto) {
 		this.usuarioDevuelto = usuarioDevuelto;
 	}
 

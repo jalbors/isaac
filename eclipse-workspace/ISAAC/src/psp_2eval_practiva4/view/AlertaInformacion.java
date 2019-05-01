@@ -38,7 +38,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 		jMenu1 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); 
 		jLabel1.setText("Información del usuario logueado:");
 
 		jLabel4.setText("Email:");
@@ -89,7 +89,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 						.addComponent(jButton1).addGap(23, 23, 23)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void initComponents() {
 
@@ -153,14 +153,15 @@ public class AlertaInformacion extends javax.swing.JFrame {
 						.addComponent(jButton1).addGap(23, 23, 23)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
+		this.setVisible(false);
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		this.setVisible(false);
 	}
 
@@ -180,7 +181,6 @@ public class AlertaInformacion extends javax.swing.JFrame {
 		this.token = token;
 	}
 
-	// Variables declaration - do not modify
 	private javax.swing.JButton jButton1;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JLabel jLabel4;
@@ -188,5 +188,4 @@ public class AlertaInformacion extends javax.swing.JFrame {
 	private javax.swing.JMenu jMenu1;
 	private javax.swing.JMenuBar jMenuBar1;
 	private javax.swing.JMenuItem jMenuItem1;
-	// End of variables declaration
 }

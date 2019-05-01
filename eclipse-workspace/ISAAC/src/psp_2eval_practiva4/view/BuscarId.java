@@ -104,9 +104,11 @@ public class BuscarId extends javax.swing.JFrame {
 						}
 					}
 				} catch (NumberFormatException e) {
-					
+
 					AlertaBuscarPorIdNumero nu = new AlertaBuscarPorIdNumero();
 					nu.setVisible(true);
+				} catch (NullPointerException e) {
+					new AlertaUsuarioNoExiste().setVisible(true);
 				}
 
 			}

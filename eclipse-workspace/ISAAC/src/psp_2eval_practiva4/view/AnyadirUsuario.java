@@ -1,16 +1,11 @@
 package psp_2eval_practiva4.view;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import psp_2eval_practica4.AnyadirUsuarioController;
-import psp_2eval_practica4.utilities.Imagen;
+import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**

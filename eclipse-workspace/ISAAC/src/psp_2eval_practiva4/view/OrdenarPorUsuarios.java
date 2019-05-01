@@ -29,6 +29,7 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 		jButton2 = new javax.swing.JButton();
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu1 = new javax.swing.JMenu();
+		jMenuItem1 = new javax.swing.JMenuItem();
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 		setResizable(false);
@@ -36,7 +37,7 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 		this.setTitle("SGE - Administradores");
 		setSize(new java.awt.Dimension(512, 253));
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14));
 		jLabel1.setText("Usuarios: ");
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
@@ -59,7 +60,10 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 				jButton1ActionPerformed(evt);
 
 				if (dist == false) {
-					//alerta
+					
+					AlertaNombre nom = new AlertaNombre();
+					nom.setVisible(true);
+					
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios
 					OrdenarPorUsuariosController usuFinales = new OrdenarPorUsuariosController();
@@ -77,7 +81,7 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 						fila[5] = lista.get(i).getRol();
 						modelo.addRow(fila);
 					}
-					dist=false;
+					dist = false;
 				}
 
 			}
@@ -91,6 +95,16 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 		});
 
 		jMenu1.setText("Salir");
+		jMenuItem1.setText("Salir");
+		jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenuItem1ActionPerformed(evt);
+
+			}
+		});
+
+		jMenu1.add(jMenuItem1);
+
 		jMenuBar1.add(jMenu1);
 
 		setJMenuBar(jMenuBar1);
@@ -137,10 +151,15 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 		this.setVisible(false);
 	}
 
+	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+		this.setVisible(false);
+	}
+
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JMenu jMenu1;
+	private javax.swing.JMenuItem jMenuItem1;
 	private javax.swing.JMenuBar jMenuBar1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTable jTable1;
