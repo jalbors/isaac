@@ -4,6 +4,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 import psp_2eval_practica4.OrdenarPorNombreController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Usuario;
 
 /**
@@ -20,7 +21,7 @@ public class OrdenarPorNombre extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-
+		this.setIconImage(IconoAplicacion.icono());
 		dist = true;
 		
 		jLabel1 = new javax.swing.JLabel();

@@ -1,5 +1,6 @@
 package psp_2eval_practiva4.view;
 
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**
@@ -26,7 +27,7 @@ public class AlertaInformacion extends javax.swing.JFrame {
 	private void initComponents(UsuarioLogin use) {
 		setResizable(false);
 		this.setTitle("SGE - Información del usuario");
-		
+		this.setIconImage(IconoAplicacion.icono());
 		setLocationByPlatform(true);
 		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
 

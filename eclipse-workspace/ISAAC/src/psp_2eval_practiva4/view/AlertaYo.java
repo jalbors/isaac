@@ -1,5 +1,7 @@
 package psp_2eval_practiva4.view;
 
+import psp_2eval_practica4.utilities.IconoAplicacion;
+
 /**
  *
  * @author Jorge
@@ -15,7 +17,7 @@ public class AlertaYo extends javax.swing.JFrame {
     }
                        
     private void initComponents() {
-    	
+    	this.setIconImage(IconoAplicacion.icono());
     	this.setResizable(false);
     	this.setTitle("SGE - Sobre mí");
     	this.setDefaultCloseOperation(HIDE_ON_CLOSE);

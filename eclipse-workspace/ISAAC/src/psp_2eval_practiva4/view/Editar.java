@@ -6,6 +6,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 import psp_2eval_practica4.EditarController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
@@ -36,7 +37,7 @@ public class Editar extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-
+		this.setIconImage(IconoAplicacion.icono());
 		this.setTitle("SGE - Editar usuario");
 
 		jLabel1 = new javax.swing.JLabel();

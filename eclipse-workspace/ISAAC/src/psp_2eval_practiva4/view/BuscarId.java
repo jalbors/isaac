@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import psp_2eval_practica4.BuscarIdController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 
 /**
  *
@@ -25,7 +26,7 @@ public class BuscarId extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-
+		this.setIconImage(IconoAplicacion.icono());
 		this.setTitle("SGE - Buscar por id");
 		this.setResizable(false);
 
@@ -46,8 +47,6 @@ public class BuscarId extends javax.swing.JFrame {
 		jMenuItem5 = new javax.swing.JMenuItem();
 		jSeparator8 = new javax.swing.JPopupMenu.Separator();
 		jMenuItem6 = new javax.swing.JMenuItem();
-		jMenu2 = new javax.swing.JMenu();
-		jMenuItem8 = new javax.swing.JMenuItem();
 		jMenu3 = new javax.swing.JMenu();
 		jMenuItem7 = new javax.swing.JMenuItem();
 		jMenu10 = new javax.swing.JMenu();
@@ -262,10 +261,6 @@ public class BuscarId extends javax.swing.JFrame {
 
 	}
 
-	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-
-	}
-
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
@@ -319,7 +314,6 @@ public class BuscarId extends javax.swing.JFrame {
 	private javax.swing.JButton jButton2;
 	private javax.swing.JLabel jLabel1;
 	private javax.swing.JMenu jMenu10;
-	private javax.swing.JMenu jMenu2;
 	private javax.swing.JMenu jMenu3;
 	private javax.swing.JMenu jMenu4;
 	private javax.swing.JMenuBar jMenuBar1;
@@ -330,7 +324,6 @@ public class BuscarId extends javax.swing.JFrame {
 	private javax.swing.JMenuItem jMenuItem5;
 	private javax.swing.JMenuItem jMenuItem6;
 	private javax.swing.JMenuItem jMenuItem7;
-	private javax.swing.JMenuItem jMenuItem8;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JPopupMenu.Separator jSeparator5;
 	private javax.swing.JPopupMenu.Separator jSeparator6;

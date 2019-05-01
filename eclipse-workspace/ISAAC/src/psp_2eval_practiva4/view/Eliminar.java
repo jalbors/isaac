@@ -11,6 +11,7 @@ import java.awt.event.WindowEvent;
 import org.apache.commons.lang.StringUtils;
 
 import psp_2eval_practica4.EliminarController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**
@@ -46,7 +47,7 @@ public class Eliminar extends javax.swing.JFrame {
 	}
 
 	private void initComponents(String tok) {
-
+		this.setIconImage(IconoAplicacion.icono());
 		System.out.println("token ELIMINAR " + tok);
 		this.setTitle("SGE - Eliminar usuario");
 

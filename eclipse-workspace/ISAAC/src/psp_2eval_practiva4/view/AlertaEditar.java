@@ -1,5 +1,7 @@
 package psp_2eval_practiva4.view;
 
+import psp_2eval_practica4.utilities.IconoAplicacion;
+
 /**
  *
  * @author Jorge
@@ -12,7 +14,7 @@ public class AlertaEditar extends javax.swing.JFrame {
     }
                           
     private void initComponents() {
-    	
+    	this.setIconImage(IconoAplicacion.icono());
 		this.setTitle("SGE - Alerta");		
 		setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 		setLocationByPlatform(true);

@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import psp_2eval_practica4.AnyadirUsuarioController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
@@ -54,6 +55,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setLocationByPlatform(true);
 		setResizable(false);
+		this.setIconImage(IconoAplicacion.icono());
 
 		jButton1 = new javax.swing.JButton();
 		jTextField1 = new javax.swing.JTextField();

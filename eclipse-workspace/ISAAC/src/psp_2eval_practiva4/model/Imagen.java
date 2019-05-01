@@ -27,15 +27,16 @@ public class Imagen {
 
 	private ImageIcon imagen(String url) {
 
-		BufferedImage image;
 		try {
-			image = ImageIO.read(getClass().getResource(url));
+			BufferedImage image = ImageIO.read(getClass().getResource(url));
 			ImageIcon icon = new ImageIcon(image);
 			return icon;
+
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error cargando las imagenes de la app --> " + e.getMessage());
+			return null;
+
 		}
-		return null;
 
 	}
 

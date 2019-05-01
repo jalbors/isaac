@@ -5,6 +5,8 @@
  */
 package psp_2eval_practiva4.view;
 
+import psp_2eval_practica4.utilities.IconoAplicacion;
+
 /**
  *
  * @author Jorge
@@ -20,7 +22,7 @@ public class AlertaLogin extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-
+        this.setIconImage(IconoAplicacion.icono());
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
 

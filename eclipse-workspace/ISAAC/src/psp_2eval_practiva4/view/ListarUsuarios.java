@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 import psp_2eval_practica4.ListarUsuariosController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Imagen;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
@@ -39,7 +40,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setLocationByPlatform(true);
 		setResizable(false);
-
+		this.setIconImage(IconoAplicacion.icono());
+		
 		jFrame1 = new javax.swing.JFrame();
 		jLabel1 = new javax.swing.JLabel();
 		jButton1 = new javax.swing.JButton();

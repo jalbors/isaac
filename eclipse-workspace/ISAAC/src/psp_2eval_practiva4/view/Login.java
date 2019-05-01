@@ -2,8 +2,15 @@ package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
 import org.apache.commons.lang.StringUtils;
 import psp_2eval_practica4.LoginController;
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**
@@ -20,6 +27,10 @@ public class Login extends javax.swing.JFrame {
 	private void initComponents() {
 
 		this.setTitle("SGE - Login");
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		setLocationByPlatform(true);	
+		this.setIconImage(IconoAplicacion.icono());
 
 		jLabel1 = new javax.swing.JLabel();
 		jTextField1 = new javax.swing.JTextField();
@@ -31,10 +42,6 @@ public class Login extends javax.swing.JFrame {
 		jMenuBar1 = new javax.swing.JMenuBar();
 		jMenu1 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
-
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		this.setResizable(false);
-		setLocationByPlatform(true);
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
 		jLabel1.setText("Introduzca su email: ");

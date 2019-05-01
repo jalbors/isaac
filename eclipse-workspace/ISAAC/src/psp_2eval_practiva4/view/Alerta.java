@@ -3,6 +3,7 @@ package psp_2eval_practiva4.view;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
+import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**
@@ -43,7 +44,7 @@ public class Alerta extends javax.swing.JFrame {
 	}
 
 	private void initComponents() {
-
+		this.setIconImage(IconoAplicacion.icono());
 		jDialog1 = new javax.swing.JDialog();
 		jLabel1 = new javax.swing.JLabel();
 		jButton1 = new javax.swing.JButton();
