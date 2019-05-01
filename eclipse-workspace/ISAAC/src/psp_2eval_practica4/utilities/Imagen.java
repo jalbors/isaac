@@ -1,4 +1,4 @@
-package psp_2eval_practiva4.model;
+package psp_2eval_practica4.utilities;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;

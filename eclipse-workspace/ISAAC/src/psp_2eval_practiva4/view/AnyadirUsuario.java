@@ -10,7 +10,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import psp_2eval_practica4.AnyadirUsuarioController;
-import psp_2eval_practiva4.model.Imagen;
+import psp_2eval_practica4.utilities.Imagen;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
 /**

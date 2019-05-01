@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
 
 import psp_2eval_practica4.EditarController;
-import psp_2eval_practiva4.model.Imagen;
+import psp_2eval_practica4.utilities.Imagen;
 import psp_2eval_practiva4.model.Usuario;
 import psp_2eval_practiva4.model.UsuarioLogin;
 
