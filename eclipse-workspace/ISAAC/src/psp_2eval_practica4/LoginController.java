@@ -3,10 +3,8 @@ package psp_2eval_practica4;
 import java.net.HttpURLConnection;
 import java.security.MessageDigest;
 import java.util.Base64;
-
 import com.google.gson.Gson;
-
-import psp_2eval_practiva4.model.GestorHTTP;
+import psp_2eval_practica4.utilities.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.UsuarioLogin;
 

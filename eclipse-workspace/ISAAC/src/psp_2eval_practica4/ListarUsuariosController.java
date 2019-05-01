@@ -3,13 +3,10 @@ package psp_2eval_practica4;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import psp_2eval_practiva4.model.GestorHTTP;
+import psp_2eval_practica4.utilities.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
