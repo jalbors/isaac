@@ -107,9 +107,11 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				String dinero = jTextField5.getText();
 
 				if (!jTextField3.getText().equalsIgnoreCase(jTextField4.getText())) {
-
-					AlertaAnyadirUsuarioContrasenya alerta = new AlertaAnyadirUsuarioContrasenya();
-					alerta.setVisible(true);
+//
+//					AlertaAnyadirUsuarioContrasenya alerta = new AlertaAnyadirUsuarioContrasenya();
+//					alerta.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(1);
+					errores.setVisible(true);
 
 				} else if (StringUtils.isEmpty(nombre) || StringUtils.isEmpty(apellido) || StringUtils.isEmpty(email)
 						|| StringUtils.isEmpty(pass) || StringUtils.isEmpty(dinero)) {
