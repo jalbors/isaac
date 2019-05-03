@@ -62,8 +62,8 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 
 				if (dist == false) {
 					
-					AlertaAdmin ad = new AlertaAdmin();
-					ad.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(14);
+					errores.setVisible(true);
 					
 				} else {
 					

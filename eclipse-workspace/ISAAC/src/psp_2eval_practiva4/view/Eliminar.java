@@ -93,8 +93,8 @@ public class Eliminar extends javax.swing.JFrame {
 
 				if (StringUtils.isEmpty(jTextField2.getText())) {
 
-					AlertaEliminar el = new AlertaEliminar();
-					el.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(10);
+					errores.setVisible(true);
 
 				} else {
 					try {
@@ -104,10 +104,12 @@ public class Eliminar extends javax.swing.JFrame {
 						eliminar.eli(identi, tok);
 						alerta();
 					} catch (NumberFormatException e) {
-						AlertaEliminarNumero nu = new AlertaEliminarNumero();
-						nu.setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(5);
+						errores.setVisible(true);
+						
 					} catch (NullPointerException e) {
-						new AlertaUsuarioNoExiste().setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(6);
+						errores.setVisible(true);
 					}
 
 				}

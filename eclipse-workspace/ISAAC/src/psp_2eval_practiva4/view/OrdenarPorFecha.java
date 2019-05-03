@@ -63,7 +63,7 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 
 				if (dist == false) {
 
-					new AlertaNombre().setVisible(true);
+					new AlertasInformacionErrores(11).setVisible(true);
 
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios

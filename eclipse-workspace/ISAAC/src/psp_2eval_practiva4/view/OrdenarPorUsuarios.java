@@ -62,8 +62,7 @@ public class OrdenarPorUsuarios extends javax.swing.JFrame {
 
 				if (dist == false) {
 					
-					AlertaNombre nom = new AlertaNombre();
-					nom.setVisible(true);
+					new AlertasInformacionErrores(11).setVisible(true);
 					
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios

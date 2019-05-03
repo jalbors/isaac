@@ -107,17 +107,14 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 				String dinero = jTextField5.getText();
 
 				if (!jTextField3.getText().equalsIgnoreCase(jTextField4.getText())) {
-//
-//					AlertaAnyadirUsuarioContrasenya alerta = new AlertaAnyadirUsuarioContrasenya();
-//					alerta.setVisible(true);
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(1);
 					errores.setVisible(true);
 
 				} else if (StringUtils.isEmpty(nombre) || StringUtils.isEmpty(apellido) || StringUtils.isEmpty(email)
 						|| StringUtils.isEmpty(pass) || StringUtils.isEmpty(dinero)) {
 
-					AlertaAnyadirUsuarioCamposRequeridos aler = new AlertaAnyadirUsuarioCamposRequeridos();
-					aler.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(2);
+					errores.setVisible(true);
 
 				} else {
 
@@ -150,9 +147,9 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 					} catch (NumberFormatException e) {
 
-						AlertaAnyadirUsuarioDinero aleDine = new AlertaAnyadirUsuarioDinero();
-						aleDine.setVisible(true);
-						
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(3);
+						errores.setVisible(true);
+
 					}
 
 				}
@@ -200,7 +197,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		jScrollPane1.setViewportView(jTable1);
 
 		Imagen iamgen = new Imagen();
-		jLabel8.setIcon(iamgen.imagenDevolver("/resources/images/usuario.jpg")); 
+		jLabel8.setIcon(iamgen.imagenDevolver("/resources/images/usuario.jpg"));
 
 		jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12));
 		// jLabel9.setText("Usuario {user} Registrado:");
@@ -417,7 +414,6 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		pack();
 	}
 
-
 	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
 
 		new OrdenarPorFecha().setVisible(true);
@@ -468,7 +464,6 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 	}
 
-
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
@@ -496,7 +491,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
-	
+
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);

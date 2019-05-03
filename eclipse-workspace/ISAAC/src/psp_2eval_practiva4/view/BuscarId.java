@@ -78,8 +78,8 @@ public class BuscarId extends javax.swing.JFrame {
 				try {
 					if (StringUtils.isEmpty(identi)) {
 
-						AlertaBuscarPorId al = new AlertaBuscarPorId();
-						al.setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(4);
+						errores.setVisible(true);
 
 					} else {
 
@@ -104,10 +104,12 @@ public class BuscarId extends javax.swing.JFrame {
 					}
 				} catch (NumberFormatException e) {
 
-					AlertaBuscarPorIdNumero nu = new AlertaBuscarPorIdNumero();
-					nu.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(5);
+					errores.setVisible(true);
+					
 				} catch (NullPointerException e) {
-					new AlertaUsuarioNoExiste().setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(6);
+					errores.setVisible(true);
 				}
 
 			}

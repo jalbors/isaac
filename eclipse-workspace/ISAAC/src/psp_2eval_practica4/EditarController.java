@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import psp_2eval_practica4.utilities.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
-import psp_2eval_practiva4.view.AlertaEditar;
 
 public class EditarController {
 

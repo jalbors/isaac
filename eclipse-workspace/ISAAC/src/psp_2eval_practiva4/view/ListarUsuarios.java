@@ -89,8 +89,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 				if (dist == false) {
 
-					AlertaListarUsuarios ale = new AlertaListarUsuarios();
-					ale.setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(11);
+					errores.setVisible(true);
 					// alerta de ya tienes todos los usuarios listados
 
 				} else {
@@ -112,6 +112,9 @@ public class ListarUsuarios extends javax.swing.JFrame {
 						modelo.addRow(fila);
 					}
 					dist = false;
+					//no me termina de convencer
+					//jButton1.setEnabled(false);
+					
 				}
 
 			}

@@ -56,8 +56,10 @@ public class Login extends javax.swing.JFrame {
 				String pass = String.valueOf(jPasswordField1.getPassword()).trim();
 
 				if (StringUtils.isEmpty(email) || StringUtils.isEmpty(pass)) {
-					AlertaLogin ale = new AlertaLogin();
-					ale.setVisible(true);
+					
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(12);
+					errores.setVisible(true);
+					
 				} else {
 					try {
 						// le envio los datos
@@ -69,8 +71,8 @@ public class Login extends javax.swing.JFrame {
 						System.out.println("paco " + paco.toString());
 					} catch (Exception e) {
 
-						AlertaLoginDatos ale = new AlertaLoginDatos();
-						ale.setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(13);
+						errores.setVisible(true);
 
 					}
 

@@ -116,7 +116,7 @@ public class Editar extends javax.swing.JFrame {
 
 				if (StringUtils.isEmpty(jTextField1.getText())) {
 
-					new AlertaBuscarPorId().setVisible(true);
+					new AlertasInformacionErrores(4).setVisible(true);
 
 				} else {
 					try {
@@ -153,9 +153,14 @@ public class Editar extends javax.swing.JFrame {
 						jButton1.setEnabled(false);
 
 					} catch (NumberFormatException e) {
-						new AlertaEditarNumero().setVisible(true);
+						
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(5);
+						errores.setVisible(true);
+						
+						
 					} catch (NullPointerException e) {
-						new AlertaUsuarioNoExiste().setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(6);
+						errores.setVisible(true);
 					}
 
 				}
@@ -227,12 +232,13 @@ public class Editar extends javax.swing.JFrame {
 						jButton2.setEnabled(false);
 						
 					} else {
-						new AlertaEditar().setVisible(true);
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(9);
+						errores.setVisible(true);
 					}
 
 				} catch (NullPointerException e) {
-					System.out.println("kinder maalo");
-					new AlertaEditar().setVisible(true);
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(9);
+					errores.setVisible(true);
 				}
 
 
