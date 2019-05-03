@@ -1,6 +1,7 @@
 package psp_2eval_practiva4.view;
 
 import psp_2eval_practica4.utilities.IconoAplicacion;
+import psp_2eval_practiva4.model.Imagen;
 
 /**
  *
@@ -27,7 +28,8 @@ public class AlertaYo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/yo.PNG"))); // NOI18N
+        Imagen imagenRetorno = new Imagen();
+        jLabel1.setIcon(imagenRetorno.imagenDevolver("/resources/images/yo.PNG"));
 
         jButton1.setText("Volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

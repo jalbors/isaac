@@ -41,7 +41,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setLocationByPlatform(true);
 		setResizable(false);
 		this.setIconImage(IconoAplicacion.icono());
-		
+
 		jFrame1 = new javax.swing.JFrame();
 		jLabel1 = new javax.swing.JLabel();
 		jButton1 = new javax.swing.JButton();
@@ -91,6 +91,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(11);
 					errores.setVisible(true);
+					jButton1.setEnabled(false);
 					// alerta de ya tienes todos los usuarios listados
 
 				} else {
@@ -112,9 +113,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 						modelo.addRow(fila);
 					}
 					dist = false;
-					//no me termina de convencer
-					//jButton1.setEnabled(false);
-					
 				}
 
 			}

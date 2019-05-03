@@ -64,6 +64,7 @@ public class OrdenarPorSalario extends javax.swing.JFrame {
 				if (dist == false) {
 
 					new AlertasInformacionErrores(11).setVisible(true);
+					jButton1.setEnabled(false);
 					
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios

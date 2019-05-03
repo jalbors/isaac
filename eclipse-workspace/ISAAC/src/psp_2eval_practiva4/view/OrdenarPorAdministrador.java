@@ -64,6 +64,7 @@ public class OrdenarPorAdministrador extends javax.swing.JFrame {
 					
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(14);
 					errores.setVisible(true);
+					jButton1.setEnabled(false);
 					
 				} else {
 					
