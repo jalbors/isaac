@@ -101,6 +101,7 @@ public class BuscarId extends javax.swing.JFrame {
 							fila[5] = get.getUsuario().getRegisterDate();
 							modelo.addRow(fila);
 						}
+						
 						jButton1.setEnabled(false);
 					}
 				} catch (NumberFormatException e) {

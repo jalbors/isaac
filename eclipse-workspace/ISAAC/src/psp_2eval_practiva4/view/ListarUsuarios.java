@@ -31,10 +31,10 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		System.out.println("nombre " + this.email);
 		System.out.println("Listar us: " + tokenAEnv);
 		System.out.println("pacazo listar -->   " + this.paquito);
-		initComponents(nombre);
+		initComponents(nombre, paco);
 	}
 
-	private void initComponents(String email) {
+	private void initComponents(String email, UsuarioLogin paco) {
 		dist = true;
 		this.setTitle("SGE - Home");
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,7 +42,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setResizable(false);
 		this.setIconImage(IconoAplicacion.icono());
 		
-		
+
         jFrame1 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -84,11 +84,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
-        setResizable(false);
-
-		// clase general que devuelve una iamgen
+    	// clase general que devuelve una iamgen
 		Imagen ima = new Imagen();
 		jLabel1.setIcon(ima.imagenDevolver("/resources/images/contactaConNosotros.jpg"));
 
@@ -97,12 +93,14 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
+				//System.out.println(paco.getUsuario().getRol());
+				
 				if (dist == false) {
 
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(11);
 					errores.setVisible(true);
-					jButton1.setEnabled(false);
 					// alerta de ya tienes todos los usuarios listados
+					jButton1.setEnabled(false);
 
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios
@@ -123,12 +121,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
 						modelo.addRow(fila);
 					}
 					dist = false;
+					
 				}
 
 			}
 		});
 
-		jButton2.setText("Crear");
+		jButton2.setText("Añadir");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
@@ -170,13 +169,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jButton5ActionPerformed(evt);
 			}
 		});
-		
-		jButton6.setText("Añadir datos");
-		jButton6.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton6ActionPerformed(evt);
-			}
-		});
 
 		jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 		if (StringUtils.isNotEmpty(email)) {
@@ -185,19 +177,20 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			jLabel2.setText("Bienvenido de vuelta usuario");
 		}
 
+
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Elija la operación ha realizar:");
 
         jButton6.setText("Añadir datos");
 
-        jMenu4.setText("Menú rápido");
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
-            }
-        });
+    	jMenu4.setText("Filtrar por...   ");
+		jMenu4.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jMenu4ActionPerformed(evt);
+			}
+		});
 
-        jMenuItem2.setText("Administradores");
+		jMenuItem2.setText("Administradores");
 		jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem2ActionPerformed(evt);
@@ -393,33 +386,29 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		BuscarId buscar = new BuscarId();
 		buscar.setVisible(true);
 
-	}       
-	
-	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		System.out.println("btn nuevo");
-
-	}    
-
-	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-
 	}
 
-	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
 
-	}
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here
+    	
+    }                                      
 
+           
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    	close();
+    }    
+    
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
 
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
 
-	}
-
-	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-
-		close();
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,7 +451,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 	public void close() {
 		WindowEvent closing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
 		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closing);
-	}                           
+	}                         
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;

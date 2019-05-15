@@ -31,8 +31,8 @@ public class LoginController {
 		String pas = encrytpSHA256(password);
 		UsuarioLogin user = null;
 		// creo un usuario con los datos recividos del usuario
-		UsuarioLogin nuevoAlumno = new UsuarioLogin(email, pas);
-
+		UsuarioLogin nuevoAlumno = new UsuarioLogin(email, pas.trim());
+		System.out.println("pas encrip cliente admin    "+pas);
 		// genero el http
 		respuesta = GestorHTTP.peticion("http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/login",
 				gson.toJson(nuevoAlumno), "POST", "");
