@@ -16,6 +16,7 @@ public class Usuario {
 	private String rol;
 	private String token;
 	private UsuarioLogin userLogin;
+	private String adress, phone, yearsWork, description;
 
 	public UsuarioLogin getUserLogin() {
 		return userLogin;
@@ -23,6 +24,23 @@ public class Usuario {
 
 	public void setUserLogin(UsuarioLogin userLogin) {
 		this.userLogin = userLogin;
+	}
+
+	public Usuario(String adress, String phone, String yearsWork, String description) {
+		super();
+		this.adress = adress;
+		this.phone = phone;
+		this.yearsWork = yearsWork;
+		this.description = description;
+	}
+
+	public Usuario(Integer idUser, String adress, String phone, String yearsWork, String description) {
+		super();
+		this.idUser = idUser;
+		this.adress = adress;
+		this.phone = phone;
+		this.yearsWork = yearsWork;
+		this.description = description;
 	}
 
 	public String getToken() {
@@ -160,6 +178,38 @@ public class Usuario {
 		this.money = money;
 		this.registerDate = registerDate;
 		this.removeDate = removeDate;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getYearsWork() {
+		return yearsWork;
+	}
+
+	public void setYearsWork(String yearsWork) {
+		this.yearsWork = yearsWork;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Usuario(UsuarioLogin userLogin) {

@@ -71,6 +71,12 @@ public class AlertasInformacionErrores extends javax.swing.JFrame {
 		case 14:
 			jLabel1.setText("Los administradores ya han sido listados");
 			break;
+		case 15:
+			jLabel1.setText("Datos añadidos con exito");
+			break;
+		case 16:
+			jLabel1.setText("Error insertando los datos");
+			break;
 	
 
 		}

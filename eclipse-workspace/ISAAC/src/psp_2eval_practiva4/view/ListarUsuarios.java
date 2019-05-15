@@ -41,7 +41,6 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		setLocationByPlatform(true);
 		setResizable(false);
 		this.setIconImage(IconoAplicacion.icono());
-		
 
         jFrame1 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
@@ -72,6 +71,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        
+        if(paco.getRol().equalsIgnoreCase("USER")) {
+			jButton6.setVisible(false);
+			jButton2.setVisible(false);
+			jButton3.setVisible(false);
+			jButton4.setVisible(false);
+		}
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -93,7 +99,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton1ActionPerformed(evt);
 
-				//System.out.println(paco.getUsuario().getRol());
+				System.out.println(paco.getRol());
 				
 				if (dist == false) {
 
@@ -133,6 +139,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 				jButton2ActionPerformed(evt);
 			}
 		});
+		
+		
 
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
 				// cabecera ce la tabla
@@ -182,6 +190,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jLabel3.setText("Elija la operación ha realizar:");
 
         jButton6.setText("Añadir datos");
+		jButton6.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton6ActionPerformed(evt);
+			}
+		});
 
     	jMenu4.setText("Filtrar por...   ");
 		jMenu4.addActionListener(new java.awt.event.ActionListener() {
@@ -385,6 +398,13 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// abrir nueva ventana
 		BuscarId buscar = new BuscarId();
 		buscar.setVisible(true);
+
+	}
+	
+	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+
+		// abrir nueva ventana
+		new AnyadirDatos().setVisible(true);
 
 	}
 

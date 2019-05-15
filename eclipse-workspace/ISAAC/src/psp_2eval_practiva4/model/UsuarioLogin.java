@@ -1,13 +1,14 @@
 package psp_2eval_practiva4.model;
 
 //clase para el login de usuarios
-public class UsuarioLogin{
+public class UsuarioLogin {
 
 	private String email;
 	private String password;
 	private String token;
 	private String idUser;
 	private Usuario usuario;
+	private String rol;
 
 	public UsuarioLogin(String email, String password, String token) {
 		super();
@@ -21,24 +22,40 @@ public class UsuarioLogin{
 		this.email = email;
 		this.password = password;
 	}
-	
+
+	public UsuarioLogin(String email, String password, String token, String rol) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.token = token;
+		this.rol = rol;
+	}
+
 	public UsuarioLogin(Usuario us) {
 		this.usuario = us;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
 	}
 
 	public Usuario getUsuario() {
 		return usuario;
 	}
-	
+
 	public String RecivirToken() {
 		return email;
-		
+
 	}
 
 	@Override
 	public String toString() {
 		return "UsuarioLogin [email=" + email + ", password=" + password + ", token=" + token + ", idUser=" + idUser
-				+ ", usuario=" + usuario + "]";
+				+ ", usuario=" + usuario + ", rol=" + rol + "]";
 	}
 
 	public void setUsuario(Usuario usuario) {
