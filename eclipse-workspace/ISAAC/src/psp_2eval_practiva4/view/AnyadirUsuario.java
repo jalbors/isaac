@@ -458,7 +458,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
-		jButton1.setEnabled(false);
+		
 
 	}
 

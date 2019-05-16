@@ -193,7 +193,7 @@ public class AnyadirDatos extends javax.swing.JFrame {
 						.addContainerGap()));
 
 		jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); 
-		jLabel5.setText("Busque el ID y añada información al usuario ");
+		jLabel5.setText("Escriba el ID y añada información al usuario");
 
 		jMenu2.setText("Información Usuario Logueado");
 		jMenu2.addActionListener(new java.awt.event.ActionListener() {

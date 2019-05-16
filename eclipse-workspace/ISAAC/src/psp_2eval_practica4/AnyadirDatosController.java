@@ -28,9 +28,9 @@ public class AnyadirDatosController {
 		int idAEnc = Integer.parseInt(id);
 		Usuario us = new Usuario(idAEnc,adress, phone, yearsWork, description);
 
-		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/"+idAEnc+"/anydir";
+		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios/"+idAEnc+"/anyadir";
 
-		respuesta = GestorHTTP.peticion(urlConId, gson.toJson(us), "PUT", "");
+		respuesta = GestorHTTP.peticion(urlConId, gson.toJson(us), "POST", "");
 
 		if (respuesta.getCodigoPeticion() == HttpURLConnection.HTTP_CREATED) {
 			System.out.println("Usuario con id " + id + " actualizado");
