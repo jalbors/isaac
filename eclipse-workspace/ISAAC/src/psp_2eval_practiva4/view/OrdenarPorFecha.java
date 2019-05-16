@@ -3,6 +3,7 @@ package psp_2eval_practiva4.view;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
+import psp_2eval_practica4.OrdenarPorFechaController;
 import psp_2eval_practica4.OrdenarPorSalarioController;
 import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Usuario;
@@ -45,15 +46,15 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 		jTable1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {}, new String[] {
 				// cabecera ce la tabla
 
-				"ID", "Nombre", "Apellido", "Email", "Dinero/mes", "F. Contratación" }));
+				"ID", "Nombre", "Dirección", "Teléfono", "Años Trabajados", "Descripcion" }));
 		jScrollPane1.setViewportView(jTable1);
 		if (jTable1.getColumnModel().getColumnCount() > 0) {
 			jTable1.getColumnModel().getColumn(0).setHeaderValue("ID");
 			jTable1.getColumnModel().getColumn(1).setHeaderValue("Nombre");
-			jTable1.getColumnModel().getColumn(2).setHeaderValue("Apellido");
-			jTable1.getColumnModel().getColumn(3).setHeaderValue("Email");
-			jTable1.getColumnModel().getColumn(4).setHeaderValue("Dinero/mes");
-			jTable1.getColumnModel().getColumn(5).setHeaderValue("F. Contratación");
+			jTable1.getColumnModel().getColumn(2).setHeaderValue("Dirección");
+			jTable1.getColumnModel().getColumn(3).setHeaderValue("Teléfono");
+			jTable1.getColumnModel().getColumn(4).setHeaderValue("Años Trabajados");
+			jTable1.getColumnModel().getColumn(5).setHeaderValue("Descripcion");
 		}
 
 		jButton1.setText("Listar");
@@ -68,7 +69,7 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios
-					OrdenarPorSalarioController usuFinales = new OrdenarPorSalarioController();
+					OrdenarPorFechaController usuFinales = new OrdenarPorFechaController();
 					usuFinales.usuariosFinales();
 					// funcion para mostrar los datos en la table cada uno en su fila y columna
 					DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
@@ -77,10 +78,10 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 					for (int i = 0; i < lista.size(); i++) {
 						fila[0] = lista.get(i).getIdUser();
 						fila[1] = lista.get(i).getName();
-						fila[2] = lista.get(i).getSurname();
-						fila[3] = lista.get(i).getEmail();
-						fila[4] = lista.get(i).getMoney();
-						fila[5] = lista.get(i).getRegisterDate();
+						fila[2] = lista.get(i).getAdress();
+						fila[3] = lista.get(i).getPhone();
+						fila[4] = lista.get(i).getYearsWork();
+						fila[5] = lista.get(i).getDescription();
 						modelo.addRow(fila);
 					}
 					dist = false;

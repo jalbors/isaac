@@ -412,7 +412,7 @@ public class Editar extends javax.swing.JFrame {
 		jMenu4.add(jMenuItem5);
 		jMenu4.add(jSeparator8);
 
-		jMenuItem6.setText("F. Contratación");
+		jMenuItem6.setText("Ver datos añadidos");
 		jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jMenuItem6ActionPerformed(evt);
