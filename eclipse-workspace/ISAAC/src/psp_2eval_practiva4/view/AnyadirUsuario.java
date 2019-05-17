@@ -443,7 +443,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 
 	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
 
-		new OrdenarPorFecha().setVisible(true);
+		new OrdenarPorDatos().setVisible(true);
 	}
 
 	private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {

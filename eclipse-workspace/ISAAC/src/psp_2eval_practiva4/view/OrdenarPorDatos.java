@@ -3,7 +3,7 @@ package psp_2eval_practiva4.view;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-import psp_2eval_practica4.OrdenarPorFechaController;
+import psp_2eval_practica4.OrdenarPorDatosController;
 import psp_2eval_practica4.OrdenarPorSalarioController;
 import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Usuario;
@@ -13,11 +13,11 @@ import psp_2eval_practiva4.model.Usuario;
  * @author Jorge
  */
 @SuppressWarnings("serial")
-public class OrdenarPorFecha extends javax.swing.JFrame {
+public class OrdenarPorDatos extends javax.swing.JFrame {
 
 	private boolean dist;
 
-	public OrdenarPorFecha() {
+	public OrdenarPorDatos() {
 		initComponents();
 	}
 
@@ -69,7 +69,7 @@ public class OrdenarPorFecha extends javax.swing.JFrame {
 
 				} else {
 					// llama a la clase get con el metodo get para listar usuarios
-					OrdenarPorFechaController usuFinales = new OrdenarPorFechaController();
+					OrdenarPorDatosController usuFinales = new OrdenarPorDatosController();
 					usuFinales.usuariosFinales();
 					// funcion para mostrar los datos en la table cada uno en su fila y columna
 					DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();

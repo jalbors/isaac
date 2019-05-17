@@ -12,10 +12,10 @@ import psp_2eval_practica4.utilities.GestorHTTP;
 import psp_2eval_practiva4.model.Respuesta;
 import psp_2eval_practiva4.model.Usuario;
 
-public class OrdenarPorFechaController {
+public class OrdenarPorDatosController {
 	private ArrayList<Usuario> usuariosADevolver = null;
 
-	public OrdenarPorFechaController() {
+	public OrdenarPorDatosController() {
 		super();
 	}
 
