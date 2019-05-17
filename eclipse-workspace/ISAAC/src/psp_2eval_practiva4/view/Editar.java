@@ -115,7 +115,7 @@ public class Editar extends javax.swing.JFrame {
 		jMenu10 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
 		jLabel1.setText("Id a editar:");
 
 		jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -273,15 +273,15 @@ public class Editar extends javax.swing.JFrame {
 		Imagen imagen = new Imagen();
 		jLabel8.setIcon(imagen.imagenDevolver("/resources/images/edi.jpg"));
 
-		jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+		jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); 
 		jLabel9.setText("Editar usuario:");
 
-		jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+		jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); 
 		jLabel10.setText("Introduzca los datos a editar de: ");
 
 		jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-		jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); 
 		jLabel6.setText("Dinero");
 
 		jButton2.setText("Editar");
@@ -291,19 +291,19 @@ public class Editar extends javax.swing.JFrame {
 			}
 		});
 
-		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
 		jLabel2.setText("Nombre");
 
-		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); 
 		jLabel3.setText("Apellido");
 
-		jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); 
 		jLabel5.setText("Contraseña");
 
-		jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); 
 		jLabel11.setText("Repita contraseña");
 
-		jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+		jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); 
 		jLabel4.setText("Email");
 
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -552,14 +552,14 @@ public class Editar extends javax.swing.JFrame {
 				.addGap(31, 31, 31)));
 
 		pack();
-	}// </editor-fold>
+	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+	
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -659,7 +659,6 @@ public class Editar extends javax.swing.JFrame {
 		this.pacazo = pacazo;
 	}
 
-	// Variables declaration - do not modify
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
@@ -701,5 +700,4 @@ public class Editar extends javax.swing.JFrame {
 	private javax.swing.JTextField jTextField5;
 	private javax.swing.JTextField jTextField6;
 	private javax.swing.JTextField jTextField7;
-	// End of variables declaration
 }

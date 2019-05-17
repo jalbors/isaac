@@ -203,8 +203,6 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 		jLabel8.setIcon(iamgen.imagenDevolver("/resources/images/usuario.jpg"));
 
 		jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12));
-		// jLabel9.setText("Usuario {user} Registrado:");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -439,7 +437,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                     
 
 	private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
 
@@ -457,17 +455,16 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+	
 		
 
 	}
 
 	private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
 	}
 
 	private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -490,7 +487,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -501,7 +498,7 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -514,11 +511,11 @@ public class AnyadirUsuario extends javax.swing.JFrame {
 	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	public void close() {

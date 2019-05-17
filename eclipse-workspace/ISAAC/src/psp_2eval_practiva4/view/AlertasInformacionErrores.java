@@ -77,6 +77,9 @@ public class AlertasInformacionErrores extends javax.swing.JFrame {
 		case 16:
 			jLabel1.setText("Error insertando los datos");
 			break;
+		case 17:
+			jLabel1.setText("Usuario eliminado");
+			break;
 	
 
 		}

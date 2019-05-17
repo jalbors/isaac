@@ -73,11 +73,11 @@ public class Eliminar extends javax.swing.JFrame {
 		jMenu10 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
 		setLocationByPlatform(true);
 		setResizable(false);
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); 
 		jLabel1.setText("Introduce el id del usuario a eliminar:");
 
 		jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +102,9 @@ public class Eliminar extends javax.swing.JFrame {
 						int identi = Integer.parseInt(jTextField2.getText());
 						EliminarController eliminar = new EliminarController();
 						eliminar.eli(identi, tok);
-						alerta();
+						AlertasInformacionErrores alerta = new AlertasInformacionErrores(17); 
+						alerta.setVisible(true);
+						jButton1.setEnabled(false);
 					} catch (NumberFormatException e) {
 						AlertasInformacionErrores errores = new AlertasInformacionErrores(5);
 						errores.setVisible(true);
@@ -265,30 +267,23 @@ public class Eliminar extends javax.swing.JFrame {
 
 	}
 
-	private void alerta() {
-		// se ejecuta alerta
-		Alerta ale = new Alerta(this.token, this.paquito);
-		ale.setVisible(true);
-		cerrarVentanaActual();
-
-	}
 
 	private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+
 		// disponse();
 
 	}
 
 	private void jButton2StateChanged(javax.swing.event.ChangeEvent evt) {
-		// TODO add your handling code here:
+
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 		cerrarVentanaActual();
 		System.out.println("token recivido papa " + this.token);
 		System.out.println("pakazo " + this.paquito);
-		ListarUsuarios u = new ListarUsuarios(this.token, "", this.paquito);
-		u.setVisible(true);
+//		ListarUsuarios u = new ListarUsuarios(this.token, "", this.paquito);
+//		u.setVisible(true);
 
 	}
 
@@ -299,19 +294,19 @@ public class Eliminar extends javax.swing.JFrame {
 	}
 
 	private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+	
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+	
 	}
 
 	private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+	
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
+		
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,5 +377,5 @@ public class Eliminar extends javax.swing.JFrame {
 	private javax.swing.JPopupMenu.Separator jSeparator7;
 	private javax.swing.JPopupMenu.Separator jSeparator8;
 	private javax.swing.JTextField jTextField2;
-	// End of variables declaration
+	
 }

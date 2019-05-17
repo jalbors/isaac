@@ -18,9 +18,6 @@ import psp_2eval_practica4.utilities.IconoAplicacion;
 @SuppressWarnings("serial")
 public class BuscarId extends javax.swing.JFrame {
 
-	/**
-	 * Creates new form BuscarId
-	 */
 	public BuscarId() {
 		initComponents();
 	}
