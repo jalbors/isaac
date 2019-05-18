@@ -2,6 +2,7 @@ package psp_2eval_practiva4.view;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
@@ -71,6 +72,7 @@ public class ListarUsuarios extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        DefaultTableModel modelo =null;
         
         if(paco.getRol().equalsIgnoreCase("USER")) {
 			jButton6.setVisible(false);
@@ -167,6 +169,11 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		jButton4.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton4ActionPerformed(evt);
+				System.out.println("eliminar");
+				DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+				modelo.fireTableRowsDeleted(1, 6);
+				
+				
 
 			}
 		});
@@ -376,6 +383,8 @@ public class ListarUsuarios extends javax.swing.JFrame {
 		// abrir nueva ventana
 		Eliminar eliminar = new Eliminar(this.tokenAEnv, this.paquito);
 		eliminar.setVisible(true);
+		jButton1.setEnabled(true);
+		
 
 	}
 
