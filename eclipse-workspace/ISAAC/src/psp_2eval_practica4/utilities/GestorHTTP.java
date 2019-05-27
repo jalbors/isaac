@@ -20,54 +20,32 @@ public class GestorHTTP {
 
 	public static Respuesta peticion(String uri, String json, String metodo, String token) {
 		Respuesta respuesta = new Respuesta();
-
 		try {
-			// Se crea la conexion y se asignan tiempos de timeout
 			URL url = new URL(uri);
 			HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
 			conexion.setReadTimeout(READ_TIMEOUT);
-			conexion.setConnectTimeout(CONNECT_TIMEOUT);
-
-			// Anyadimos token en caso de que se envia
-			if (!token.isEmpty()) {
+			conexion.setConnectTimeout(CONNECT_TIMEOUT);			if (!token.isEmpty()) {
 				conexion.setRequestProperty("Authorization", "bearer " + token);
 			}
-
-			// Se anyade el mwtodo a usar (GET, POST, PUT, DELETE) y se configura para
-			// recibir informacion de respuesta
-			conexion.setRequestMethod(metodo);
-
-			// En caso de POST y PUT se configura para poder enviar información, con el
-			// tamanyo a enviar.
 			if (metodo.equals("POST") || metodo.equals("PUT")) {
 				conexion.setRequestProperty("Content-Type", CONTENT_TYPE_JSON);
 				conexion.setDoOutput(true);
 				conexion.setFixedLengthStreamingMode(json.getBytes().length);
 			} else {
-				// GETs o DELETE
 				conexion.setRequestProperty("Accept", CONTENT_TYPE_JSON);
 			}
-
-			// Se abre la conexion
 			conexion.connect();
-
-			// En caso de POST y PUT se envia la informacion a guardar o actualizar
 			if (metodo.equals("POST") || metodo.equals("PUT")) {
 				OutputStream os = new BufferedOutputStream(conexion.getOutputStream());
 				os.write(json.getBytes());
 				os.flush();
 			}
-
-			// Se obtiene el codigo de respueta
 			int codigoPeticion = conexion.getResponseCode();
 			respuesta.setCodigoPeticion(codigoPeticion);
-
 			if (codigoPeticion == HttpURLConnection.HTTP_OK || codigoPeticion == HttpURLConnection.HTTP_CREATED) {
-				// Se obtiene informacion de respuesta
 				respuesta.setJsonRespuesta(getStringFromInputStream(conexion.getInputStream()));
 			}
 
-			// Se acaba la peticoon
 			conexion.disconnect();
 		} catch (MalformedURLException e) {
 			respuesta.setCodigoPeticion(HttpURLConnection.HTTP_BAD_REQUEST);

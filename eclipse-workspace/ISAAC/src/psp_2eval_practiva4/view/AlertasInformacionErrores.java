@@ -80,6 +80,9 @@ public class AlertasInformacionErrores extends javax.swing.JFrame {
 		case 17:
 			jLabel1.setText("Usuario eliminado");
 			break;
+		case 18:
+			jLabel1.setText("Los campos ya están vacios");
+			break;
 	
 
 		}

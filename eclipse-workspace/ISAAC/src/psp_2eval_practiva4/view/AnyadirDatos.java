@@ -1,5 +1,7 @@
 package psp_2eval_practiva4.view;
 
+import org.apache.commons.lang.StringUtils;
+
 import psp_2eval_practica4.AnyadirDatosController;
 import psp_2eval_practica4.utilities.IconoAplicacion;
 
@@ -41,34 +43,44 @@ public class AnyadirDatos extends javax.swing.JFrame {
 		jMenuItem8 = new javax.swing.JMenuItem();
 		jMenu10 = new javax.swing.JMenu();
 		jMenuItem1 = new javax.swing.JMenuItem();
-		
+
 		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
 		jButton2.setText("Agregar");
 		jButton2.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				jButton2ActionPerformed(evt);
-				
+
 				String id = jTextField2.getText();
 				String nomb = jTextField1.getText();
 				String apell = txtn.getText();
 				String email = txtp.getText();
 				String cont = jTextArea1.getText();
-				
-				//Integer idA = Integer.parseInt(id);
-				
-				AnyadirDatosController controller = new AnyadirDatosController();
-				int codigo = controller.editedUsuario(id, nomb, apell, email, cont);
-				
-				if(codigo==1) {
-					AlertasInformacionErrores errores = new AlertasInformacionErrores(15);
-					errores.setVisible(true);
-					jButton2.setEnabled(false);
-				}else {
-					AlertasInformacionErrores errores = new AlertasInformacionErrores(16);
-					errores.setVisible(true);
+
+				if (StringUtils.isEmpty(String.valueOf(id)) || StringUtils.isEmpty(nomb) || StringUtils.isEmpty(apell)
+						|| StringUtils.isEmpty(email) || StringUtils.isEmpty(cont)) {
+					if (StringUtils.isEmpty(String.valueOf(id))) {
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(4);
+						errores.setVisible(true);
+					} else {
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(2);
+						errores.setVisible(true);
+					}
+
+				} else {
+					AnyadirDatosController controller = new AnyadirDatosController();
+					int codigo = controller.editedUsuario(id, nomb, apell, email, cont);
+
+					if (codigo == 1) {
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(15);
+						errores.setVisible(true);
+						jButton2.setEnabled(false);
+					} else {
+						AlertasInformacionErrores errores = new AlertasInformacionErrores(16);
+						errores.setVisible(true);
+					}
 				}
-				
+
 			}
 		});
 
@@ -88,6 +100,12 @@ public class AnyadirDatos extends javax.swing.JFrame {
 				jTextField2.setText("");
 				jTextField1.setText("");
 				jTextArea1.setText("");
+				if (StringUtils.isEmpty(txtp.getText()) || StringUtils.isEmpty(txtn.getText())
+						|| StringUtils.isEmpty(jTextField2.getText()) || StringUtils.isEmpty(jTextField1.getText())
+						|| StringUtils.isEmpty(jTextArea1.getText())) {
+					AlertasInformacionErrores errores = new AlertasInformacionErrores(18);
+					errores.setVisible(true);
+				}
 			}
 		});
 
@@ -192,7 +210,7 @@ public class AnyadirDatos extends javax.swing.JFrame {
 										javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addContainerGap()));
 
-		jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); 
+		jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14));
 		jLabel5.setText("Escriba el ID y añada información al usuario");
 
 		jMenu2.setText("Información Usuario Logueado");
@@ -272,20 +290,20 @@ public class AnyadirDatos extends javax.swing.JFrame {
 	}
 
 	private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 		this.setVisible(false);
 	}
 
 	private void jMenu10ActionPerformed(java.awt.event.ActionEvent evt) {
-		
+
 	}
 
 	public void eliminar(int id) {

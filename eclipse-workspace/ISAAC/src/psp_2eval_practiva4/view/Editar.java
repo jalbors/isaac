@@ -5,6 +5,8 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.lang.StringUtils;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
 import psp_2eval_practica4.EditarController;
 import psp_2eval_practica4.utilities.IconoAplicacion;
 import psp_2eval_practiva4.model.Imagen;
@@ -215,10 +217,15 @@ public class Editar extends javax.swing.JFrame {
 					dinero = String.valueOf(jTextField6.getText());
 
 					if (StringUtils.isEmpty(String.valueOf(id)) || StringUtils.isEmpty(nomb)
-							|| StringUtils.isEmpty(apell) || StringUtils.isEmpty(email) || StringUtils.isEmpty(cont)
+							|| StringUtils.isEmpty(apell) || StringUtils.isEmpty(email) || StringUtils.isEmpty(contra2)
 							|| StringUtils.isEmpty(dinero)) {
-						AlertasInformacionErrores errores = new AlertasInformacionErrores(2);
-						errores.setVisible(true);
+						if(StringUtils.isEmpty(String.valueOf(id))) {
+							System.out.println("id nulo fdallaa");
+						}else {
+							AlertasInformacionErrores errores = new AlertasInformacionErrores(2);
+							errores.setVisible(true);
+						}
+						
 					} else if (!jTextField7.getText().equalsIgnoreCase(jTextField5.getText())) {
 						AlertasInformacionErrores errores = new AlertasInformacionErrores(1);
 						errores.setVisible(true);
@@ -256,7 +263,8 @@ public class Editar extends javax.swing.JFrame {
 				} catch (NullPointerException e) {
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(9);
 					errores.setVisible(true);
-				}
+					e.printStackTrace();
+}
 
 			}
 		});
