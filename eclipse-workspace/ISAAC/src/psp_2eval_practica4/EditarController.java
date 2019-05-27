@@ -25,13 +25,12 @@ public class EditarController {
 		return this.usuarioDevuelto;
 	}
 
-	// devolver numeros para controlar excepciones ;););)
+	
+	//devolver numeros para controlar excepciones ;););)
 	private int edit(int id, String nombre, String apellido, String email, String contra, double dinero) {
 		Respuesta respuesta = null;
 		Gson gson = new Gson();
-		Usuario us = new Usuario(id,nombre, apellido, email, contra, dinero);
-		System.out.println("usuario a editar  "+us.toString());
-		System.out.println("el idi es este:  "+id);
+		Usuario us = new Usuario(nombre, apellido, email, contra, dinero);
 
 		String urlConId = "http://localhost:8080/ProyectoFinalJorgeAlbors/usuarios" + "/" + id;
 
@@ -42,7 +41,7 @@ public class EditarController {
 			return 1;
 		} else {
 
-			// new AlertaEditar().setVisible(true);
+			//new AlertaEditar().setVisible(true);
 			System.out.println(
 					"Se ha producido un error actualizando  id " + id + ": Codigo " + respuesta.getCodigoPeticion());
 			return 2;

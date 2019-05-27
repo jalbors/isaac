@@ -33,8 +33,7 @@ public class Imagen {
 			return icon;
 
 		} catch (IOException e) {
-			System.out.println("Error cargando las imagenes de la app --> "
-					+ e.getMessage());
+			System.out.println("Error cargando las imagenes de la app --> " + e.getMessage());
 			return null;
 
 		}

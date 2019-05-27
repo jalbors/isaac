@@ -1,6 +1,6 @@
 package psp_2eval_practiva4.view;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import psp_2eval_practica4.AnyadirDatosController;
 import psp_2eval_practica4.utilities.IconoAplicacion;
@@ -57,6 +57,8 @@ public class AnyadirDatos extends javax.swing.JFrame {
 				String email = txtp.getText();
 				String cont = jTextArea1.getText();
 
+				// Integer idA = Integer.parseInt(id);
+
 				if (StringUtils.isEmpty(String.valueOf(id)) || StringUtils.isEmpty(nomb) || StringUtils.isEmpty(apell)
 						|| StringUtils.isEmpty(email) || StringUtils.isEmpty(cont)) {
 					if (StringUtils.isEmpty(String.valueOf(id))) {
@@ -79,8 +81,8 @@ public class AnyadirDatos extends javax.swing.JFrame {
 						AlertasInformacionErrores errores = new AlertasInformacionErrores(16);
 						errores.setVisible(true);
 					}
-				}
 
+				}
 			}
 		});
 
@@ -105,7 +107,7 @@ public class AnyadirDatos extends javax.swing.JFrame {
 						|| StringUtils.isEmpty(jTextArea1.getText())) {
 					AlertasInformacionErrores errores = new AlertasInformacionErrores(18);
 					errores.setVisible(true);
-				}
+}
 			}
 		});
 

@@ -83,7 +83,6 @@ public class AlertasInformacionErrores extends javax.swing.JFrame {
 		case 18:
 			jLabel1.setText("Los campos ya están vacios");
 			break;
-	
 
 		}
 
